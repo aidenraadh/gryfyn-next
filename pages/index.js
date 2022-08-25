@@ -1,5 +1,6 @@
 import Script from 'next/script'
 import MainLayout from '../components/MainLayout'
+import SVG from '../components/SVG'
 import PageHead from '../components/PageHead'
 
 export default function Home(){
@@ -11,29 +12,64 @@ export default function Home(){
             data-0="transform: translateX(0%);" data-8000="transform: translateX(-91%);">
             
                 <header className="flex flex-col justify-center w-screen h-screen px-32 py-24 tablet:w-full shrink-0 tablet:px-11 mobile:px-4 section">
-                    <h1 className="text-5xl font-['neue_metana_regular'] mobile:text-center">
-                        A world<br className="mobile:hidden"/> beyond your<br className="mobile:hidden"/>imagination awaits
+                    <h1 className="text-5xl font-['neue_metana_regular'] mobile:justify-center flex flex-wrap gap-4">
+                        A
+                        <span className='relative'>
+                            world
+                            <SVG id={1} classes={'absolute anim-world-beyond-o'} attr={{
+                                style: {width: '3.9rem', left: '2.4rem', top: '-0.47rem'}
+                            }}/>
+                        </span><span style={{width: '50rem'}} className="mobile:hidden"></span>
+                        beyond
+                        <span className='relative'>
+                            your
+                            <SVG id={2} classes={'absolute anim-world-beyond-u'} attr={{
+                                style: {top: '-1.2rem', left: '4.5rem', width: '2rem'}
+                            }}/>
+                        </span><span style={{width: '50rem'}} className="mobile:hidden"></span>
+                        <span className='relative'>
+                            imagination
+                            <SVG id={2} classes={'absolute anim-world-beyond-o'} fill_1={'#F7CE55'} attr={{
+                                style: {top: '-1rem', left: '-0.6rem', width: '2rem'}
+                            }}/>
+                        </span>
+                        <span className='relative'>
+                            awaits
+                            <SVG id={3} classes={'absolute w-10'} attr={{
+                                style: {top: '0.5rem', left: '-0.18rem'}
+                            }}/>                            
+                        </span>
                     </h1>    
                     <p className="flex items-center mt-10">
                         <span className="relative before:absolute before:rounded-full before:top-2 before:left-2.5 inline-block h-12 mr-6 border-2 rounded-full w-7 anim-scroll-to-explore before:content-[''] before:w-1 before:h-2"></span>
                         Scroll to explore
                     </p>
                 </header>        
-
+                <SVG id={2} classes={'absolute'} attr={{
+                    style: {bottom: '-34rem', left: '63vw', width: '63rem'}
+                }}/>
                 <p id="im-your-imagination" className="flex flex-col items-center justify-center w-screen h-screen px-32 py-24 tablet:w-full shrink-0 tablet:px-11 mobile:px-4 section">
                     <span className="relative flex flex-col font-['neue_metana_regular']">
-                        <span data-0="animation-play-state: paused;" data-350="animation-play-state: running;" className="text-4xl text-white im-your-imagination-fading-text">
+                        <span className="text-4xl text-white im-your-imagination-fading-text" data-0="animation-play-state: paused;" data-350="animation-play-state: running;">
                             I am your
                         </span>
-                        <span data-0="animation-play-state: paused;" data-350="animation-play-state: running;" className="text-4xl ml-14 im-your-imagination-fading-text text-['#FFCD32']">
+                        <span className="text-5xl relative ml-14 im-your-imagination-fading-text text-[#FFCD32]" data-0="animation-play-state: paused;" data-350="animation-play-state: running;">
                             imagination
+                            <SVG id={3} classes={'absolute'} fill_1={'#FFCD32'} fill_2={'#0268A3'} attr={{
+                                style: {top: '0.2em', left: '1.4em', width: '0.8em'}
+                            }}/>     
+                            <SVG id={3} classes={'absolute'} fill_1={'#FFCD32'} fill_2={'#0268A3'} attr={{
+                                style: {top: '0.2em', left: '4.2em', width: '0.8em'}
+                            }}/>                                                       
                         </span>
-                        <svg data-0="animation-play-state: paused;" data-350="animation-play-state: running;" className="absolute w-20 anim-im-your-imagination-pattern1" id="pattern-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 464.27 475.13">
-                            <path fill="#0a9c49" d="M235.33,47.97l-1.75-5.25-1.75,5.25c-29.76,89.27-90.11,149.62-179.37,179.37l-5.25,1.75,5.25,1.75c89.27,29.75,149.62,90.11,179.37,179.37l1.75,5.25,1.75-5.25c29.76-89.27,90.11-149.62,179.37-179.37l5.25-1.75-5.25-1.75c-89.27-29.75-149.62-90.11-179.37-179.37Z"/>
-                        </svg>         
-                        <svg data-0="animation-play-state: paused;" data-350="animation-play-state: running;" className="absolute w-36 anim-im-your-imagination-pattern2" id="pattern-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 464.27 475.13">
-                            <path fill="#0a9c49" d="M235.33,47.97l-1.75-5.25-1.75,5.25c-29.76,89.27-90.11,149.62-179.37,179.37l-5.25,1.75,5.25,1.75c89.27,29.75,149.62,90.11,179.37,179.37l1.75,5.25,1.75-5.25c29.76-89.27,90.11-149.62,179.37-179.37l5.25-1.75-5.25-1.75c-89.27-29.75-149.62-90.11-179.37-179.37Z"/>
-                        </svg>                           
+                        <SVG id={2} classes={'absolute w-20 anim-im-your-imagination-pattern1'} attr={{
+                            'data-0': 'animation-play-state: paused;',
+                            'data-350': 'animation-play-state: running;',
+                        }}/>  
+                        <SVG id={2} classes={'absolute w-36 anim-im-your-imagination-pattern2'} attr={{
+                            'data-0': 'animation-play-state: paused;',
+                            'data-350': 'animation-play-state: running;',
+                        }}/>                                                                                 
                     </span>
                 </p>
 
@@ -79,6 +115,9 @@ export default function Home(){
                         <span className="text-6xl text-[#439948] anim-fade-in absolute" style={{animationDuration: '0ms', animationDelay: '1700ms'}}
                         data-0="animation-play-state: paused;" data-3500="animation-play-state: running;">
                             home
+                            <SVG id={4} fill_1={'#F36B37'} fill_2={'#439948'} classes={'absolute'} attr={{
+                                style: {top: '-0.22em', left: '0.56em', width: '1.4em'}
+                            }}/>
                         </span>
                         <span className='anim-im-your-home-squares' style={{width: '23rem', height: '23rem', transform: 'scale(2)'}}
                         data-0="animation-play-state: paused;" data-3500="animation-play-state: running;">
@@ -127,10 +166,7 @@ export default function Home(){
                 <p className="relative flex flex-col items-center justify-center w-screen h-screen px-32 py-24 tablet:w-full shrink-0 tablet:px-11 mobile:px-4 section">
                     <span className="relative flex flex-col items-center justify-center font-['neue_metana_regular'] anim-eye-zoom-out" style={{width: '50rem'}}
                     data-0="animation-play-state: paused;" data-5100="animation-play-state: running;">
-                        <svg className="w-full" id="eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513.34 525.36">
-                            <path fill="#E8DFD4" d="M29.77,262.92s103.13-116.72,230.34-116.72,230.34,116.72,230.34,116.72c0,0-103.13,116.72-230.34,116.72S29.77,262.92,29.77,262.92Z"/>
-                            <circle fill="#1996CE" cx="260.11" cy="262.92" r="83.88" transform="translate(-109.73 260.94) rotate(-45)"/>
-                        </svg>
+                        <SVG id={3} classes={'w-full'} fill_1={'#E8DFD4'} fill_2={'#1996CE'}/>                         
                         <span className="absolute text-4xl text-white anim-fade-out" style={{animationDuration: '0ms', animationDelay: '2000ms'}}
                         data-0="animation-play-state: paused;" data-5100="animation-play-state: running;">
                             I am your
@@ -138,12 +174,17 @@ export default function Home(){
                         <span className="absolute text-black opacity-0 text-7xl anim-fade-in mobile:text-6xl" style={{animationDuration: '0ms', animationDelay: '2000ms'}}
                         data-0="animation-play-state: paused;" data-5100="animation-play-state: running;">
                             adventure
-                        </span>                               
-                        <svg className="absolute top-0 left-0 w-full anim-eye-lid-blinking" id="eyelid" xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 513.34 525.36" data-0="animation-play-state: paused;" data-5100="animation-play-state: running;">
-                            <path fill="#000000" style={{transform: 'rotateX(1deg)', transformOrigin: 'center 20%'}} d="M29.77,262.92s103.13-116.72,230.34-116.72,230.34,116.72,230.34,116.72c0,0-103.13,116.72-230.34,116.72S29.77,262.92,29.77,262.92Z"/>
-                            <circle fill="#000000" cx="260.11" cy="262.92" r="83.88" transform="translate(-109.73 260.94) rotate(-45)"/>
-                        </svg> 
+                            <SVG id={3} classes={'absolute'} fill_1={'#000000'} fill_2={'#FFCD32'} attr={{
+                                style: {top: '0.16em', left: '-0.08em', width: '0.84em'}
+                            }}/> 
+                            <SVG id={2} classes={'absolute'} fill_1={'#FFCD32'} attr={{
+                                style: {top: '-0.1em', left: '4.69em', width: '0.6em'}
+                            }}/>  
+                        </span>         
+                        <SVG id={3} classes={'absolute top-0 left-0 w-full anim-eye-lid-blinking'} fill_1={'#000000'} fill_2={'#000000'} attr={{
+                            'data-0': 'animation-play-state: paused;',
+                            'data-5100': 'animation-play-state: running;',
+                        }}/>                        
                     </span>  
                 </p>   
 
@@ -159,7 +200,7 @@ export default function Home(){
                 </p>         
 
                 <div id="im-your-wallet" className="flex flex-col items-center justify-center w-screen h-screen px-32 py-24 tablet:w-full shrink-0 tablet:px-11 mobile:px-4 section">
-                    <h2 data-0="animation-play-state: paused;" data-6650="animation-play-state: running;" className="mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular'] text-center">
+                    <h2 className="flex mobile:flex-col content-center items-center flex-wrap gap-5 mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular']" data-0="animation-play-state: paused;" data-6650="animation-play-state: running;">
                         Im your 
                         <span className="font-['neue_metana_bold']">wallet.</span>
                     </h2>

@@ -241,6 +241,17 @@ body{
     animation-delay: 2000ms;
 }
 
+.anim-world-beyond-o{
+    animation: anim-world-beyond-o 1600ms ease-out infinite;
+    animation-fill-mode: both;
+}
+
+.anim-world-beyond-u{
+    animation: anim-world-beyond-u 1400ms ease-out infinite;
+    animation-fill-mode: both;
+}
+
+
 /*
 |--------------------------------------------------------------------------
 | Desktop Layout

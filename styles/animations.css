@@ -271,3 +271,24 @@
         clip-path: circle(100% at 50vw 50vh);
     }
 }
+
+@keyframes anim-world-beyond-o {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes anim-world-beyond-u {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.8rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
