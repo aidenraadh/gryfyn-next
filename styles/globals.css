@@ -211,15 +211,34 @@ body{
 }
 
 .anim-im-your-home-box{
-    animation: anim-im-your-home-box 1200ms ease-in;
+    animation: anim-im-your-home-box 1800ms ease-in;
     animation-fill-mode: both;    
 }
 
 .anim-im-your-home-inner-box{
-    animation: anim-im-your-home-inner-box 1400ms ease;
+    animation: anim-im-your-home-inner-box 2000ms ease;
     animation-fill-mode: both;
-    animation-delay: 800ms;
+    animation-delay: 1400ms;
     transform-origin: center bottom;
+}
+
+.anim-im-your-home-squares{
+    animation: anim-im-your-home-squares 900ms ease;
+    animation-fill-mode: both;
+    animation-delay: 2500ms;
+}
+
+.anim-circle-clip-path{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    animation: anim-circle-clip-path 2500ms ease-in;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-delay: 2000ms;
 }
 
 /*

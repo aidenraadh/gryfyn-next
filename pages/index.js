@@ -1,8 +1,6 @@
-import { useEffect } from "react"
 import Script from 'next/script'
 import MainLayout from '../components/MainLayout'
 import PageHead from '../components/PageHead'
-
 
 export default function Home(){
 
@@ -74,10 +72,41 @@ export default function Home(){
                     <span data-0="animation-play-state: paused;" data-3500="animation-play-state: running;" className="flex flex-col items-center justify-center border-8 border-[#E8DFD4] w-96 h-96 anim-im-your-home-box relative">
                         <span className="anim-im-your-home-inner-box absolute left-0 bottom-0 bg-[#E8DFD4] h-full w-full" 
                         data-0="animation-play-state: paused;" data-3500="animation-play-state: running;"></span>
-                        <span className="text-[#E8DFD4] text-3xl">Im your</span>
-                        <span className="text-6xl hidden text-[#439948]">
+                        <span className="text-[#E8DFD4] text-3xl anim-fade-out absolute" data-0="animation-play-state: paused;" data-3500="animation-play-state: running;"
+                        style={{animationDuration: '0ms', animationDelay: '1600ms'}}>
+                            Im your
+                        </span>
+                        <span className="text-6xl text-[#439948] anim-fade-in absolute" style={{animationDuration: '0ms', animationDelay: '1700ms'}}
+                        data-0="animation-play-state: paused;" data-3500="animation-play-state: running;">
                             home
                         </span>
+                        <span className='anim-im-your-home-squares' style={{width: '23rem', height: '23rem', transform: 'scale(2)'}}
+                        data-0="animation-play-state: paused;" data-3500="animation-play-state: running;">
+                            <span className='absolute grid grid-cols-2 gap-4 bottom-8 left-20'>
+                                <span className='w-24 h-24 bg-[#2388C1]'></span>
+                                <span className='w-24 h-24 bg-[#E8DFD4]'></span>
+                            </span>        
+                            <span className='absolute grid grid-cols-2 gap-4 top-4 left-20'>
+                                <span className='w-24 h-24 bg-[#E8DFD4]'></span>
+                                <span className='w-24 h-24 bg-[#F36B37]'></span>
+                            </span>                                          
+                            <span className='absolute grid grid-cols-2 gap-4 bottom-8' style={{right: '-8.92rem'}}>
+                                <span className='w-24 h-24 bg-[#2388C1]'></span>
+                                <span className='w-24 h-24 bg-[#E8DFD4]'></span>
+                                <span className='w-24 h-24 bg-[#439948]'></span>
+                                <span className='w-24 h-24 bg-[#FFCD32]'></span>
+                                <span className='w-24 h-24 bg-[#F36B37]'></span>
+                                <span className='w-24 h-24 bg-[#439948]'></span>
+                            </span>
+                            <span className='absolute grid grid-cols-2 gap-4 bottom-8' style={{left: '-8.92rem'}}>
+                                <span className='w-24 h-24 bg-[#FFCD32]'></span>
+                                <span className='w-24 h-24 bg-[#F36B37]'></span>
+                                <span className='w-24 h-24 bg-[#439948]'></span>
+                                <span className='w-24 h-24 bg-[#2388C1]'></span>
+                                <span className='w-24 h-24 bg-[#E8DFD4]'></span>
+                                <span className='w-24 h-24 bg-[#F7CE55]'></span>
+                            </span>  
+                        </span>                                           
                     </span>
                 </p>      
 
@@ -163,7 +192,7 @@ export default function Home(){
                                 <path fill="#1996CE" d="M29.77,262.92s103.13-116.72,230.34-116.72,230.34,116.72,230.34,116.72c0,0-103.13,116.72-230.34,116.72S29.77,262.92,29.77,262.92Z"/>
                                 <circle fill="#F7CE54" cx="260.11" cy="262.92" r="83.88" transform="translate(-109.73 260.94) rotate(-45)"/>
                             </svg>
-                            <span className="before:content-['('] after:content-[')'] mx-4">UN</span>known
+                            <span className="before:content-['('] before:text-[#F7CE54] after:content-[')'] after:text-[#F7CE54] mx-4 uppercase">un</span>known
                         </span>
                         <button className="px-5 py-2 text-black rounded-md text-2xl w-max font-medium font-['basier_circle'] bg-['#E8DFD4']" type="button">
                             Discover more
