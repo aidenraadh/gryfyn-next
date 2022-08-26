@@ -66,7 +66,6 @@ body{
     width: 100vw;
     position:fixed;
     z-index:100;
-    animation-play-state: running;
 }
   
 #preloader .rectangle{
@@ -111,33 +110,23 @@ body{
     animation-fill-mode: both;
 } 
 
-.loading-sun{
-    fill: var(--orange-color);
-}
-
-.svg-sun{
-    width: 100vw;
-    height: auto;
-}
-
-#pattern-sun{
-    position: absolute;
+#sun-loader{
     z-index: 100;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    animation: spin 2s ease 3.3s,
-    scale-out 5s 4.8s forwards;
-} 
+    animation: scale-out 4s ease 4.8s 1 forwards;
+}
+
+.loading-sun{
+    animation: spin 2s ease 3.3s;
+    fill: var(--orange-color);
+    transform-origin: center;
+}
+
 
 #star-divider{
     bottom: -36rem;
     right: -34rem;
     width: 69rem;
-    transform: rotate(-7deg); 
+    transform: rotate(-38deg); 
 }
 
 /*
@@ -268,10 +257,6 @@ body{
     min-width: 100vw;
     height: 100vh;
     overflow: hidden;
-    animation: anim-circle-clip-path 800ms ease-in;
-    animation-fill-mode: both;
-    animation-play-state: running;
-    animation-delay: 3300ms;
 }
 
 .anim-world-beyond-o{
@@ -367,8 +352,14 @@ body{
         bottom: -42vh;
         right: -2vw;
         width: 52rem;
-        transform: rotate(-10deg);
+        transform: rotate(-27deg);
     }    
+    /* #pattern-sun{
+        margin: 0;
+        height: 100vh;
+        bottom: auto;
+        right: auto;
+    } */
 }
 
 /*

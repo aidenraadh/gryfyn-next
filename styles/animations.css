@@ -62,10 +62,9 @@
 
 @keyframes scale-out { 
     0% {
-        transform: scale(0);
+        transform: scale(1);
     }
     100%{
-        visibility: hidden;
         transform: scale(40) rotate(180deg); 
     }
 }
@@ -265,15 +264,6 @@
         transform: scale(1);
         filter: blur(0px);
     }    
-}
-
-@keyframes anim-circle-clip-path {
-    0% {
-        clip-path: circle(5rem at 50vw 50vh);
-    }
-    100% {
-        clip-path: circle(100% at 50vw 50vh);
-    }
 }
 
 @keyframes anim-world-beyond-o {

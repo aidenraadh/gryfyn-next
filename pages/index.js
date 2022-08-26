@@ -19,13 +19,19 @@ const animTriggerPos = (pos) => {
 export default function Home(){
 
     useEffect(() => {
-        const sunLoader = document.getElementById("pattern-sun");
+        const sunLoader = document.getElementById("sun-loader");
+
         document.body.style.overflow = "hidden";
-        setTimeout(() => {
+
+        let timeout = setTimeout(() => {
             sunLoader.style.display = "none";
             document.body.style.overflow = "auto";
-        }, 4000);
-      });
+        }, 6800);
+        
+        return () => {
+            clearTimeout(timeout)
+        }
+    }, []);
 
     return (<>
         <PageHead/>
