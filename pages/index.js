@@ -1,9 +1,19 @@
 import Script from 'next/script'
+import { useEffect } from 'react'
 import MainLayout from '../components/MainLayout'
 import SVG from '../components/SVG'
 import PageHead from '../components/PageHead'
 
 export default function Home(){
+
+    useEffect(() => {
+        const sunLoader = document.getElementById("pattern-sun");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => {
+            sunLoader.style.display = "none";
+            document.body.style.overflow = "auto";
+        }, 5000);
+      });
 
     return (<>
         <PageHead/>
