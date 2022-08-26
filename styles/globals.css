@@ -105,19 +105,27 @@ body{
     margin-left: -5%; 
 }
 
-/* .loading-sun{
+.loading-sun{
     fill: var(--orange-color);
 }
+
+.svg-sun{
+    width: auto;
+    height: 80px;
+}
+
 #pattern-sun{
     position: absolute;
     z-index: 100;
-    top: 50%;
-    left: 50%;
-    width: 18%;
-    margin-top: -10%;
-    margin-left: -9%;
-    animation: spin 2s ease;
-}*/
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100px;
+    margin-top: 310px;
+    animation: spin 2s ease,
+    scale-out 5s 2s forwards;
+} 
 
 /*
 |--------------------------------------------------------------------------
