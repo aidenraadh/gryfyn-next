@@ -46,9 +46,6 @@ body{
     width: 4rem;
 }
 
-.navbar .logo-link{
-}
-
 .navbar .logo-link > svg{
     width: 9rem;
     top: -8vh;
@@ -58,9 +55,6 @@ body{
 
 .wrapper{
     min-width: 100vw;
-}
-
-.wrapper > .section{
 }
 
 #preloader{
@@ -74,15 +68,6 @@ body{
     z-index:100;
     animation-play-state: running;
 }
-/* 
-#loader {
-    display: none;
-    background:#000000 ;
-    height: 100vh;
-    width: 100%;
-    position:fixed;
-    z-index:100;
-} */
   
 #preloader .rectangle{
     animation: move-left 600ms ease-in-out alternate, anim-fade-out 0s;
@@ -131,22 +116,21 @@ body{
 }
 
 .svg-sun{
-    width: auto;
-    height: 80px;
+    width: 100vw;
+    height: auto;
 }
 
 #pattern-sun{
     position: absolute;
     z-index: 100;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 100px;
-    margin-top: 310px;
-    animation: spin 2s ease,
-    scale-out 5s 2s forwards;
-    animation-delay: 3300ms, 3300ms;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    animation: spin 2s ease 3.3s,
+    scale-out 5s 4.8s forwards;
 } 
 
 #star-divider{
@@ -284,7 +268,7 @@ body{
     min-width: 100vw;
     height: 100vh;
     overflow: hidden;
-    animation: anim-circle-clip-path 2500ms ease-in;
+    animation: anim-circle-clip-path 800ms ease-in;
     animation-fill-mode: both;
     animation-play-state: running;
     animation-delay: 3300ms;

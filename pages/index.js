@@ -1,11 +1,12 @@
 import Script from 'next/script'
+import { useEffect } from 'react'
 import MainLayout from '../components/MainLayout'
 import LandingPageSection from '../components/LandingPageSection'
 import SVG from '../components/SVG'
 import PageHead from '../components/PageHead'
 
 
-// Return all horizontal scroll position of the page that will trigger the animation
+// Return all horaizontal scroll position of the page that will trigger the animation
 // that part of Skrollr.js
 const animTriggerPos = (pos) => {
     const posData = {'data-0': 'animation-play-state: paused;'}
@@ -16,6 +17,15 @@ const animTriggerPos = (pos) => {
 }
 
 export default function Home(){
+
+    useEffect(() => {
+        const sunLoader = document.getElementById("pattern-sun");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => {
+            sunLoader.style.display = "none";
+            document.body.style.overflow = "auto";
+        }, 4000);
+      });
 
     return (<>
         <PageHead/>
