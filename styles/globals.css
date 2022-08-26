@@ -64,14 +64,15 @@ body{
 }
 
 #preloader{
-    animation: preloader 1000ms ease 1;
-    animation-delay: 1400ms;
+    animation: preloader 0ms;
+    animation-delay: 3300ms;
     animation-fill-mode: both;
     background:#000000;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     position:fixed;
     z-index:100;
+    animation-play-state: running;
 }
 /* 
 #loader {
@@ -83,26 +84,39 @@ body{
     z-index:100;
 } */
   
-#pattern-rect1{
-    fill: var(--grey-color);
-    animation: move-left 1s ease-in-out alternate;
-    animation-iteration-count: 2;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -5%;
-    margin-left: -5%; 
+#preloader .rectangle{
+    animation: move-left 600ms ease-in-out alternate, anim-fade-out 0s;
+    animation-iteration-count: 2, 1;
+    animation-fill-mode: none, forwards;
+    animation-delay: 0ms, 1150ms;
 }
-  
-#pattern-rect2{
-    fill: var(--grey-color);
-    animation: move-right 1s ease-in-out alternate;
-    animation-iteration-count: 2;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -5%;
-    margin-left: -5%; 
+
+#preloader .rectangle:nth-child(2){
+    animation: move-right 600ms ease-in-out alternate, anim-fade-out 0s;
+    animation-iteration-count: 2, 1;
+    animation-fill-mode: none, forwards;
+    animation-delay: 0ms, 1150ms;    
+}
+
+#preloader .star{
+    animation: spin-90 1000ms ease, anim-fade-in 0s ease;
+    animation-fill-mode: none, both;
+    animation-direction: normal, normal;
+    animation-iteration-count: 1, 1;
+    animation-delay: 1150ms, 1150ms;    
+}
+
+#preloader .eye{
+    animation: anim-fade-in 0s ease;
+    animation-fill-mode: both;
+    animation-delay: 2300ms;        
+}
+
+#preloader .eye-lid{
+    animation: eye-open 2500ms ease;
+    animation-fill-mode: both;
+    animation-delay: 2100ms;        
+    transform-origin: center 10%;
 }
 
 #im-playground #sun{
@@ -132,13 +146,41 @@ body{
     margin-top: 310px;
     animation: spin 2s ease,
     scale-out 5s 2s forwards;
+    animation-delay: 3300ms, 3300ms;
 } 
+
+#star-divider{
+    bottom: -36rem;
+    right: -34rem;
+    width: 69rem;
+    transform: rotate(-7deg); 
+}
 
 /*
 |--------------------------------------------------------------------------
 | All Animation Classes
 |--------------------------------------------------------------------------
 */
+
+.anim-spin.deg-90{
+    animation: spin-90 1000ms;
+    animation-fill-mode: both;
+}
+
+.anim-spin.deg-180{
+    animation: spin-180 1000ms;
+    animation-fill-mode: both;
+}
+
+.anim-spin.deg-270{
+    animation: spin-270 1000ms;
+    animation-fill-mode: both;
+}
+
+.anim-spin.deg-360{
+    animation: spin-360 1000ms;
+    animation-fill-mode: both;
+}
 
 #im-your-imagination #pattern-10{
     transform: translate(-3rem, -12rem);
@@ -245,7 +287,7 @@ body{
     animation: anim-circle-clip-path 2500ms ease-in;
     animation-fill-mode: both;
     animation-play-state: running;
-    animation-delay: 2000ms;
+    animation-delay: 3300ms;
 }
 
 .anim-world-beyond-o{
@@ -337,6 +379,12 @@ body{
         top: -16rem;
         width: 32rem
     } 
+    #star-divider{
+        bottom: -42vh;
+        right: -2vw;
+        width: 52rem;
+        transform: rotate(-10deg);
+    }    
 }
 
 /*
@@ -349,4 +397,9 @@ body{
     html{
         font-size: 14.4px;
     }
+    #star-divider{
+        bottom: -35vh;
+        right: -9vw;
+        width: 35rem;
+    }        
 }

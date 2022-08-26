@@ -22,7 +22,7 @@ export default function Home(){
         <MainLayout>
             <div id="skrollr-body" className="fixed top-0 left-0 flex gap-0 overflow-hidden tablet:flex-col tablet:h-auto wrapper" 
             data-0="transform: translateX(0%);" data-8000="transform: translateX(-91%);">
-                <LandingPageSection classes={'flex flex-col justify-center'} tag={'header'}>
+                <LandingPageSection classes={'relative flex flex-col justify-center'} tag={'header'}>
                     <h1 className="text-5xl font-['neue_metana_regular'] mobile:justify-center flex flex-wrap gap-4">
                         A
                         <span className='relative'>
@@ -51,15 +51,14 @@ export default function Home(){
                             }}/>                            
                         </span>
                     </h1>    
-                    <p className="flex items-center mt-10">
+                    <p className="flex items-center mt-10 tablet:justify-center">
                         <span className="relative before:absolute before:rounded-full before:top-2 before:left-2.5 inline-block h-12 mr-6 border-2 rounded-full w-7 anim-scroll-to-explore before:content-[''] before:w-1 before:h-2"></span>
                         Scroll to explore
                     </p>
+                    <SVG id={2} classes={'absolute anim-spin deg-90'} attr={{
+                        id: "star-divider", ...animTriggerPos(100)
+                    }}/>                    
                 </LandingPageSection>      
-
-                <SVG id={2} classes={'absolute'} attr={{
-                    style: {bottom: '-34rem', left: '63vw', width: '63rem'}
-                }}/>
                 
                 <LandingPageSection classes={'flex flex-col items-center justify-center'} tag={'p'} attr={{id: 'im-your-imagination'}}>
                     <span className="relative flex flex-col font-['neue_metana_regular']">
