@@ -269,7 +269,7 @@
 
 @keyframes anim-circle-clip-path {
     0% {
-        clip-path: circle(1rem at 50vw 50vh);
+        clip-path: circle(5rem at 50vw 50vh);
     }
     100% {
         clip-path: circle(100% at 50vw 50vh);

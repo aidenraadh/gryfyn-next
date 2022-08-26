@@ -117,21 +117,21 @@ body{
 }
 
 .svg-sun{
-    width: auto;
-    height: 80px;
+    width: 100vw;
+    height: auto;
 }
 
 #pattern-sun{
     position: absolute;
     z-index: 100;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 100px;
-    margin-top: 310px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     animation: spin 2s ease,
-    scale-out 5s 2s forwards;
+    scale-out 5s 1.5s forwards;
 } 
 
 /*
@@ -242,7 +242,7 @@ body{
     min-width: 100vw;
     height: 100vh;
     overflow: hidden;
-    animation: anim-circle-clip-path 2500ms ease-in;
+    animation: anim-circle-clip-path 800ms ease-in;
     animation-fill-mode: both;
     animation-play-state: running;
     animation-delay: 2000ms;

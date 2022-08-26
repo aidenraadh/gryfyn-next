@@ -6,7 +6,7 @@ import SVG from '../components/SVG'
 import PageHead from '../components/PageHead'
 
 
-// Return all horizontal scroll position of the page that will trigger the animation
+// Return all horaizontal scroll position of the page that will trigger the animation
 // that part of Skrollr.js
 const animTriggerPos = (pos) => {
     const posData = {'data-0': 'animation-play-state: paused;'}
@@ -24,7 +24,7 @@ export default function Home(){
         setTimeout(() => {
             sunLoader.style.display = "none";
             document.body.style.overflow = "auto";
-        }, 5000);
+        }, 4000);
       });
 
     return (<>
