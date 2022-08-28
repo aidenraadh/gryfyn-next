@@ -127,7 +127,7 @@ export default function Home(){
                 <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'}>
                     <span {...animTriggerPos(2800)} className="flex flex-col items-center justify-center anim-create-future">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-[#FE6B32]">
-                            Play
+                            play
                         </span>
                         <span {...animTriggerPos(2800)} className="text-xl text-center anim-fade-in" style={{animationDelay: '800ms'}}>
                             any roles of your desire,<br className="mobile:hidden"/>
@@ -143,7 +143,7 @@ export default function Home(){
                         {...animTriggerPos(3500)}></span>
                         <span className="text-[#E8DFD4] text-3xl anim-fade-out absolute" {...animTriggerPos(3500)}
                         style={{animationDuration: '0ms', animationDelay: '1600ms'}}>
-                            Im your
+                            I am your
                         </span>
                         <span className="text-6xl text-[#439948] anim-fade-in absolute" style={{animationDuration: '0ms', animationDelay: '1700ms'}}
                         {...animTriggerPos(3500)}>
@@ -185,7 +185,7 @@ export default function Home(){
                 <LandingPageSection tag={'p'} classes={"flex flex-col items-center justify-center"}>
                     <span {...animTriggerPos(4300)} className="flex flex-col items-center justify-center anim-create-future">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-[#0a9c49]">
-                            Socialize
+                            socialize
                         </span>
                         <span className="text-xl text-center anim-fade-in" style={{animationDelay: '800ms'}} {...animTriggerPos(4300)}>
                             and connect with a world of opportunity.<br/><br/>
@@ -221,8 +221,8 @@ export default function Home(){
                 </LandingPageSection>   
 
                 <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'}>
-                    <span {...animTriggerPos(5950)} className="mb-6 text-6xl anim-fade-in font-['neue_metana_bold'] text-['#1996CE']">
-                        Explore
+                    <span {...animTriggerPos(5950)} className="mb-6 text-6xl anim-fade-in font-['neue_metana_bold'] text-[#2388C1]">
+                        explore
                     </span>
                     <span {...animTriggerPos(5950)} className="text-xl text-center anim-fade-in" style={{animationDelay: '600ms'}}>
                         the (un)known.<br className="mobile:hidden"/>
@@ -233,7 +233,7 @@ export default function Home(){
 
                 <LandingPageSection classes={'flex flex-col items-center justify-center'} attr={{id: 'im-your-wallet'}}>
                     <h2 className="flex mobile:flex-col content-center items-center flex-wrap gap-5 mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular']" {...animTriggerPos(6650)}>
-                        Im your 
+                        I am your 
                         <span className="font-['neue_metana_bold']">wallet.</span>
                     </h2>
                     <p {...animTriggerPos(6650)} className="text-xl text-center anim-im-your-wallet-desc">
