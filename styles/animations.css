@@ -29,6 +29,12 @@
     }
 }
 
+@keyframes spin-90 { 
+    100% { 
+        transform:rotate(90deg); 
+    } 
+} 
+
 @keyframes spin { 
     100% { 
         -webkit-transform: rotate(180deg); 
