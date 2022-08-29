@@ -29,30 +29,6 @@
     }
 }
 
-@keyframes spin-90{ 
-    to { 
-        transform:rotate(90deg); 
-    } 
-} 
-
-@keyframes spin-180{    
-    to { 
-        transform:rotate(180deg); 
-    } 
-} 
-
-@keyframes spin-270{     
-    to { 
-        transform:rotate(270deg); 
-    } 
-} 
-
-@keyframes spin-360{   
-    to { 
-        transform:rotate(359deg); 
-    } 
-} 
-
 @keyframes spin { 
     100% { 
         -webkit-transform: rotate(180deg); 

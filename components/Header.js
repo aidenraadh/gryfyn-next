@@ -1,12 +1,10 @@
+import Button from './Button'
+import SVG from './SVG'
+
 export default function Header(){
     return (<>
-        <nav  className="fixed top-0 left-0 flex flex-col items-center justify-between h-screen gap-0 p-4 bg-black tablet:flex-row tablet:w-full tablet:h-auto navbar">
-            <a href="#" className="logo-test">
-                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705.31 640.77">
-                    <path fill="#E5DFD6" d="M640.16,364.69c-47.96-15.89-82.38-38.3-105.19-68.49-5.16-37.53,3.4-77.71,26.17-122.82l2.9-5.74-5.73,2.91c-44.92,22.85-85,31.56-122.46,26.57-30.07-22.82-52.4-57.18-68.26-105.01l-2.02-6.1-1.97,6.12c-15.52,47.9-37.58,82.39-67.45,105.42-37.36,5.16-77.48-3.31-122.52-25.87l-5.75-2.88,2.93,5.72c22.94,44.8,31.75,84.79,26.94,122.22-22.8,30.04-57.1,52.36-104.84,68.23l-5.19,1.73s125.03,141.51,279.26,141.51,279.26-141.51,279.26-141.51l-6.08-2.02Z"/>
-                    <circle fill="#f36b37" cx="366.98" cy="345.27" r="102.25" transform="translate(-136.66 360.62) rotate(-45)"/>
-                </svg>
-            </a>
+        <nav  className="fixed top-0 left-0 flex flex-col items-center justify-between h-screen gap-0 p-4 bg-black py-7 mobile:py-2 tablet:flex-row tablet:w-full tablet:h-auto navbar">
+            <SVG name={'fire'} classes={'w-16 tablet:hidden'}/>
             <a href="#" className="relative logo-link tablet:static">
                 <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1362.79 495.91" className="absolute tablet:static tablet:top-auto tablet:bottom-auto">
                     <path fill="#FFCD32" d="M598.57,113.99c-17.51-3.66-28.81-14.98-35.57-35.6l-.37-1.14-.37,1.14c-6.75,20.62-18.06,31.93-35.57,35.6l-1.84,.38,1.84,.38c17.51,3.67,28.81,14.98,35.57,35.6l.37,1.14,.37-1.14c6.75-20.62,18.05-31.93,35.57-35.6l1.84-.38-1.84-.38Z"/>
@@ -21,7 +19,13 @@ export default function Header(){
                 </svg>            
                 <span className="sr-only">Home</span>
             </a>
-            <div></div>
+            <div className='flex flex-col tablet:hidden'>
+                <span className='rounded-md w-9 h-9 bg-[#E8DFD4] mb-4'></span>
+                <span className='rounded-md w-9 h-9 bg-[#E8DFD4]'></span>
+            </div>
+            <Button classes={'text-lg fixed top-4 right-6'}>
+                Sign up
+            </Button>            
         </nav>
     </>)
 }
