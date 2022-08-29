@@ -12,17 +12,17 @@ const getTriggerPos = (posName) => {
     const posData = {'data-0': 'animation-play-state: paused;'}
 
     posData['data-_'+posName] = 'animation-play-state: running;'
-
+    
     return posData
 }
+
 
 export default function Home(){
 
     return (<>
         <PageHead/>
         <MainLayout>
-            <div id="skrollr-body" className="fixed top-0 left-0 flex gap-0 overflow-hidden tablet:flex-col tablet:h-auto wrapper" 
-            data-0="transform: translateX(0%);" data-8000="transform: translateX(-91%);">
+            <div id="skrollr-body" className="wrapper" data-0="transform: translateX(0%);" data-10000="transform: translateX(-1000%);">
                 <LandingPageSection classes={'relative flex flex-col justify-center'} tag={'header'}>
                     <h1 className="text-5xl font-['neue_metana_regular'] mobile:justify-center flex flex-wrap gap-4">
                         A
@@ -63,8 +63,9 @@ export default function Home(){
                     }}/>                    
                 </LandingPageSection>      
                 
-                <LandingPageSection classes={'flex flex-col items-center justify-center'} tag={'p'} attr={{id: 'im-your-imagination'}}>
-                    <span className="relative flex flex-col font-['neue_metana_regular'] tablet:top-1/4">
+                <LandingPageSection classes={'flex flex-col items-center justify-center bg-red'} tag={'p'} attr={{id: 'im-your-imagination'}}>
+                    <span className="relative flex flex-col font-['neue_metana_regular'] tablet:top-1/4"
+                    data-0="opacity: 1; transform: scale(1);" data-115p="opacity: 1; transform: scale(1);" data-130p="opacity: 0; transform: scale(0.9);">
                         <span className="text-4xl text-white mobile:text-3xl im-your-imagination-fading-text" {...getTriggerPos('im_imagination')}>
                             I am your
                         </span>
@@ -94,12 +95,20 @@ export default function Home(){
                 </LandingPageSection>
 
                 <LandingPageSection tag={'p'} classes={"relative flex flex-col items-center justify-center font-['neue_metana_regular']"} attr={{id: 'im-playground'}}>
-                    <SVG name={'sun'} fill_1={'#F36B37'} fill_2={'#FFCD32'} classes={'absolute'} attr={{id: 'sun',}}/>
+                    <SVG name={'sun'} fill_1={'#F36B37'} fill_2={'#FFCD32'} classes={'absolute'} attr={{id: 'sun'}}/>
                     <span className='absolute flex flex-col justify-center gap-8 tracking-widest text-7xl mobile:text-5xl text-blue' aria-hidden="true">
                         <span className='playground' {...getTriggerPos('im_playground')}>playground</span>
                         <span className='playground' {...getTriggerPos('im_playground')}>playground</span>
                         <span className='playground' {...getTriggerPos('im_playground')}>playground</span>
-                        <span className='playground' {...getTriggerPos('im_playground')}>playground</span>
+                        <span className='relative playground' {...getTriggerPos('im_playground')}>
+                            playground
+                            <SVG name={'eye'} fill_1={'#2388C1'} fill_2={'#FE6B32'} classes={'absolute'} attr={{
+                                style: {top: '0.185em', left: '1.34em', width: '0.78em'}
+                            }}/>
+                            <SVG name={'star'} fill_1={'#439948'} classes={'absolute'} attr={{
+                                style: {top: '-0.1em', left: '5.64em', width: '0.62em'}
+                            }}/>
+                        </span>
                         <span className='playground' {...getTriggerPos('im_playground')}>playground</span>
                         <span id="load-bar" className='relative w-full h-2 bg-white' style={{top: '-8rem'}} {...getTriggerPos('im_playground')}></span>
                     </span>
@@ -228,7 +237,8 @@ export default function Home(){
                         Experience the digital world like never before.
                     </p>
                 </LandingPageSection> 
-                <LandingPageSection tag={'p'} classes={'flex flex-col items-start justify-center'}>
+                
+                <LandingPageSection tag={'p'} classes={'flex flex-col items-start justify-center'} attr={{style: {backgroundColor: 'red'}}}>
                     <span className="relative flex flex-col font-['neue_metana_regular'] text-5xl w-full mobile:items-center mobile:text-4xl">
                         <span className="mb-4">Your key</span>
                         <span className="flex items-center">
