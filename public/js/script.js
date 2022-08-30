@@ -166,7 +166,7 @@ class FunnyScroll{
 }
 
 new FunnyScroll({
-    transDur: '700ms',
+    transDur: '1000ms',
     callbacks: {
         '1': {
             'enterStart': (section) => {

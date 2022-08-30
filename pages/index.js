@@ -44,7 +44,7 @@ export default function Home(){
                             imagination
                             <span className='absolute w-2 h-2 bg-black' style={{top: '-1rem', left: '-0.6rem', width: '2rem'}}></span>
                             <SVG name={'star'} classes={'absolute anim-world-beyond-o'} fill_1={'#F7CE55'} attr={{
-                                style: {top: '-1rem', left: '-0.6rem', width: '2rem'}
+                                style: {top: '-0.9rem', left: '-0.7rem', width: '2rem'}
                             }}/>
                         </span>
                         <span className='relative'>
@@ -76,10 +76,10 @@ export default function Home(){
                             <span className='absolute bg-black' style={{left: '1.46em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <span className='absolute bg-black' style={{left: '4.23em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#FFCD32'} fill_2={'#0268A3'} attr={{
-                                style: {top: '0.2em', left: '1.4em', width: '0.8em'}
+                                style: {top: '0.19em', left: '1.4em', width: '0.8em'}
                             }}/>     
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#FFCD32'} fill_2={'#0268A3'} attr={{
-                                style: {top: '0.2em', left: '4.2em', width: '0.8em'}
+                                style: {top: '0.19em', left: '4.2em', width: '0.8em'}
                             }}/>                                                       
                         </span>
                         <SVG name={'star'} classes={'absolute w-20 anim-im-your-imagination-pattern1'}/>  
