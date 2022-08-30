@@ -195,6 +195,54 @@ new FunnyScroll({
                 section.classList.remove('enter-start')
                 section.classList.remove('enter-end')
             },                             
-        }        
+        },      
+        '3': {
+            'enterStart': (section) => {
+                section.classList.add('enter-start')                   
+            },            
+            'enterEnd': (section) => {
+                section.classList.add('enter-end')                   
+            },  
+            'leaveEnd': (section) => {
+                section.classList.remove('enter-start')
+                section.classList.remove('enter-end')
+            },                             
+        },
+        '4': {
+            'enterStart': (section) => {
+                section.classList.add('enter-start')                   
+            },            
+            'enterEnd': (section) => {
+                section.classList.add('enter-end')                   
+            },  
+            'leaveEnd': (section) => {
+                section.classList.remove('enter-start')
+                section.classList.remove('enter-end')
+            },                             
+        },    
+        '5': {
+            'enterStart': (section) => {
+                section.classList.add('enter-start')                   
+            },            
+            'enterEnd': (section) => {
+                section.classList.add('enter-end')                   
+            },  
+            'leaveEnd': (section) => {
+                section.classList.remove('enter-start')
+                section.classList.remove('enter-end')
+            },                             
+        },     
+        '7': {
+            'enterStart': (section) => {
+                section.classList.add('enter-start')                   
+            },            
+            'enterEnd': (section) => {
+                section.classList.add('enter-end')                   
+            },  
+            'leaveEnd': (section) => {
+                section.classList.remove('enter-start')
+                section.classList.remove('enter-end')
+            },                             
+        }                         
     }        
 }).init()
