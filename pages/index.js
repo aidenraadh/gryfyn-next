@@ -206,7 +206,7 @@ export default function Home(){
                         {...getTriggerPos('im_adventure')}>
                             I am your
                         </span>             
-                        <span className="absolute text-black opacity-0 text-7xl anim-fade-in mobile:text-6xl"
+                        <span className="absolute text-black opacity-0 text-7xl adventure mobile:text-6xl"
                         {...getTriggerPos('im_adventure')}>
                             adventure
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#000000'} fill_2={'#FFCD32'} attr={{

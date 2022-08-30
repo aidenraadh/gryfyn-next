@@ -304,14 +304,15 @@ body{
     animation-play-state: running;    
 }
 
-#im-adventure.enter-start .anim-fade-in{
+#im-adventure.enter-start .adventure{
+    animation: anim-fade-in;
     animation-duration: 0ms;
     animation-delay: 2000ms;
     animation-fill-mode: both;
     animation-play-state: paused; 
 }
 
-#im-adventure.enter-end .anim-fade-in{
+#im-adventure.enter-end .adventure{
     animation-play-state: running;    
 }
 
