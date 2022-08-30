@@ -20,10 +20,12 @@ export default function Header(){
                 <span className="sr-only">Home</span>
             </a>
             <div className='flex flex-col tablet:hidden'>
+            <a href="https://www.instagram.com/gryfyn.app/">
                 <SVG name={'instagram'} fill_1={'#E8DFD4'} classes={'w-9 h-9 mobile:hidden'}/>
+            </a>
             </div>
             <Button classes={'text-lg fixed top-4 right-6'}>
-                Discover more
+                Discover More
             </Button>            
         </nav>
     </>)
