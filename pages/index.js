@@ -22,7 +22,7 @@ export default function Home(){
     return (<>
         <PageHead/>
         <MainLayout>
-            <div id="skrollr-body" className="wrapper" data-0="transform: translateX(0%);" data-10000="transform: translateX(-1000%);">
+            <div id="wrapper" className="wrapper">
                 <LandingPageSection classes={'relative flex flex-col justify-center'} tag={'header'}>
                     <h1 className="text-5xl font-['neue_metana_regular'] mobile:justify-center flex flex-wrap gap-4">
                         A
@@ -74,8 +74,8 @@ export default function Home(){
                         </span>
                         <span className="relative text-5xl mobile:text-4xl ml-14 im-your-imagination-fading-text text-yellow" {...getTriggerPos('im_imagination')}>
                             imagination
-                            <span className='absolute bg-black' style={{left: '4.35rem', top: '0.42em', width: '1.8rem', height: '1.2rem'}}></span>
-                            <span className='absolute bg-black' style={{left: '12.64rem', top: '0.42em', width: '1.8rem', height: '1.2rem'}}></span>
+                            <span className='absolute bg-black' style={{left: '1.46em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
+                            <span className='absolute bg-black' style={{left: '4.23em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#FFCD32'} fill_2={'#0268A3'} attr={{
                                 style: {top: '0.2em', left: '1.4em', width: '0.8em'}
                             }}/>     
@@ -107,7 +107,7 @@ export default function Home(){
                         <span className='playground' {...getTriggerPos('im_playground')}>playground</span>
                         <span className='relative playground' {...getTriggerPos('im_playground')}>
                             playground
-                            <span className='absolute w-10 h-8 bg-black' style={{left: '6.4rem', top: '1.6rem'}}></span>
+                            <span className='absolute bg-black' style={{left: '1.4em', top: '0.36em', width: '0.55em', height: '0.45em'}}></span>
                             <SVG name={'eye'} fill_1={'#2388C1'} fill_2={'#FE6B32'} classes={'absolute'} attr={{
                                 style: {top: '0.185em', left: '1.34em', width: '0.78em'}
                             }}/>
@@ -268,13 +268,13 @@ export default function Home(){
                 </LandingPageSection>      
             </div>
         </MainLayout>
-        <Script
+        {/* <Script
             id="skrollr-js" src="js/skrollr.min.js"
             strategy="beforeInteractive"
             onError={(e) => {
                 console.error('Script failed to load', e)
             }}            
-        />    
+        />     */}
         <Script
             id="script-js" src="js/script.js"
             strategy="afterInteractive"
