@@ -42,9 +42,15 @@ class FunnyScroll{
         this.isSliding = false
         this.touchStart = 0
     }
-
+    /**
+     * Check whether the scroll is valid
+     * @param {integer} dir - The direction of slide, can be positive or negative 
+     * @param {string} type - the type of slide's trigger, mouse wheel or touch move
+     * @returns 
+     */
     isScrollValid(dir, type){
-        if(this.isSliding === true){
+        // Make sure the wrapper is not currently sliding
+        if(this.isSliding){
             return false
         }
         if(type === 'wheel'){
@@ -67,9 +73,9 @@ class FunnyScroll{
         }
         return false      
     }    
-    slide(targetSect){
-        const prevSlideVal = this.currSlideVal
+    slide(targetSect, reset = false){
         this.isSliding = true
+        this.reset = reset
         // Slide to the next section
         if(targetSect > this.currSection){
             this.currSlideVal -= 100 * Math.abs(targetSect - this.currSection)
@@ -80,42 +86,52 @@ class FunnyScroll{
         }
         this.prevSection = this.currSection
         this.currSection = targetSect
-        // Play callback
-        console.log(prevSlideVal)
-        console.log(this.currSlideVal)
-        this.playCallback('start')
-        this.wrapper.style.transitionDuration = this.reset ? '1ms' : this.transDur        
+        // Play callback when the previous section is leaving
+        this.playCallbackStart(this.prevSection, 'leave')
+        // Play callback when the current section is entering
+        this.playCallbackStart(this.currSection, 'enter')
+        // Slide the wrapper to the current section
+        this.wrapper.style.transitionDuration = (reset ? '0ms' : this.transDur)        
         this.wrapper.style.transform = 'translate('+(
             this.mobileMode ? `0%, ${this.currSlideVal}%` : `${this.currSlideVal}%, 0%` 
         )+')';
-        if(this.currSlideVal === prevSlideVal){
+        if(reset){
             this.isSliding = false
             this.reset = false
         }
     }    
-    playCallback(type){
-        const callback = this.callbacks[this.currSection.toString()]
-        if(callback && this.reset === false){
-            if(type == 'start' && callback.start){
-                callback.start(
-                    this.sections[this.prevSection], this.sections[this.currSection]
-                )
+    playCallbackStart(sectionId, type){
+        const callback = this.callbacks[sectionId.toString()]
+        if(this.reset === false && callback){
+            if(type === 'enter' && callback.enterStart){
+                callback.enterStart(this.sections[sectionId])
             }
-            else if(type == 'end' && callback.end){
-                callback.end(
-                    this.sections[this.prevSection], this.sections[this.currSection]
-                )
+            else if(type === 'leave' && callback.leaveStart){
+                callback.leaveStart(this.sections[sectionId])  
             }
         }
     }
+    playCallbackEnd(sectionId, type){
+        const callback = this.callbacks[sectionId.toString()]
+        if(this.reset === false && callback){
+            if(type === 'enter' && callback.enterEnd){
+                callback.enterEnd(this.sections[sectionId])
+            }
+            else if(type === 'leave' && callback.leaveEnd){
+                callback.leaveEnd(this.sections[sectionId])  
+            }
+        }
+    }    
     init(){
         const _instance = this
 
         _instance.wrapper.ontransitionend = () => {
-            _instance.playCallback('end')
+            console.log('sss')
+            // Play callback when the previous section is leaving
+            this.playCallbackEnd(this.prevSection, 'leave')
+            // Play callback when the current section is entering
+            this.playCallbackEnd(this.currSection, 'enter')
             _instance.isSliding = false
-            _instance.reset = false
-            console.log('now sliding is false')
         }
         window.onwheel = (e) => {
             if(_instance.isScrollValid(e.deltaY, e.type)){
@@ -127,14 +143,12 @@ class FunnyScroll{
             // Browser resized to mobile viewport
             if(_instance.mobileMode === false && window.innerWidth <= _instance.mobileVpWidth){
                 _instance.mobileMode = true
-                _instance.reset = true
-                _instance.slide(_instance.currSection)
+                _instance.slide(_instance.currSection, true)
             }
             // Browser resized to desktop viewport
             else if(_instance.mobileMode === true && window.innerWidth > _instance.mobileVpWidth){
                 _instance.mobileMode = false
-                _instance.reset = true
-                _instance.slide(_instance.currSection)
+                _instance.slide(_instance.currSection, true)
             }
         }
         document.ontouchstart = (e) => {
@@ -151,19 +165,23 @@ class FunnyScroll{
 }
 
 new FunnyScroll({
-    transDur: '800ms'
-    // callbacks: {
-    //     '0': {
-    //         'start': (prev, curr) => {
-    //             console.log('start')
-    //             console.log(prev)
-    //             console.log(curr)
-    //         },
-    //         'end': (prev, curr) => {
-    //             console.log('end')
-    //             console.log(prev)
-    //             console.log(curr)                    
-    //         }
-    //     }
-    // }        
+    transDur: '700ms',
+    callbacks: {
+        '1': {
+            'enterStart': (section) => {
+                section.classList.add('enter-start')                   
+            },            
+            'enterEnd': (section) => {
+                section.classList.add('enter-end')                   
+            },
+            'leaveStart': (section) => {
+                section.firstChild.style = 'transform: scale(0.9); opacity: 0';                  
+            },    
+            'leaveEnd': (section) => {
+                section.firstChild.style = ''
+                section.classList.remove('enter-start')
+                section.classList.remove('enter-end')
+            },                             
+        }
+    }        
 }).init()

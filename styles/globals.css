@@ -149,6 +149,10 @@ body{
     transition: transform 800ms;
 }
 
+#im-your-imagination .content{
+    transition: opacity 0.3s, transform 0.3s;
+}
+
 /*
 |--------------------------------------------------------------------------
 | All Animation Classes
@@ -175,21 +179,36 @@ body{
     transform-origin: center top;
 }
 
-.im-your-imagination-fading-text{
+#im-your-imagination.enter-start .im-your-imagination-fading-text{
     animation: im-your-imagination-fading-text 1800ms ease 1;
-    animation-fill-mode: both;     
+    animation-fill-mode: both;   
+    animation-play-state: paused;  
 }
 
-.anim-im-your-imagination-pattern1{
+#im-your-imagination.enter-end .im-your-imagination-fading-text{
+    animation-play-state: running;
+}
+
+#im-your-imagination.enter-start .anim-im-your-imagination-pattern1{
     animation: anim-im-your-imagination-pattern1 1400ms ease 1;
     animation-delay: 800ms;
     animation-fill-mode: both;     
+    animation-play-state: paused; 
 }
 
-.anim-im-your-imagination-pattern2{
+#im-your-imagination.enter-end .anim-im-your-imagination-pattern1{
+    animation-play-state: running;   
+}
+
+#im-your-imagination.enter-start .anim-im-your-imagination-pattern2{
     animation: anim-im-your-imagination-pattern2 1400ms ease 1;
     animation-delay: 500ms;
-    animation-fill-mode: both;     
+    animation-fill-mode: both;  
+    animation-play-state: paused;    
+}
+
+#im-your-imagination.enter-end .anim-im-your-imagination-pattern2{
+    animation-play-state: running; 
 }
 
 .anim-create-future{

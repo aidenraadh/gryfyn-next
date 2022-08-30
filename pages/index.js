@@ -67,12 +67,11 @@ export default function Home(){
                 </LandingPageSection>      
                 
                 <LandingPageSection classes={'flex flex-col items-center justify-center bg-red'} tag={'p'} attr={{id: 'im-your-imagination'}}>
-                    <span className="relative flex flex-col font-['neue_metana_regular'] tablet:top-1/4"
-                    data-0="opacity: 1; transform: scale(1);" data-115p="opacity: 1; transform: scale(1);" data-130p="opacity: 0; transform: scale(0.9);">
-                        <span className="text-4xl text-white mobile:text-3xl im-your-imagination-fading-text" {...getTriggerPos('im_imagination')}>
+                    <span className="relative flex flex-col font-['neue_metana_regular'] tablet:top-1/4 content">
+                        <span className="text-4xl text-white mobile:text-3xl im-your-imagination-fading-text">
                             I am your
                         </span>
-                        <span className="relative text-5xl mobile:text-4xl ml-14 im-your-imagination-fading-text text-yellow" {...getTriggerPos('im_imagination')}>
+                        <span className="relative text-5xl mobile:text-4xl ml-14 im-your-imagination-fading-text text-yellow">
                             imagination
                             <span className='absolute bg-black' style={{left: '1.46em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <span className='absolute bg-black' style={{left: '4.23em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
@@ -83,8 +82,8 @@ export default function Home(){
                                 style: {top: '0.2em', left: '4.2em', width: '0.8em'}
                             }}/>                                                       
                         </span>
-                        <SVG name={'star'} classes={'absolute w-20 anim-im-your-imagination-pattern1'} attr={{...getTriggerPos('im_imagination')}}/>  
-                        <SVG name={'star'} classes={'absolute w-36 anim-im-your-imagination-pattern2'} attr={{...getTriggerPos('im_imagination')}}/>                                                                                 
+                        <SVG name={'star'} classes={'absolute w-20 anim-im-your-imagination-pattern1'}/>  
+                        <SVG name={'star'} classes={'absolute w-36 anim-im-your-imagination-pattern2'}/>                                                                                 
                     </span>
                 </LandingPageSection>
 
