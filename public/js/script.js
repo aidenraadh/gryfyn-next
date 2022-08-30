@@ -125,13 +125,14 @@ class FunnyScroll{
     init(){
         const _instance = this
 
-        _instance.wrapper.ontransitionend = () => {
-            console.log('sss')
-            // Play callback when the previous section is leaving
-            this.playCallbackEnd(this.prevSection, 'leave')
-            // Play callback when the current section is entering
-            this.playCallbackEnd(this.currSection, 'enter')
-            _instance.isSliding = false
+        _instance.wrapper.ontransitionend = (e) => {
+            if(e.target.id === 'wrapper'){
+                // Play callback when the previous section is leaving
+                this.playCallbackEnd(this.prevSection, 'leave')
+                // Play callback when the current section is entering
+                this.playCallbackEnd(this.currSection, 'enter')
+                _instance.isSliding = false
+            }
         }
         window.onwheel = (e) => {
             if(_instance.isScrollValid(e.deltaY, e.type)){
