@@ -222,11 +222,11 @@ export default function Home(){
                     </span>                  
                 </LandingPageSection>   
 
-                <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'}>
-                    <span {...getTriggerPos('explore')} className="mb-6 text-6xl anim-fade-in font-['neue_metana_bold'] text-blue">
+                <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'} attr={{id: 'explore'}}>
+                    <span {...getTriggerPos('explore')} className="mb-6 text-6xl explore font-['neue_metana_bold'] text-blue">
                         explore
                     </span>
-                    <span {...getTriggerPos('explore')} className="text-xl text-center anim-fade-in" style={{animationDelay: '600ms'}}>
+                    <span {...getTriggerPos('explore')} className="text-xl text-center explore-desc">
                         the (un)known.<br className="mobile:hidden"/>
                         Go on the journey that is unique to you,<br className="mobile:hidden"/>
                         and watch Web 3 grow as you grow with it.

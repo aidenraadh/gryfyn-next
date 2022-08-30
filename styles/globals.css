@@ -328,6 +328,22 @@ body{
     animation-play-state: running;    
 }
 
+#explore.enter-start .explore,
+#explore.enter-start .explore-desc{
+    animation: anim-fade-in 1000ms ease 1;
+    animation-fill-mode: both; 
+    animation-play-state: paused;    
+}
+
+#explore.enter-end .explore,
+#explore.enter-end .explore-desc{
+    animation-play-state: running;    
+}
+
+#explore.enter-start .explore-desc{
+    animation-delay: 600ms;   
+}
+
 
 #im-your-home.enter-start .anim-im-your-home-box{
     animation: anim-im-your-home-box 1800ms ease-in;

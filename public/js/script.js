@@ -243,6 +243,18 @@ new FunnyScroll({
                 section.classList.remove('enter-start')
                 section.classList.remove('enter-end')
             },                             
-        }                         
+        },      
+        '8': {
+            'enterStart': (section) => {
+                section.classList.add('enter-start')                   
+            },            
+            'enterEnd': (section) => {
+                section.classList.add('enter-end')                   
+            },  
+            'leaveEnd': (section) => {
+                section.classList.remove('enter-start')
+                section.classList.remove('enter-end')
+            },                             
+        },                          
     }        
 }).init()
