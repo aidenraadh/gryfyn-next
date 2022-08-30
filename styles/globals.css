@@ -122,6 +122,7 @@ body{
 #im-playground #sun{
     top: -22rem;
     width: 44rem;
+    z-index: 100;
     animation: anim-im-playground-sun 5500ms linear infinite;
     animation-fill-mode: both;
 } 
