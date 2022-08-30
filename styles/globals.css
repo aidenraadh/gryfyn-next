@@ -128,7 +128,7 @@ body{
 
 #sun-loader{
     z-index: 100;
-    animation: scale-out 4s ease 4.8s 1 forwards;
+    animation: scale-out 13s ease 4.8s 1 forwards;
 }
 
 .loading-sun{
