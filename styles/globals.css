@@ -216,6 +216,49 @@ body{
     animation-play-state: running;
 }
 
+#play-roles.enter-start .anim-create-future{
+    animation: anim-create-future 1000ms ease 1;
+    animation-fill-mode: both; 
+    animation-play-state: paused;
+}
+
+#play-roles.enter-end .anim-create-future{
+    animation-play-state: running;
+}
+
+#play-roles.enter-start .anim-fade-in{
+    animation: anim-create-future 1000ms ease 1;
+    animation-fill-mode: both; 
+    animation-delay: 800ms;
+    animation-play-state: paused;    
+}
+
+#play-roles.enter-end .anim-fade-in{
+    animation-play-state: running;
+}
+
+#socialize.enter-start .anim-create-future{
+    animation: anim-create-future 1000ms ease 1;
+    animation-fill-mode: both; 
+    animation-play-state: paused;
+}
+
+#socialize.enter-end .anim-create-future{
+    animation-play-state: running;
+}
+
+#socialize.enter-start .anim-fade-in{
+    animation: anim-create-future 1000ms ease 1;
+    animation-fill-mode: both; 
+    animation-delay: 800ms;
+    animation-play-state: paused;    
+}
+
+#socialize.enter-end .anim-fade-in{
+    animation-play-state: running;
+}
+
+
 .anim-fade-in{
     -webkit-animation: anim-fade-in 1000ms ease 1;
     animation: anim-fade-in 1000ms ease 1;
@@ -239,35 +282,85 @@ body{
     animation-fill-mode: both; 
 }
 
-.anim-eye-lid-blinking{
+#im-adventure.enter-start .anim-eye-lid-blinking{
     animation: eye-lid-blinking 3000ms linear;
     animation-delay: 100ms;
     transform-origin: 50% 27%;
     animation-fill-mode: both;
+    animation-play-state: paused;
 }
 
-.anim-eye-zoom-out{
+#im-adventure.enter-end .anim-eye-lid-blinking{
+    animation-play-state: running;
+}
+
+#im-adventure.enter-start .anim-eye-zoom-out{
     animation: anim-eye-zoom-out 1100ms ease;
-    animation-fill-mode: both;    
+    animation-fill-mode: both;
+    animation-play-state: paused;    
 }
 
-.anim-im-your-home-box{
+#im-adventure.enter-end .anim-eye-zoom-out{
+    animation-play-state: running;    
+}
+
+#im-adventure.enter-start .anim-fade-in{
+    animation-duration: 0ms;
+    animation-delay: 2000ms;
+    animation-fill-mode: both;
+    animation-play-state: paused; 
+}
+
+#im-adventure.enter-end .anim-fade-in{
+    animation-play-state: running;    
+}
+
+#im-adventure.enter-start .im-your{
+    animation: anim-fade-out;
+    animation-duration: 0ms;
+    animation-delay: 2000ms;
+    animation-fill-mode: both;
+    animation-play-state: paused; 
+}
+
+#im-adventure.enter-end .im-your{
+    animation-play-state: running;    
+}
+
+
+#im-your-home.enter-start .anim-im-your-home-box{
     animation: anim-im-your-home-box 1800ms ease-in;
-    animation-fill-mode: both;    
+    animation-fill-mode: both;   
+    animation-play-state: paused; 
 }
 
-.anim-im-your-home-inner-box{
+#im-your-home.enter-end .anim-im-your-home-box{
+    animation-play-state: running; 
+}
+
+#im-your-home.enter-start .anim-im-your-home-inner-box{
     animation: anim-im-your-home-inner-box 2000ms ease;
     animation-fill-mode: both;
     animation-delay: 1400ms;
     transform-origin: center bottom;
+    animation-play-state: paused;
 }
 
-.anim-im-your-home-squares{
+#im-your-home.enter-end .anim-im-your-home-inner-box{
+    animation-play-state: running;
+}
+
+#im-your-home.enter-start .anim-im-your-home-squares{
     animation: anim-im-your-home-squares 900ms ease;
     animation-fill-mode: both;
     animation-delay: 2500ms;
+    animation-play-state: paused;
 }
+
+#im-your-home.enter-end .anim-im-your-home-squares{
+    animation-play-state: running;
+}
+
 
 .anim-circle-clip-path{
     position: fixed;
@@ -288,24 +381,39 @@ body{
     animation-fill-mode: both;
 }
 
-#im-playground #im-your{
+#im-playground.enter-start #im-your{
     animation: anim-fade-out 800 ease;
     animation-delay: 1800ms;
     animation-fill-mode: both;
+    animation-play-state: paused;
 } 
 
-#im-playground #load-bar{
+#im-playground.enter-end #im-your{
+    animation-play-state: running;
+} 
+
+#im-playground.enter-start #load-bar{
     animation: anim-im-playground-load-bar, anim-fade-out;
     animation-timing-function: linear, ease;
     animation-duration: 1800ms, 800ms;
     animation-delay: 0ms, 1800ms;
     animation-fill-mode: both;
     transform-origin: left center;
+    animation-play-state: paused;
 } 
 
-#im-playground .playground{
+#im-playground.enter-end #load-bar{
+    animation-play-state: running;
+} 
+
+#im-playground.enter-start .playground{
     animation: anim-im-playground-playground 800ms;
     animation-fill-mode: both;
+    animation-play-state: paused;
+} 
+
+#im-playground.enter-end .playground{
+    animation-play-state: running;
 } 
 
 #im-playground .playground:nth-child(1){
