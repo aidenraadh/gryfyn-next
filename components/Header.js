@@ -25,10 +25,7 @@ export default function Header(){
             </Link>
             <a href="https://www.instagram.com/gryfyn.app/" className='flex flex-col tablet:hidden'>
                 <SVG name={'instagram'} fill_1={'#E8DFD4'} classes={'w-9 h-9 mobile:hidden'}/>
-            </a>        
-            <Button classes={'text-lg fixed top-4 right-6'}>
-                Discover More
-            </Button>            
+            </a>                 
         </nav>
     </>)
 }

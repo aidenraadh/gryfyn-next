@@ -312,12 +312,12 @@ export default function Home(){
             </div>
             {/* <aside className='absolute bottom-0 right-0 flex justify-end text-6xl bg-black text-body'>sss</aside> */}
             <aside>
-                <Button classes={'text-lg absolute fixed top-4 right-6'} attr={{ onClick: () => {setPopupShown(true)} }}>
+                <Button classes={'text-lg fixed top-4 right-6'} attr={{ onClick: () => {console.log('asd'); setPopupShown(true)} }}>
                     Discover more
                 </Button>   
             </aside>   
 
-            <Popup
+            {/* <Popup
                 shown={privacyShown}
                 toggleShown={() => {setPrivacyShown(state => !state)}}
                 body={
@@ -380,7 +380,7 @@ export default function Home(){
                         </div>
                     </div>
                 }
-            />                                     
+            />                                      */}
 
             <Popup
                 shown={popupShown}
