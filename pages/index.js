@@ -3,8 +3,10 @@ import MainLayout from '../components/MainLayout'
 import LandingPageSection from '../components/LandingPageSection'
 import SVG from '../components/SVG'
 import Button from '../components/Button'
+import Form from '../components/Form'
+import Popup from '../components/Popup'
 import PageHead from '../components/PageHead'
-
+import { useCallback, useState } from 'react'
 
 // Get horaizontal scroll position of the page that will trigger the animation
 // that part of Skrollr.js
@@ -18,13 +20,30 @@ const getTriggerPos = (posName) => {
 
 
 export default function Home(){
+    const [popupShown, setPopupShown] = useState(false)
+    const [usrEmailAddr, setUsrEmailAddr] = useState('')
+    const [privacyShown, setPrivacyShown] = useState(false)
+    const [cookiesShown, setCookiesShown] = useState(false)
+    const [termsShown, setTermsShown] = useState(false)
+    const [residenceShown, setResidenceShown] = useState(false)
 
+    const subscribe = useCallback(() => {
+        const options = {
+            method: 'POST',
+            body: JSON.stringify({email: usrEmailAddr})
+        };        
+        fetch('http://localhost:3000/api/subscribe', options)
+        .then(response => response.json())
+        // .then(response => console.log(response))
+        .catch(err => console.error(err));        
+    }, [usrEmailAddr])
+    
     return (<>
         <PageHead/>
         <MainLayout>
             <div id="wrapper" className="wrapper">
                 <LandingPageSection classes={'relative flex flex-col justify-center'} tag={'header'}>
-                    <h1 className="text-5xl font-['neue_metana_regular'] mobile:justify-center flex flex-wrap gap-4">
+                    <h1 className="text-5xl font-['neue_metana_regular'] tablet:justify-center flex flex-wrap gap-4">
                         A
                         <span className='relative'>
                             world
@@ -32,14 +51,14 @@ export default function Home(){
                             <SVG name={'sun_empty'} classes={'absolute anim-world-beyond-o'} attr={{
                                 style: {width: '3.9rem', left: '2.4rem', top: '-0.47rem'}
                             }}/>
-                        </span><span style={{width: '50rem'}} className="mobile:hidden"></span>
+                        </span><span style={{width: '50rem'}} className="tablet:hidden"></span>
                         beyond
                         <span className='relative'>
                             your
                             <SVG name={'star'} classes={'absolute anim-world-beyond-u'} attr={{
                                 style: {top: '-1.2rem', left: '4.5rem', width: '2rem'}
                             }}/>
-                        </span><span style={{width: '50rem'}} className="mobile:hidden"></span>
+                        </span><span className="w-1/3 tablet:hidden"></span>
                         <span className='relative'>
                             imagination
                             <span className='absolute w-2 h-2 bg-black' style={{top: '-1rem', left: '-0.6rem', width: '2rem'}}></span>
@@ -55,7 +74,7 @@ export default function Home(){
                             }}/>                            
                         </span>
                     </h1>    
-                    <p className="flex items-center mt-10 tablet:justify-center">
+                    <p className="flex items-center w-full mt-10 tablet:justify-center">
                         <span className="relative before:absolute before:rounded-full before:top-2 before:left-2.5 inline-block h-12 mr-6 border-2 rounded-full w-7 anim-scroll-to-explore before:content-[''] before:w-1 before:h-2"></span>
                         Scroll to explore
                     </p>
@@ -66,13 +85,15 @@ export default function Home(){
                     }}/>                    
                 </LandingPageSection>      
                 
-                <LandingPageSection classes={'flex flex-col items-center justify-center bg-red'} tag={'p'} attr={{id: 'im-your-imagination'}}>
-                    <span className="relative flex flex-col font-['neue_metana_regular'] tablet:top-1/4"
+                <LandingPageSection classes={'flex flex-col items-center justify-center bg-red'} tag={'p'} attr={{
+                    id: 'im-your-imagination', 'data-hold-leave': 500 , 'data-hold-enter': 2000,
+                }}>
+                    <span className="relative flex flex-col font-['neue_metana_regular'] tablet:top-1/4 content"
                     data-0="opacity: 1; transform: scale(1);" data-115p="opacity: 1; transform: scale(1);" data-130p="opacity: 0; transform: scale(0.9);">
-                        <span className="text-4xl text-white mobile:text-3xl im-your-imagination-fading-text" {...getTriggerPos('im_imagination')}>
+                        <span className="text-4xl text-white mobile:text-3xl im-your-imagination-fading-text">
                             I am your
                         </span>
-                        <span className="relative text-5xl mobile:text-4xl ml-14 im-your-imagination-fading-text text-yellow" {...getTriggerPos('im_imagination')}>
+                        <span className="relative text-5xl mobile:text-4xl ml-14 im-your-imagination-fading-text text-yellow">
                             imagination
                             <span className='absolute bg-black' style={{left: '1.46em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <span className='absolute bg-black' style={{left: '4.23em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
@@ -88,7 +109,9 @@ export default function Home(){
                     </span>
                 </LandingPageSection>
 
-                <LandingPageSection classes={'relative flex flex-col items-center justify-center'} tag={'p'} attr={{id: 'create-future'}}>
+                <LandingPageSection classes={'relative flex flex-col items-center justify-center'} tag={'p'} attr={{
+                    id: 'create-future', 'data-hold-enter': '1100'
+                }}>
                     <span {...getTriggerPos('create_future')} className="flex flex-col items-center justify-center anim-create-future tablet:absolute tablet:top-1/4">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-yellow">Create</span>
                         <span className="text-xl text-center">
@@ -99,7 +122,9 @@ export default function Home(){
                     </span>                
                 </LandingPageSection>
 
-                <LandingPageSection tag={'p'} classes={"relative flex flex-col items-center justify-center font-['neue_metana_regular']"} attr={{id: 'im-playground'}}>
+                <LandingPageSection tag={'p'} classes={"relative flex flex-col items-center justify-center font-['neue_metana_regular']"} attr={{
+                    id: 'im-playground', 'data-hold-enter': 3000
+                }}>
                     <SVG name={'sun'} fill_1={'#F36B37'} fill_2={'#FFCD32'} classes={'absolute'} attr={{id: 'sun'}}/>
                     <span className='absolute flex flex-col justify-center gap-8 tracking-widest text-7xl mobile:text-5xl text-blue' aria-hidden="true">
                         <span className='playground'>playground</span>
@@ -126,12 +151,14 @@ export default function Home(){
                     </span>                
                 </LandingPageSection>
 
-                <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'} attr={{id: "play-roles"}}>
-                    <span {...getTriggerPos('play_roles')} className="flex flex-col items-center justify-center anim-create-future">
-                        <span className="mb-6 text-6xl font-['neue_metana_bold'] text-orange">
+                <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'} attr={{
+                    id: "play-roles", 'data-hold-leave': 900, 'data-hold-enter': 1500
+                }}>
+                    <span {...getTriggerPos('play_roles')} className="flex flex-col items-center justify-center body">
+                        <span className="mb-6 text-6xl font-['neue_metana_bold'] text-orange title">
                             play
                         </span>
-                        <span {...getTriggerPos('play_roles')} className="text-xl text-center anim-fade-in">
+                        <span {...getTriggerPos('play_roles')} className="text-xl text-center desc">
                             any roles of your desire,<br className="mobile:hidden"/>
                             fulfill your fantasies.<br className="mobile:hidden"/>
                             Bring utility to its full potential.
@@ -139,16 +166,15 @@ export default function Home(){
                     </span>
                 </LandingPageSection>        
 
-                <LandingPageSection tag={'p'} classes={"flex flex-col items-center justify-center font-['neue_metana_regular']"} attr={{id: 'im-your-home'}}>
+                <LandingPageSection tag={'p'} classes={"flex flex-col items-center justify-center font-['neue_metana_regular']"} attr={{
+                    id: 'im-your-home', 'data-hold-leave': 900, 'data-hold-enter': 3500, 'data-slide-dur': '50ms',
+                }}>
                     <span className="relative flex flex-col items-center justify-center border-8 border-body w-96 h-96 anim-im-your-home-box">
-                        <span className="absolute bottom-0 left-0 w-full h-full anim-im-your-home-inner-box bg-body" 
-                       ></span>
-                        <span className="absolute text-3xl text-body anim-fade-out"
-                        style={{animationDuration: '0ms', animationDelay: '1600ms'}}>
+                        <span className="absolute bottom-0 left-0 w-full h-full anim-im-your-home-inner-box bg-body" ></span>
+                        <span className="absolute text-3xl text-body im-your-text">
                             I am your
                         </span>
-                        <span className="absolute text-6xl text-green anim-fade-in" style={{animationDuration: '0ms', animationDelay: '1700ms'}}
-                       >
+                        <span className="absolute text-6xl text-green home-text">
                             home
                             <SVG name={'sun'} fill_1={'#F36B37'} fill_2={'#439948'} classes={'absolute'} attr={{
                                 style: {top: '-0.22em', left: '0.56em', width: '1.4em'}
@@ -184,12 +210,14 @@ export default function Home(){
                     </span>
                 </LandingPageSection>
 
-                <LandingPageSection tag={'p'} classes={"flex flex-col items-center justify-center"} attr={{id: 'socialize'}}>
-                    <span className="flex flex-col items-center justify-center anim-create-future">
+                <LandingPageSection tag={'p'} classes={"flex flex-col items-center justify-center"} attr={{
+                    id: 'socialize', 'data-hold-leave': '600', 'data-hold-enter': '1100', 'data-slide-dur': '50ms',
+                }}>
+                    <span className="flex flex-col items-center justify-center title">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-green">
                             socialize
                         </span>
-                        <span className="text-xl text-center anim-fade-in">
+                        <span className="text-xl text-center desc">
                             and connect with a world of opportunity.<br/><br/>
                             Communicate with those who inspire us<br className="mobile:hidden"/>
                             to explore the boundaries of imagination<br className="mobile:hidden"/>
@@ -198,7 +226,9 @@ export default function Home(){
                     </span>
                 </LandingPageSection>         
 
-                <LandingPageSection tag={'p'} classes={'relative flex flex-col items-center justify-center'} attr={{id: 'im-adventure'}}>
+                <LandingPageSection tag={'p'} classes={'relative flex flex-col items-center justify-center'} attr={{
+                    id: 'im-adventure', 'data-hold-leave': 600, 'data-hold-enter': 2800, 'data-slide-dur': '50ms',
+                }}>
                     <span className="relative flex flex-col items-center justify-center font-['neue_metana_regular'] anim-eye-zoom-out" style={{width: '50rem'}}
                     {...getTriggerPos('im_adventure')}>
                         <SVG name={'eye'} classes={'w-full'} fill_1={'#E8DFD4'} fill_2={'#1996CE'}/>                         
@@ -222,7 +252,9 @@ export default function Home(){
                     </span>                  
                 </LandingPageSection>   
 
-                <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'} attr={{id: 'explore'}}>
+                <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'} attr={{
+                    id: 'explore', 'data-hold-leave': 600, 'data-hold-enter': 1200, 'data-slide-dur': '50ms',
+                }}>
                     <span {...getTriggerPos('explore')} className="mb-6 text-6xl explore font-['neue_metana_bold'] text-blue">
                         explore
                     </span>
@@ -233,7 +265,9 @@ export default function Home(){
                     </span>
                 </LandingPageSection>    
 
-                <LandingPageSection classes={'flex flex-col items-center justify-center'} attr={{id: 'im-your-wallet'}}>
+                <LandingPageSection classes={'flex flex-col items-center justify-center'} attr={{
+                    id: 'im-your-wallet', 'data-hold-leave': 600, 'data-hold-enter': 1500, 'data-slide-dur': '50ms',
+                }}>
                     <h2 className="flex mobile:flex-col content-center items-center flex-wrap gap-5 mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular']" {...getTriggerPos('im_wallet')}>
                         I am your 
                         <span className="font-['neue_metana_bold']">wallet.</span>
@@ -244,29 +278,126 @@ export default function Home(){
                     </p>
                 </LandingPageSection> 
                 
-                <LandingPageSection tag={'p'} classes={'flex flex-col items-start justify-center'}>
+                <LandingPageSection tag={'div'} classes={'relative flex flex-col items-start justify-center'} attr={{
+                    id: 'your-key', 'data-hold-leave': 600, 'data-hold-enter': 800, 'data-slide-dur': '50ms',
+                }}>
                     <span className="relative flex flex-col font-['neue_metana_regular'] text-5xl w-full mobile:items-center mobile:text-4xl">
-                        <span className="mb-4">Your key</span>
-                        <span className="flex items-center">
+                        <span className="mb-4 your-key">Your key</span>
+                        <span className="flex items-center to-the">
                             <SVG name={'star'} classes={'w-20 mobile:w-14'} fill_1={'#F36B37'}/>                            
                             <span className="mx-3 mobile:mx-2">to the</span>
                             <SVG name={'star'} classes={'w-20 mobile:w-14'} fill_1={'#F7CE54'}/> 
                             <SVG name={'star'} classes={'w-20 mobile:w-14'} fill_1={'#0a9c49'}/> 
                             <SVG name={'star'} classes={'w-20 mobile:w-14'} fill_1={'#F7CE54'}/>                                                            
                         </span>
-                        <span className="flex items-center font-['neue_metana_bold'] mb-4">
+                        <span className="flex items-center font-['neue_metana_bold'] mb-4 unknown">
                             <SVG name={'eye'} classes={'w-28 mobile:w-20'} fill_1={'#1996CE'} fill_2={'#F7CE54'}/>                             
                             <span className="before:content-['('] before:text-yellow after:content-[')'] after:text-yellow mx-5 mobile:mx-3 uppercase">
                                 un
                             </span>
                             known
                         </span>
-                        <Button classes={'text-2xl w-60'}>
-                            Discover more
+                        <Button classes={'text-2xl w-60 unlock-btn'} attr={{ onClick: () => {setPopupShown(true)} }}>
+                            Unlock Now
                         </Button>
-                    </span>                
+                    </span>
+                    <span className='absolute bottom-0 right-0 flex justify-end w-full gap-8 p-6 bg-black'>
+                        <button type='button' onClick={() => {setPrivacyShown(true)}}>Privacy Policy</button>
+                        <button type='button' onClick={() => {setCookiesShown(true)}}>Cookies Policy</button>
+                        <button type='button' onClick={() => {setTermsShown(true)}}>Terms &#38; Conditions</button>
+                        <button type='button' onClick={() => {setResidenceShown(true)}}>Why is your country of residence needed?</button>
+                    </span>            
                 </LandingPageSection>      
             </div>
+            {/* <aside className='absolute bottom-0 right-0 flex justify-end text-6xl bg-black text-body'>sss</aside> */}
+            <aside>
+                <Button classes={'text-lg absolute fixed top-4 right-6'} attr={{ onClick: () => {setPopupShown(true)} }}>
+                    Discover more
+                </Button>   
+            </aside>   
+
+            <Popup
+                shown={privacyShown}
+                toggleShown={() => {setPrivacyShown(state => !state)}}
+                body={
+                    <div className={"flex flex-col items-center justify-center text-body"}>
+                        <span className={"font-['neue_metana_bold'] text-xl text-left mb-4"} style={{width: '60%'}}>
+                            Privacy Policy
+                        </span>
+                        <div style={{width: '60%'}} className={"font-['basier_circle'] text-base bg-black border-2 border-body flex flex-col justify-center items-center p-6 overflow-y-auto"}>
+                        In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set
+                        </div>
+                    </div>
+                }
+            />      
+            <Popup
+                shown={cookiesShown}
+                toggleShown={() => {setCookiesShown(state => !state)}}
+                body={
+                    <div className={"flex flex-col items-center justify-center text-body"}>
+                        <span className={"font-['neue_metana_bold'] text-xl text-left mb-4"} style={{width: '60%'}}>
+                            Cookies Policy
+                        </span>
+                        <div style={{width: '60%'}} className={"font-['basier_circle'] text-base bg-black border-2 border-body flex flex-col justify-center items-center p-6 overflow-y-auto"}>
+                        In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you Set
+                        </div>
+                    </div>
+                }
+            />        
+            <Popup
+                shown={termsShown}
+                toggleShown={() => {setTermsShown(state => !state)}}
+                body={
+                    <div className={"flex flex-col items-center justify-center text-body"}>
+                        <span className={"font-['neue_metana_bold'] text-xl text-left mb-4"} style={{width: '60%'}}>
+                        Terms &#38; Conditions
+                        </span>
+                        <div style={{width: '60%'}} className={"font-['basier_circle'] text-base bg-black border-2 border-body flex flex-col justify-center items-center p-6 overflow-y-auto"}>
+                        In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you Set
+                        </div>
+                    </div>
+                }
+            />       
+            <Popup
+                shown={residenceShown}
+                toggleShown={() => {setResidenceShown(state => !state)}}
+                body={
+                    <div className={"flex flex-col items-center justify-center text-body"}>
+                        <span className={"font-['neue_metana_bold'] text-xl text-left mb-4 text-yellow"} style={{width: '60%'}}>
+                        Why is your country of residence needed?
+                        </span>
+                        <div style={{width: '60%'}} className={"font-['basier_circle'] text-base bg-black border-2 border-body justify-center p-6 overflow-y-auto flex flex-col gap-6"}>
+                            <span>
+                                Disclosing your country of residence is an important step because we provide a custodial wallet solution (custodial wallets are explained below). Accurately determining your country of residence allows us to follow relevant Anti-Money Laundering (AML) laws, tax reporting, regulatory compliance. Further to this, you will not be able to withdraw any assets until your Know Your Customer (KYC) verification has been fully completed and approved. You will only be allowed to deposit.                                
+                            </span>
+                            <span className="font-['neue_metana_bold'] text-xl text-yellow">
+                                What is country of residence?
+                            </span>
+                            <span>
+                                A country of residence is a jurisdiction where you reside, i.e. where you are considered to be a resident. As part of our KYC process, we will ask you to submit proof of residence with your full name and residential address clearly displayed. Examples include:                                
+                            </span> 
+                        </div>
+                    </div>
+                }
+            />                                     
+
+            <Popup
+                shown={popupShown}
+                toggleShown={() => {setPopupShown(state => !state)}}
+                body={
+                    <div className={"font-['basier_circle'] text-4xl flex flex-col justify-center items-center"}>
+                        Be the first to know
+                        <Form classes={'text-lg w-96 mt-4 mb-10'} attr={{
+                            value: usrEmailAddr,
+                            onChange: (e) => {setUsrEmailAddr(e.target.value)},
+                            placeholder: 'Please enter your email address'
+                        }}/>
+                        <Button classes={'text-lg'} attr={{ onClick: subscribe }}>
+                            Subscribe
+                        </Button>
+                    </div>
+                }
+            />            
         </MainLayout>
         {/* <Script
             id="skrollr-js" src="js/skrollr.min.js"

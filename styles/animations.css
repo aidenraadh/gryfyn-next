@@ -297,3 +297,45 @@
         transform: translateY(0) scale(1);
     }
 }
+
+@keyframes anim-im-your-home-home-text{
+    from{
+        transform: translateY(-50%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes anim-your-key { 
+    0% {
+        opacity: 0;
+        transform: translateX(20%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes anim-to-the { 
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes anim-unknown { 
+    0% {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

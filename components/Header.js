@@ -2,6 +2,7 @@ import Button from './Button'
 import SVG from './SVG'
 
 export default function Header(){
+
     return (<>
         <nav  className="fixed top-0 left-0 flex flex-col items-center justify-between h-screen gap-0 p-4 bg-black py-7 mobile:py-2 tablet:flex-row tablet:w-full tablet:h-auto navbar">
             <SVG name={'fire'} classes={'w-16 tablet:hidden'}/>
@@ -19,12 +20,9 @@ export default function Header(){
                 </svg>            
                 <span className="sr-only">Home</span>
             </a>
-            <div className='flex flex-col tablet:hidden'>
+            <a href="#" className='flex flex-col tablet:hidden'>
                 <SVG name={'instagram'} fill_1={'#E8DFD4'} classes={'w-9 h-9 mobile:hidden'}/>
-            </div>
-            <Button classes={'text-lg fixed top-4 right-6'}>
-                Discover more
-            </Button>            
+            </a>        
         </nav>
     </>)
 }

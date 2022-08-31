@@ -86,15 +86,40 @@ class FunnyScroll{
         }
         this.prevSection = this.currSection
         this.currSection = targetSect
+        const prevSectionEl = this.sections[this.prevSection]
+        const currSectionEl = this.sections[this.currSection]
+        // Get sliding duration for the current section
+        const slideDur = currSectionEl.getAttribute('data-slide-dur')
+        // Get hold leave of the previous section
+        const holdLeaveDur = prevSectionEl.getAttribute('data-hold-leave')
         // Play callback when the previous section is leaving
         this.playCallbackStart(this.prevSection, 'leave')
         // Play callback when the current section is entering
         this.playCallbackStart(this.currSection, 'enter')
-        // Slide the wrapper to the current section
-        this.wrapper.style.transitionDuration = (reset ? '0ms' : this.transDur)        
-        this.wrapper.style.transform = 'translate('+(
-            this.mobileMode ? `0%, ${this.currSlideVal}%` : `${this.currSlideVal}%, 0%` 
-        )+')';
+        // Set the transition duration
+        this.wrapper.style.transitionDuration = (
+            reset ? '0ms' : slideDur ? slideDur : this.transDur
+        )   
+
+        // When hold leave exists and wrapper is not resetting,
+        // slide the wrapper to the current section by waiting hold before dur
+        if(reset === false && holdLeaveDur){
+            setTimeout(() => {
+                this.wrapper.style.transform = 'translate('+(
+                    this.mobileMode ? `0%, ${this.currSlideVal}%` : `${this.currSlideVal}%, 0%` 
+                )+')';
+            }, holdLeaveDur)            
+        }
+        // Slide the wrapper to the current section instantly
+        else{
+            this.wrapper.style.transform = 'translate('+(
+                this.mobileMode ? `0%, ${this.currSlideVal}%` : `${this.currSlideVal}%, 0%` 
+            )+')';
+        }
+        // Slide the wrapper to the current section instantly
+        // this.wrapper.style.transform = 'translate('+(
+        //     this.mobileMode ? `0%, ${this.currSlideVal}%` : `${this.currSlideVal}%, 0%` 
+        // )+')';        
         if(reset){
             this.isSliding = false
             this.reset = false
@@ -127,11 +152,20 @@ class FunnyScroll{
 
         _instance.wrapper.ontransitionend = (e) => {
             if(e.target.id === 'wrapper'){
+                const currSectionEl = this.sections[this.currSection]
+                const holdEnterDur = currSectionEl.getAttribute('data-hold-enter')
                 // Play callback when the previous section is leaving
                 this.playCallbackEnd(this.prevSection, 'leave')
                 // Play callback when the current section is entering
                 this.playCallbackEnd(this.currSection, 'enter')
-                _instance.isSliding = false
+                if(holdEnterDur){
+                    setTimeout(() => {
+                        _instance.isSliding = false
+                    }, holdEnterDur)
+                }
+                else{
+                    _instance.isSliding = false
+                }
             }
         }
         window.onwheel = (e) => {
@@ -161,13 +195,21 @@ class FunnyScroll{
                 const targetSect = (dir > 0 ? _instance.currSection + 1 : _instance.currSection - 1)
                 _instance.slide(targetSect)
             }             
-        }
+        }        
     }
 }
 
-new FunnyScroll({
-    transDur: '700ms',
+const funnyScroll = new FunnyScroll({
+    transDur: '1000ms',
     callbacks: {
+        '0': {
+            enterEnd: () => {
+                document.getElementById('star-divider').style = 'transform: rotate(0deg);'
+            },     
+            'leaveStart': (section) => {
+                document.getElementById('star-divider').style = 'transform: rotate(90deg);'
+            },                                
+        },        
         '1': {
             'enterStart': (section) => {
                 section.classList.add('enter-start')                   
@@ -215,23 +257,50 @@ new FunnyScroll({
             'enterEnd': (section) => {
                 section.classList.add('enter-end')                   
             },  
+            'leaveStart': (section) => {
+                section.firstChild.firstChild.style = 'transform: translateY(-70%); opacity: 0;';
+                section.firstChild.lastChild.style = 'transform: translateY(70%); opacity: 0 !important;';      
+            },             
             'leaveEnd': (section) => {
+                section.firstChild.firstChild.style = '';
+                section.firstChild.lastChild.style = '';                  
                 section.classList.remove('enter-start')
                 section.classList.remove('enter-end')
             },                             
         },    
         '5': {
             'enterStart': (section) => {
+                section.style = 'opacity: 1';
                 section.classList.add('enter-start')                   
             },            
             'enterEnd': (section) => {
                 section.classList.add('enter-end')                   
             },  
-            'leaveEnd': (section) => {
+            'leaveStart': (section) => { 
+                section.style = 'transform: translateY(70%); opacity: 0';
+            },            
+            'leaveEnd': (section) => { 
+                section.style = 'opacity: 0';
                 section.classList.remove('enter-start')
                 section.classList.remove('enter-end')
             },                             
         },     
+        '6': {
+            'enterStart': (section) => {
+                section.classList.add('enter-start')                   
+            },            
+            'enterEnd': (section) => {
+                section.classList.add('enter-end')                   
+            },  
+            'leaveStart': (section) => { 
+                section.style = 'opacity: 0';
+            },            
+            'leaveEnd': (section) => { 
+                section.style = '';
+                section.classList.remove('enter-start')
+                section.classList.remove('enter-end')
+            },                             
+        },         
         '7': {
             'enterStart': (section) => {
                 section.classList.add('enter-start')                   
@@ -239,7 +308,11 @@ new FunnyScroll({
             'enterEnd': (section) => {
                 section.classList.add('enter-end')                   
             },  
+            'leaveStart': (section) => { 
+                section.style = 'opacity: 0';
+            },             
             'leaveEnd': (section) => {
+                section.style = '';
                 section.classList.remove('enter-start')
                 section.classList.remove('enter-end')
             },                             
@@ -251,10 +324,49 @@ new FunnyScroll({
             'enterEnd': (section) => {
                 section.classList.add('enter-end')                   
             },  
+            'leaveStart': (section) => { 
+                section.style = 'opacity: 0';
+            },             
             'leaveEnd': (section) => {
+                section.style = '';
                 section.classList.remove('enter-start')
                 section.classList.remove('enter-end')
             },                             
-        },                          
+        },   
+        '9': {
+            'enterStart': (section) => {
+                section.classList.add('enter-start')                   
+            },            
+            'enterEnd': (section) => {
+                section.classList.add('enter-end')                   
+            }, 
+            'leaveStart': (section) => { 
+                section.style = 'opacity: 0';
+            },               
+            'leaveEnd': (section) => {
+                section.style = '';
+                section.classList.remove('enter-start')
+                section.classList.remove('enter-end')
+            },                             
+        },        
+        '10': {
+            'enterStart': (section) => {
+                section.classList.add('enter-start')                   
+            },            
+            'enterEnd': (section) => {
+                section.classList.add('enter-end')                   
+            },     
+            'leaveStart': (section) => { 
+                section.style = 'opacity: 0';
+            },                     
+            'leaveEnd': (section) => {
+                section.style = '';
+                section.classList.remove('enter-start')
+                section.classList.remove('enter-end')
+            },                             
+        },          
     }        
-}).init()
+})
+setTimeout(() => {
+    funnyScroll.init()
+}, 6800)

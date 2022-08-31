@@ -42,6 +42,10 @@ body{
     z-index: 98;
 }
 
+.popup{
+    z-index: 99;
+}
+
 .navbar .logo-test{
     width: 4rem;
 }
@@ -145,7 +149,7 @@ body{
 }
 
 #im-your-imagination .content{
-    transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.5s, transform 0.5s;
 }
 
 /*
@@ -216,45 +220,57 @@ body{
     animation-play-state: running;
 }
 
-#play-roles.enter-start .anim-create-future{
+#play-roles.enter-start .body{
     animation: anim-create-future 1000ms ease 1;
     animation-fill-mode: both; 
     animation-play-state: paused;
 }
 
-#play-roles.enter-end .anim-create-future{
+#play-roles.enter-end .body{
     animation-play-state: running;
 }
 
-#play-roles.enter-start .anim-fade-in{
-    animation: anim-create-future 1000ms ease 1;
+#play-roles.enter-end .title{
+    transition: opacity 800ms, transform 800ms;
+}
+
+#play-roles.enter-start .desc{
+    animation: anim-fade-in 1000ms ease 1;
     animation-fill-mode: both; 
     animation-delay: 800ms;
     animation-play-state: paused;    
 }
 
-#play-roles.enter-end .anim-fade-in{
+#play-roles .desc{
+    transition: opacity 800ms , transform 800ms !important;
+}
+
+#play-roles.enter-end .desc{
     animation-play-state: running;
 }
 
-#socialize.enter-start .anim-create-future{
+#socialize{
+    transition: opacity 0.5s;
+}
+
+#socialize.enter-start .title{
     animation: anim-create-future 1000ms ease 1;
     animation-fill-mode: both; 
     animation-play-state: paused;
 }
 
-#socialize.enter-end .anim-create-future{
+#socialize.enter-end .title{
     animation-play-state: running;
 }
 
-#socialize.enter-start .anim-fade-in{
-    animation: anim-create-future 1000ms ease 1;
+#socialize.enter-start .desc{
+    animation: anim-fade-in 1000ms ease 1;
     animation-fill-mode: both; 
     animation-delay: 800ms;
     animation-play-state: paused;    
 }
 
-#socialize.enter-end .anim-fade-in{
+#socialize.enter-end .desc{
     animation-play-state: running;
 }
 
@@ -271,15 +287,33 @@ body{
     animation-fill-mode: both; 
 }
 
-.anim-im-your-wallet-title{
-    animation: anim-im-your-wallet-title 1000ms ease 1, anim-fade-in 1000ms ease 1;
-    animation-fill-mode: both; 
+#im-your-wallet{
+    transition: opacity 0.5s;
 }
 
-.anim-im-your-wallet-desc{
+#im-your-wallet.enter-start .anim-im-your-wallet-title{
+    animation: anim-im-your-wallet-title 1000ms ease 1, anim-fade-in 1000ms ease 1;
+    animation-fill-mode: both; 
+    animation-play-state: paused;
+}
+
+#im-your-wallet.enter-end .anim-im-your-wallet-title{
+    animation-play-state: running;
+}
+
+#im-your-wallet.enter-start .anim-im-your-wallet-desc{
     animation: anim-im-your-wallet-desc 1000ms ease 1, anim-fade-in 1000ms ease 1;
     animation-delay: 800ms;
     animation-fill-mode: both; 
+    animation-play-state: paused;
+}
+
+#im-your-wallet.enter-end .anim-im-your-wallet-desc{
+    animation-play-state: running;
+}
+
+#im-adventure{
+    transition: opacity 0.5s;
 }
 
 #im-adventure.enter-start .anim-eye-lid-blinking{
@@ -328,6 +362,10 @@ body{
     animation-play-state: running;    
 }
 
+#explore{
+    transition: opacity 0.5s;
+}
+
 #explore.enter-start .explore,
 #explore.enter-start .explore-desc{
     animation: anim-fade-in 1000ms ease 1;
@@ -344,6 +382,10 @@ body{
     animation-delay: 600ms;   
 }
 
+
+#im-your-home{
+    transition: opacity 800ms, transform 800ms;
+}
 
 #im-your-home.enter-start .anim-im-your-home-box{
     animation: anim-im-your-home-box 1800ms ease-in;
@@ -378,6 +420,27 @@ body{
     animation-play-state: running;
 }
 
+#im-your-home.enter-start .im-your-text{
+    animation-name: anim-fade-out;
+    animation-duration: 0ms;
+    animation-delay: 1600ms;
+    animation-play-state: paused;
+    animation-fill-mode: both;
+}
+
+#im-your-home.enter-end .im-your-text{
+    animation-play-state: running;
+}
+
+#im-your-home.enter-start .home-text{
+    animation: anim-fade-in 0ms 1700ms, anim-im-your-home-home-text 500ms ease 1700ms;
+    animation-play-state: paused, paused;
+    animation-fill-mode: both, both;
+}
+
+#im-your-home.enter-end .home-text{
+    animation-play-state: running, running;
+}
 
 .anim-circle-clip-path{
     position: fixed;
@@ -453,6 +516,43 @@ body{
     animation-delay: 2400ms;
 } 
 
+#your-key{
+    transition: opacity 0.5s;
+}
+
+#your-key.enter-start .your-key{
+    animation: anim-your-key 0.6s;
+    animation-fill-mode: both;    
+    animation-play-state: paused;
+}
+
+#your-key.enter-start .to-the{
+    animation: anim-to-the 0.6s;
+    animation-fill-mode: both;   
+    animation-delay: 200ms; 
+    animation-play-state: paused;
+}
+
+#your-key.enter-start .unknown{
+    animation: anim-unknown 0.6s;
+    animation-fill-mode: both;
+    animation-delay: 300ms;    
+    animation-play-state: paused;
+}
+
+#your-key.enter-start .unlock-btn{
+    animation: anim-fade-in 0.6s;
+    animation-fill-mode: both;
+    animation-delay: 500ms;    
+    animation-play-state: paused;
+}
+
+#your-key.enter-end .your-key,
+#your-key.enter-end .to-the,
+#your-key.enter-end .unknown,
+#your-key.enter-end .unlock-btn{
+    animation-play-state: running;
+}
 
 
 /*
@@ -503,8 +603,8 @@ body{
     } 
     #star-divider{
         bottom: -42vh;
-        right: -2vw;
-        width: 52rem;
+        right: 0;
+        width: 100%;
     }    
     /* #pattern-sun{
         margin: 0;
@@ -526,7 +626,7 @@ body{
     }
     #star-divider{
         bottom: -35vh;
-        right: -9vw;
-        width: 35rem;
+        right: 0;
+        width: 100%;
     }        
 }
