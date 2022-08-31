@@ -651,7 +651,7 @@ body{
         touch-action: none;
     }   
     #wrapper > .section{
-        height: 120vh;
+        height: calc(100vh - calc(100vh - 100%));
     }
     .skrollr.skrollr-desktop #wrapper{
         transform: none !important;
