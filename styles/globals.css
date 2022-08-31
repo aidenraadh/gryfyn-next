@@ -12,6 +12,10 @@
     --orange-color: #FE6B32;
 }
 
+input{
+    outline: none;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -616,6 +620,7 @@ body{
 @media only screen and (max-width: 1100px){	
     html, body{
         overscroll-behavior-y: none;
+        touch-action: none;
     }
     #wrapper{
         position: fixed;
@@ -623,6 +628,7 @@ body{
         transform-origin: center top;
         /**/
         overscroll-behavior-y: none;
+        touch-action: none;
     }   
     .skrollr.skrollr-desktop #wrapper{
         transform: none !important;

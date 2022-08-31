@@ -23,10 +23,8 @@ const getTriggerPos = (posName) => {
 export default function Home(){
     const [popupShown, setPopupShown] = useState(false)
     const [usrEmailAddr, setUsrEmailAddr] = useState('')
-    const [privacyShown, setPrivacyShown] = useState(false)
-    const [cookiesShown, setCookiesShown] = useState(false)
-    const [termsShown, setTermsShown] = useState(false)
-    const [residenceShown, setResidenceShown] = useState(false)
+    const [usrEmailValid, setUsrEmailValid] = useState(true)
+    const [successSubscribe, setSuccessSubscribe] = useState(false)
 
     const subscribe = useCallback(() => {
         const options = {
@@ -34,9 +32,22 @@ export default function Home(){
             body: JSON.stringify({email: usrEmailAddr})
         };        
         fetch('http://localhost:3000/api/subscribe', options)
-        .then(response => response.json())
-        // .then(response => console.log(response))
-        .catch(err => console.error(err));        
+        .then(response => {
+            if(response.status === 400){
+                setUsrEmailAddr('')
+                setUsrEmailValid(false)
+                throw new Error('Please enter valid email address');
+            }
+            return response.json()
+        })
+        .then(response => {
+            setUsrEmailAddr('')
+            setUsrEmailValid(true)
+            setSuccessSubscribe(true)
+        })
+        .catch(err => {
+            console.error(err)
+        });        
     }, [usrEmailAddr])
 
     return (<>
@@ -310,92 +321,31 @@ export default function Home(){
                     </span>            
                 </LandingPageSection>      
             </div>
-            {/* <aside className='absolute bottom-0 right-0 flex justify-end text-6xl bg-black text-body'>sss</aside> */}
             <aside>
                 <Button classes={'text-lg fixed top-4 right-6'} attr={{ onClick: () => {setPopupShown(true)}, id: 'discover-more' }}>
                     Discover more
                 </Button>   
             </aside>   
 
-            {/* <Popup
-                shown={privacyShown}
-                toggleShown={() => {setPrivacyShown(state => !state)}}
-                body={
-                    <div className={"flex flex-col items-center justify-center text-body"}>
-                        <span className={"font-['neue_metana_bold'] text-xl text-left mb-4"} style={{width: '60%'}}>
-                            Privacy Policy
-                        </span>
-                        <div style={{width: '60%'}} className={"font-['basier_circle'] text-base bg-black border-2 border-body flex flex-col justify-center items-center p-6 overflow-y-auto"}>
-                        In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set
-                        </div>
-                    </div>
-                }
-            />      
-            <Popup
-                shown={cookiesShown}
-                toggleShown={() => {setCookiesShown(state => !state)}}
-                body={
-                    <div className={"flex flex-col items-center justify-center text-body"}>
-                        <span className={"font-['neue_metana_bold'] text-xl text-left mb-4"} style={{width: '60%'}}>
-                            Cookies Policy
-                        </span>
-                        <div style={{width: '60%'}} className={"font-['basier_circle'] text-base bg-black border-2 border-body flex flex-col justify-center items-center p-6 overflow-y-auto"}>
-                        In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you Set
-                        </div>
-                    </div>
-                }
-            />        
-            <Popup
-                shown={termsShown}
-                toggleShown={() => {setTermsShown(state => !state)}}
-                body={
-                    <div className={"flex flex-col items-center justify-center text-body"}>
-                        <span className={"font-['neue_metana_bold'] text-xl text-left mb-4"} style={{width: '60%'}}>
-                        Terms &#38; Conditions
-                        </span>
-                        <div style={{width: '60%'}} className={"font-['basier_circle'] text-base bg-black border-2 border-body flex flex-col justify-center items-center p-6 overflow-y-auto"}>
-                        In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. In order to set up a digital asset wallet, a private key (your unique key phrase that looks like a combination of letters and digits) needs to be created and securely stored. Non-custodial (or self-custodial) wallets, such as MetaMask, require you to safekeep the private key by yourself. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your wallet or the key phrase, you will lose access to your assets forever. This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you set up for your This means you have full control and responsibility, and will have to take precautions to protect your funds. If you lose the password you Set
-                        </div>
-                    </div>
-                }
-            />       
-            <Popup
-                shown={residenceShown}
-                toggleShown={() => {setResidenceShown(state => !state)}}
-                body={
-                    <div className={"flex flex-col items-center justify-center text-body"}>
-                        <span className={"font-['neue_metana_bold'] text-xl text-left mb-4 text-yellow"} style={{width: '60%'}}>
-                        Why is your country of residence needed?
-                        </span>
-                        <div style={{width: '60%'}} className={"font-['basier_circle'] text-base bg-black border-2 border-body justify-center p-6 overflow-y-auto flex flex-col gap-6"}>
-                            <span>
-                                Disclosing your country of residence is an important step because we provide a custodial wallet solution (custodial wallets are explained below). Accurately determining your country of residence allows us to follow relevant Anti-Money Laundering (AML) laws, tax reporting, regulatory compliance. Further to this, you will not be able to withdraw any assets until your Know Your Customer (KYC) verification has been fully completed and approved. You will only be allowed to deposit.                                
-                            </span>
-                            <span className="font-['neue_metana_bold'] text-xl text-yellow">
-                                What is country of residence?
-                            </span>
-                            <span>
-                                A country of residence is a jurisdiction where you reside, i.e. where you are considered to be a resident. As part of our KYC process, we will ask you to submit proof of residence with your full name and residential address clearly displayed. Examples include:                                
-                            </span> 
-                        </div>
-                    </div>
-                }
-            />                                      */}
-
             <Popup
                 shown={popupShown}
                 toggleShown={() => {setPopupShown(state => !state)}}
                 body={
                     <div className={"font-['basier_circle'] text-4xl flex flex-col justify-center items-center"}>
-                        Be the first to know
-                        <Form classes={'text-lg w-96 mt-4 mb-10'} attr={{
-                            value: usrEmailAddr,
-                            onChange: (e) => {setUsrEmailAddr(e.target.value)},
-                            placeholder: 'Please enter your email address'
-                        }}/>
-                        <Button classes={'text-lg'} attr={{ onClick: subscribe }}>
-                            Subscribe
-                        </Button>
+                        {successSubscribe ?
+                            'Thank you for subscribing' :
+                            <>
+                                Be the first to know
+                                <Form classes={`text-lg w-96 mt-4 mb-10${usrEmailValid ? '' : ' placeholder-red-600'}`} attr={{
+                                    value: usrEmailAddr,
+                                    onChange: (e) => {setUsrEmailAddr(e.target.value)},
+                                    placeholder: usrEmailValid ? 'Please enter your email address' : 'Please enter valid email address'
+                                }}/>
+                                <Button classes={'text-lg'} attr={{ onClick: subscribe }}>
+                                    Subscribe
+                                </Button>                            
+                            </> 
+                        }
                     </div>
                 }
             />            
