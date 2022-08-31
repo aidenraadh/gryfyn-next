@@ -54,36 +54,34 @@ export default function Home(){
         <PageHead/>
         <MainLayout>
             <div id="wrapper" className="wrapper">
-                <LandingPageSection classes={'relative flex flex-col justify-center'} tag={'header'}>
-                    <h1 className="text-5xl font-['neue_metana_regular'] tablet:justify-center flex flex-wrap gap-4">
-                        A
-                        <span className='relative'>
+                <LandingPageSection classes={'relative flex flex-col'} tag={'header'} attr={{id: 'world-beyond'}}>
+                    <h1 className="text-5xl font-['neue_metana_regular'] w-full leading-tight tablet:flex tablet:flex-wrap tablet:justify-center">
+                        <span style={{marginRight: '0.5em'}}>A</span>
+                        <span className='relative' style={{marginRight: '0.5em'}}>
                             world
-                            <span className='absolute w-8 h-8 bg-black' style={{left: '3.6rem', top: '0.6em'}}></span>
+                            <span id="black-sun" className='absolute w-8 h-8 bg-black'></span>
                             <SVG name={'sun_empty'} classes={'absolute anim-world-beyond-o'} attr={{
-                                style: {width: '3.9rem', left: '2.4rem', top: '-0.47rem'}
+                                style: {width: '1.4em', left: '0.8em', top: '-0.2em'}
                             }}/>
-                        </span><span style={{width: '50rem'}} className="tablet:hidden"></span>
-                        beyond
-                        <span className='relative'>
+                        </span><br className='tablet:hidden'/>
+                        <span style={{marginRight: '0.5em'}}>beyond</span>
+                        <span className='relative' style={{marginRight: '0.5em'}}>
                             your
                             <SVG name={'star'} classes={'absolute anim-world-beyond-u'} attr={{
-                                style: {top: '-1.2rem', left: '4.5rem', width: '2rem'}
+                                style: {top: '-0.3em', left: '1.5em', width: '0.65em'}
                             }}/>
-                        </span><span className="w-1/3 tablet:hidden"></span>
-                        <span className='relative'>
+                        </span><br className='tablet:hidden'/>
+                        <span className='relative' style={{marginRight: '0.5em'}}>
                             imagination
-                            <span className='absolute w-2 h-2 bg-black' style={{top: '-1rem', left: '-0.6rem', width: '2rem'}}></span>
+                            <span className='absolute w-2 h-2 bg-black' id="black-star"></span>
                             <SVG name={'star'} classes={'absolute anim-world-beyond-o'} fill_1={'#F7CE55'} attr={{
-                                style: {top: '-0.9rem', left: '-0.7rem', width: '2rem'}
+                                style: {top: '-0.3em', left: '-0.22em', width: '0.67em'}
                             }}/>
                         </span>
                         <span className='relative'>
                             awaits
-                            <span className='absolute w-8 h-4 bg-black' style={{top: '1.2rem', left: '-0.16rem'}}></span>
-                            <SVG name={'eye'} classes={'absolute w-10'} attr={{
-                                style: {top: '0.5rem', left: '-0.18rem'}
-                            }}/>                            
+                            <span className='absolute bg-black eye-black'></span>
+                            <SVG name={'eye'} classes={'absolute eye-in-a'}/>                            
                         </span>
                     </h1>    
                     <p className="flex items-center w-full mt-10 tablet:justify-center">
