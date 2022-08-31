@@ -650,6 +650,9 @@ body{
         overscroll-behavior-y: none;
         touch-action: none;
     }   
+    #wrapper > .section{
+        height: 80vh;
+    }
     .skrollr.skrollr-desktop #wrapper{
         transform: none !important;
     }
