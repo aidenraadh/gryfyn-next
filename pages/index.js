@@ -129,8 +129,8 @@ export default function Home(){
                     <span {...getTriggerPos('create_future')} className="flex flex-col items-center justify-center anim-create-future">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-yellow">create</span>
                         <span className="text-xl text-center">
-                            the world of the future,<br className="mobile:hidden"/>
-                            and witness the boundless<br className="mobile:hidden"/>
+                            the world of the future,<br/>
+                            and witness the boundless<br/>
                             posibilities of your mind
                         </span>               
                     </span>                
@@ -282,7 +282,7 @@ export default function Home(){
                 <LandingPageSection classes={'flex flex-col items-center justify-center'} attr={{
                     id: 'im-your-wallet', 'data-hold-leave': 600, 'data-hold-enter': 1500, 'data-slide-dur': '50ms',
                 }}>
-                    <h2 className="flex mobile:flex-col content-center items-center flex-wrap gap-5 mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular']" {...getTriggerPos('im_wallet')}>
+                    <h2 className="flex mobile:flex-col mobile:text-center items-center flex-wrap gap-5 mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular']" {...getTriggerPos('im_wallet')}>
                         I am your 
                         <span className="font-['neue_metana_bold']">wallet.</span>
                     </h2>

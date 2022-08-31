@@ -723,4 +723,11 @@ body{
     #im-playground .playground-words{
         font-size: 10vw;
     }
+    #im-your-wallet .anim-im-your-wallet-title{
+        font-size: 11.8vw;
+    }
+    #im-your-wallet .anim-im-your-wallet-desc{
+        line-height: 6.5vw;
+        font-size: 3.8vw;
+    }    
 }
