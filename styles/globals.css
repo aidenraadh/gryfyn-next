@@ -129,9 +129,9 @@ body{
 }
 
 #im-playground #sun{
-    top: -22rem;
-    width: 44rem;
-    z-index: 100;
+    top: -26rem;
+    width: 42rem;
+    z-index: 5;
     animation: anim-im-playground-sun 5500ms linear infinite;
     animation-fill-mode: both;
 } 
@@ -189,6 +189,20 @@ body{
     z-index: 99;
 }
 
+#im-your-imagination .star-container{
+    top: -7rem;
+    left: -10rem;
+    width: 10rem;
+}
+
+#im-your-imagination .anim-im-your-imagination-pattern1{
+    top: -1rem;
+    left: 5rem;
+    width: 60%;
+}
+#im-your-imagination .anim-im-your-imagination-pattern2{
+    width: 80%;
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -352,6 +366,10 @@ body{
 
 #im-adventure{
     transition: opacity 0.5s;
+}
+
+#im-adventure > span{
+    width: 50rem;
 }
 
 #im-adventure.enter-start .anim-eye-lid-blinking{
@@ -643,14 +661,23 @@ body{
         transform: none;
     }
     #im-playground #sun{
-        top: -16rem;
-        width: 32rem
-    } 
-    #star-divider{
-        bottom: -42vh;
-        right: 0;
-        width: 100%;
+        top: -35%;
+        width: 70%;
     }    
+    #star-divider{
+        bottom: -61vw;
+        left: -7vw;
+        width: 114vw;
+    }    
+    #im-adventure > span{
+        width: 110%;
+    }    
+    #im-adventure .adventure{
+        font-size: 8vw;
+    }   
+    #im-adventure .im-your{
+        font-size: 4vw;
+    }  
     /* #pattern-sun{
         margin: 0;
         height: 100vh;
@@ -669,9 +696,31 @@ body{
     html{
         font-size: 14.4px;
     }
-    #star-divider{
+    #im-your-imagination .im-your-imagination-fading-text{
+        font-size: 8vw;
+    }    
+    #im-your-imagination .star-container{
+        left: -1rem;
+        top: -2rem;
+        width: 5rem;
+    }
+    #im-your-imagination .anim-im-your-imagination-pattern1{
+        top: 1rem;
+        left: 2.5rem;
+    }    
+    /* #star-divider{
         bottom: -35vh;
         right: 0;
         width: 100%;
-    }        
+    }         */
+    #im-playground #sun{
+        top: -21vw;
+        width: 61vw;
+    }     
+    #im-playground #im-your{
+        font-size: 10vw;
+    }    
+    #im-playground .playground-words{
+        font-size: 10vw;
+    }
 }

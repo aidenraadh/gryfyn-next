@@ -81,32 +81,32 @@
 @keyframes anim-im-your-imagination-pattern1{
     0%{
         opacity: 0;
-        transform: translate(-3rem, -16rem);
+        transform: translateY(-16rem);
     }
     50%{
         opacity: 1;
-        transform: translate(-3rem, -10.5rem);
+        transform: translateY(-10.5rem);
     }    
 
     100%{
         opacity: 1;
-        transform: translate(-3rem, -10.5rem) rotate(90deg);
+        transform: translateY(-10.5rem) rotate(90deg);
     }
 }
 
 @keyframes anim-im-your-imagination-pattern2{
     0%{
         opacity: 0;
-        transform: translate(-9rem, -2rem);
+        transform: translateY(-2rem);
     }
     50%{
         opacity: 1;
-        transform: translate(-9rem, -8rem);
+        transform: translateY(-8rem);
     }    
 
     100%{
         opacity: 1;
-        transform: translate(-9rem, -8rem) rotate(90deg);
+        transform: translateY(-8rem) rotate(90deg);
     }
 }
 

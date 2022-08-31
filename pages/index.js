@@ -100,12 +100,12 @@ export default function Home(){
                 <LandingPageSection classes={'flex flex-col items-center justify-center bg-red'} tag={'p'} attr={{
                     id: 'im-your-imagination', 'data-hold-leave': 500 , 'data-hold-enter': 2000,
                 }}>
-                    <span className="relative flex flex-col font-['neue_metana_regular'] tablet:top-1/4 content"
+                    <span className="relative flex flex-col mobile:items-center font-['neue_metana_regular'] content"
                     data-0="opacity: 1; transform: scale(1);" data-115p="opacity: 1; transform: scale(1);" data-130p="opacity: 0; transform: scale(0.9);">
-                        <span className="text-4xl text-white mobile:text-3xl im-your-imagination-fading-text">
+                        <span className="text-4xl text-white im-your-imagination-fading-text">
                             I am your
                         </span>
-                        <span className="relative text-5xl mobile:text-4xl ml-14 im-your-imagination-fading-text text-yellow">
+                        <span className="relative text-5xl ml-14 mobile:ml-0 im-your-imagination-fading-text text-yellow">
                             imagination
                             <span className='absolute bg-black' style={{left: '1.46em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <span className='absolute bg-black' style={{left: '4.23em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
@@ -116,16 +116,18 @@ export default function Home(){
                                 style: {top: '0.19em', left: '4.2em', width: '0.8em'}
                             }}/>                                                       
                         </span>
-                        <SVG name={'star'} classes={'absolute w-20 anim-im-your-imagination-pattern1'} attr={{...getTriggerPos('im_imagination')}}/>  
-                        <SVG name={'star'} classes={'absolute w-36 anim-im-your-imagination-pattern2'} attr={{...getTriggerPos('im_imagination')}}/>                                                                                 
+                        <span className='relative star-container'>
+                            <SVG name={'star'} classes={'absolute anim-im-your-imagination-pattern1'} attr={{...getTriggerPos('im_imagination')}}/>  
+                            <SVG name={'star'} classes={'absolute anim-im-your-imagination-pattern2'} attr={{...getTriggerPos('im_imagination')}}/> 
+                        </span>                                                                                                        
                     </span>
                 </LandingPageSection>
 
                 <LandingPageSection classes={'relative flex flex-col items-center justify-center'} tag={'p'} attr={{
                     id: 'create-future', 'data-hold-enter': '1100'
                 }}>
-                    <span {...getTriggerPos('create_future')} className="flex flex-col items-center justify-center anim-create-future tablet:absolute tablet:top-1/4">
-                        <span className="mb-6 text-6xl font-['neue_metana_bold'] text-yellow">Create</span>
+                    <span {...getTriggerPos('create_future')} className="flex flex-col items-center justify-center anim-create-future">
+                        <span className="mb-6 text-6xl font-['neue_metana_bold'] text-yellow">create</span>
                         <span className="text-xl text-center">
                             the world of the future,<br className="mobile:hidden"/>
                             and witness the boundless<br className="mobile:hidden"/>
@@ -137,8 +139,7 @@ export default function Home(){
                 <LandingPageSection tag={'p'} classes={"relative flex flex-col items-center justify-center font-['neue_metana_regular']"} attr={{
                     id: 'im-playground', 'data-hold-enter': 3000
                 }}>
-                    <SVG name={'sun'} fill_1={'#F36B37'} fill_2={'#FFCD32'} classes={'absolute'} attr={{id: 'sun'}}/>
-                    <span className='absolute flex flex-col justify-center gap-8 tracking-widest text-7xl mobile:text-5xl text-blue' aria-hidden="true">
+                    <span className='absolute flex flex-col items-center justify-center gap-8 tracking-widest text-7xl text-blue playground-words' aria-hidden="true">
                         <span className='playground'>playground</span>
                         <span className='playground'>playground</span>
                         <span className='playground'>playground</span>
@@ -154,9 +155,10 @@ export default function Home(){
                         </span>
                         <span className='playground'>playground</span>
                         <span id="load-bar" className='relative w-full h-2 bg-white' style={{top: '-8rem'}}></span>
+                        <SVG name={'sun'} fill_1={'#F36B37'} fill_2={'#FFCD32'} classes={'absolute tablet:w-5'} attr={{id: 'sun'}}/>
                     </span>
                     <span className='flex flex-col items-center justify-center mobile:w-full' style={{width: '38rem'}}>
-                        <span id="im-your" className='mb-20 text-5xl anim-fade-out'>
+                        <span id="im-your" className='text-5xl mb-15'>
                             I am your
                         </span>
                         <span className='sr-only'>playground</span>
@@ -170,9 +172,9 @@ export default function Home(){
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-orange title">
                             play
                         </span>
-                        <span {...getTriggerPos('play_roles')} className="text-xl text-center desc">
-                            any roles of your desire,<br className="mobile:hidden"/>
-                            fulfill your fantasies.<br className="mobile:hidden"/>
+                        <span {...getTriggerPos('play_roles')} className="text-2xl text-center desc">
+                            any roles of your desire,<br className=""/>
+                            fulfill your fantasies.<br className=""/>
                             Bring utility to its full potential.
                         </span>
                     </span>
@@ -241,16 +243,16 @@ export default function Home(){
                 <LandingPageSection tag={'p'} classes={'relative flex flex-col items-center justify-center'} attr={{
                     id: 'im-adventure', 'data-hold-leave': 600, 'data-hold-enter': 2800, 'data-slide-dur': '50ms',
                 }}>
-                    <span className="relative flex flex-col items-center justify-center font-['neue_metana_regular'] anim-eye-zoom-out" style={{width: '50rem'}}
+                    <span className="relative flex flex-col items-center justify-center font-['neue_metana_regular'] anim-eye-zoom-out tablet:w-full"
                     {...getTriggerPos('im_adventure')}>
                         <SVG name={'eye'} classes={'w-full'} fill_1={'#E8DFD4'} fill_2={'#1996CE'}/>                         
                         <span className="absolute text-4xl text-white im-your"
                         {...getTriggerPos('im_adventure')}>
                             I am your
                         </span>             
-                        <span className="absolute text-black opacity-0 text-7xl adventure mobile:text-6xl"
+                        <span className="absolute text-black opacity-0 text-7xl adventure"
                         {...getTriggerPos('im_adventure')}>
-                            adventure
+                            <span>adventure</span>
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#000000'} fill_2={'#FFCD32'} attr={{
                                 style: {top: '0.16em', left: '-0.08em', width: '0.84em'}
                             }}/> 
@@ -271,8 +273,8 @@ export default function Home(){
                         explore
                     </span>
                     <span {...getTriggerPos('explore')} className="text-xl text-center explore-desc">
-                        the (un)known.<br className="mobile:hidden"/>
-                        Go on the journey that is unique to you,<br className="mobile:hidden"/>
+                        the (un)known.<br/>
+                        Go on the journey that is unique to you,<br/>
                         and watch Web 3 grow as you grow with it.
                     </span>
                 </LandingPageSection>    
@@ -323,7 +325,7 @@ export default function Home(){
             </div>
             <aside>
                 <Button classes={'text-lg fixed top-4 right-6'} attr={{ onClick: () => {setPopupShown(true)}, id: 'discover-more' }}>
-                    Discover more
+                    Discover More
                 </Button>   
             </aside>   
 
