@@ -370,10 +370,10 @@ const funnyScroll = new FunnyScroll({
 setTimeout(() => {
     funnyScroll.init()
     if(window.innerWidth <= 1100){
-        document.body.style.overflowY = "scroll";
-        console.log(window.pageYOffset)
-        window.pageYOffset = 10000
-        console.log(window.pageYOffset)
+        document.body.style.overflowY = "auto";
+        // console.log(window.pageYOffset)
+        // window.pageYOffset = 10000
+        // console.log(window.pageYOffset)
     }
     // document.body.ontouchmove = () => {
     //     console.log(window.pageYOffset)
