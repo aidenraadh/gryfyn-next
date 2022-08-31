@@ -312,7 +312,7 @@ export default function Home(){
             </div>
             {/* <aside className='absolute bottom-0 right-0 flex justify-end text-6xl bg-black text-body'>sss</aside> */}
             <aside>
-                <Button classes={'text-lg fixed top-4 right-6'} attr={{ onClick: () => {console.log('asd'); setPopupShown(true)} }}>
+                <Button classes={'text-lg fixed top-4 right-6'} attr={{ onClick: () => {setPopupShown(true)}, id: 'discover-more' }}>
                     Discover more
                 </Button>   
             </aside>   
