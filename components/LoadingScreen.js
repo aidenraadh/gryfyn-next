@@ -9,11 +9,9 @@ export default function LoadingScreen(){
 
         let timeout = setTimeout(() => {
             sunLoader.style.display = "none";
-            document.body.style.overflow = "auto";
         }, 6800);
         
         return () => {
-            document.body.style.overflow = "auto";
             clearTimeout(timeout)
         }
     }, []);    

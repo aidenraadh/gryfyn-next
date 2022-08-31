@@ -62,7 +62,7 @@ class FunnyScroll{
             }
         }
         else{
-            if(Math.abs(dir) > 50){
+            if(Math.abs(dir) > 70){
                 if(
                     ( dir > 0 && (this.currSection + 1) < this.totalSections ) ||
                     ( dir < 0 && (this.currSection - 1) >= 0 )                    
@@ -173,7 +173,7 @@ class FunnyScroll{
                 const targetSect = (e.deltaY > 0 ? _instance.currSection + 1 : _instance.currSection - 1)
                 _instance.slide(targetSect)
             }      
-        }
+        }      
         window.onresize = () => {
             // Browser resized to mobile viewport
             if(_instance.mobileMode === false && window.innerWidth <= _instance.mobileVpWidth){
@@ -369,4 +369,15 @@ const funnyScroll = new FunnyScroll({
 })
 setTimeout(() => {
     funnyScroll.init()
+    if(window.innerWidth <= 1100){
+        document.body.style.overflowY = "scroll";
+        console.log(window.pageYOffset)
+        window.pageYOffset = 10000
+        console.log(window.pageYOffset)
+    }
+    // document.body.ontouchmove = () => {
+    //     console.log(window.pageYOffset)
+    //     console.log(document.documentElement.scrollTop)
+    // }
 }, 6800)
+

@@ -639,6 +639,8 @@ body{
     html, body{
         overscroll-behavior-y: none;
         touch-action: none;
+        /**/
+        height: 10000vh;
     }
     #wrapper{
         position: fixed;
