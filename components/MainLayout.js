@@ -4,7 +4,7 @@ import LoadingScreen from './LoadingScreen'
 export default function MainLayout(props){
     return (
     <>      
-        <LoadingScreen/>
+        {/* <LoadingScreen/> */}
         <Header/>
         {props.children}              
     </>)
