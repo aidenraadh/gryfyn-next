@@ -55,6 +55,7 @@ body{
     top: -8vh;
     left: -4.8rem;
     transform: rotate(-90deg);
+    cursor: pointer;
 }
 
 #wrapper{

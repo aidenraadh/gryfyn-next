@@ -1,8 +1,25 @@
 import Link from 'next/link'
 import Button from './Button'
 import SVG from './SVG'
+import Popup from './Popup'
+import Form from './Form'
+import { useCallback, useState } from 'react'
 
 export default function Header(){
+
+    const [popupShown, setPopupShown] = useState(false)
+    const [usrEmailAddr, setUsrEmailAddr] = useState('')
+
+    const subscribe = useCallback(() => {
+        const options = {
+            method: 'POST',
+            body: JSON.stringify({email: usrEmailAddr})
+        };        
+        fetch('http://localhost:3000/api/subscribe', options)
+        .then(response => response.json())
+        // .then(response => console.log(response))
+        .catch(err => console.error(err));        
+    }, [usrEmailAddr])
 
     return (<>
         <nav  className="fixed top-0 left-0 flex flex-col items-center justify-between h-screen gap-0 p-4 bg-black py-7 mobile:py-2 tablet:flex-row tablet:w-full tablet:h-auto navbar">
@@ -26,9 +43,27 @@ export default function Header(){
             <a href="https://www.instagram.com/gryfyn.app/" className='flex flex-col tablet:hidden'>
                 <SVG name={'instagram'} fill_1={'#E8DFD4'} classes={'w-9 h-9 mobile:hidden'}/>
             </a>        
-            <Button classes={'text-lg fixed top-4 right-6'}>
+            <Button classes={'text-lg fixed top-4 right-6'} attr={{ onClick: () => {setPopupShown(true)} }}>
                 Discover More
             </Button>            
         </nav>
+        
+        <Popup
+                shown={popupShown}
+                toggleShown={() => {setPopupShown(state => !state)}}
+                body={
+                    <div className={"font-['basier_circle'] text-4xl flex flex-col justify-center items-center"}>
+                        Be the first to know
+                        <Form classes={'text-lg w-96 mt-4 mb-10'} attr={{
+                            value: usrEmailAddr,
+                            onChange: (e) => {setUsrEmailAddr(e.target.value)},
+                            placeholder: 'Please enter your email address'
+                        }}/>
+                        <Button classes={'text-lg'} attr={{ onClick: subscribe }}>
+                            Subscribe
+                        </Button>
+                    </div>
+                }
+            /> 
     </>)
 }
