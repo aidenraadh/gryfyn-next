@@ -185,6 +185,24 @@ body{
     width: 330px;
 }
 
+.footer{
+    background-color: #E5DFD6;
+    max-height: 27vh;
+}
+
+.footer-logo{
+    display: flex;
+    align-self: center;
+    max-width: 200px;
+}
+
+.footer-text{
+    padding-left: 6px;
+    padding-right: 6px;
+    max-height:50px;
+    color: #000000;
+}
+
 #discover-more{
     z-index: 99;
 }

@@ -3,28 +3,13 @@ import Link from 'next/link'
 import SVG from './SVG'
 // import Popup from './Popup'
 // import Form from './Form'
-import { useCallback, useState } from 'react'
 
 export default function Header(){
-
-    const [popupShown, setPopupShown] = useState(false)
-    const [usrEmailAddr, setUsrEmailAddr] = useState('')
-
-    const subscribe = useCallback(() => {
-        const options = {
-            method: 'POST',
-            body: JSON.stringify({email: usrEmailAddr})
-        };        
-        fetch('http://localhost:3000/api/subscribe', options)
-        .then(response => response.json())
-        // .then(response => console.log(response))
-        .catch(err => console.error(err));        
-    }, [usrEmailAddr])
 
     return (<>
         <nav  className="fixed top-0 left-0 flex flex-col items-center justify-between h-screen gap-0 p-4 bg-black py-7 mobile:py-2 tablet:flex-row tablet:w-full tablet:h-auto navbar">
             <SVG name={'fire'} classes={'w-16 tablet:hidden'}/>
-            <Link href="/">
+            <Link href="https://gryfyn.io/">
                 <a className="relative logo-link tablet:static">
                     <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1362.79 495.91" className="absolute tablet:static tablet:top-auto tablet:bottom-auto">
                         <path fill="#FFCD32" d="M598.57,113.99c-17.51-3.66-28.81-14.98-35.57-35.6l-.37-1.14-.37,1.14c-6.75,20.62-18.06,31.93-35.57,35.6l-1.84,.38,1.84,.38c17.51,3.67,28.81,14.98,35.57,35.6l.37,1.14,.37-1.14c6.75-20.62,18.05-31.93,35.57-35.6l1.84-.38-1.84-.38Z"/>
@@ -40,27 +25,18 @@ export default function Header(){
                     <span className="sr-only">Home</span>
                 </a>            
             </Link>
-            <a href="https://www.instagram.com/gryfyn.app/" className='flex flex-col tablet:hidden'>
+            <div className='flex flex-col'>
+            <a href="https://www.linkedin.com/company/gryfyn/" className='flex flex-col p-2 tablet:hidden'>
+                <SVG name={'linkedin'} fill_1={'#E8DFD4'} classes={'w-9 h-9 mobile:hidden'}/>
+            </a> 
+            <a href="https://www.instagram.com/gryfyn.app/" className='flex flex-col p-2 tablet:hidden'>
                 <SVG name={'instagram'} fill_1={'#E8DFD4'} classes={'w-9 h-9 mobile:hidden'}/>
-            </a>                       
+            </a>
+            <a href="./" className='flex flex-col p-2 tablet:hidden'>
+                <SVG name={'twitter'} fill_1={'#E8DFD4'} classes={'w-9 h-9 mobile:hidden'}/>
+            </a>
+            </div>                    
         </nav>
-        
-        {/* <Popup
-                shown={popupShown}
-                toggleShown={() => {setPopupShown(state => !state)}}
-                body={
-                    <div className={"font-['basier_circle'] text-4xl flex flex-col justify-center items-center"}>
-                        Be the first to know
-                        <Form classes={'text-lg w-96 mt-4 mb-10'} attr={{
-                            value: usrEmailAddr,
-                            onChange: (e) => {setUsrEmailAddr(e.target.value)},
-                            placeholder: 'Please enter your email address'
-                        }}/>
-                        <Button classes={'text-lg'} attr={{ onClick: subscribe }}>
-                            Subscribe
-                        </Button>
-                    </div>
-                }
-            />  */}
+
     </>)
 }
