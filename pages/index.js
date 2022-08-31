@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Script from 'next/script'
 import MainLayout from '../components/MainLayout'
 import LandingPageSection from '../components/LandingPageSection'
@@ -37,7 +38,7 @@ export default function Home(){
         // .then(response => console.log(response))
         .catch(err => console.error(err));        
     }, [usrEmailAddr])
-    
+
     return (<>
         <PageHead/>
         <MainLayout>
@@ -63,7 +64,7 @@ export default function Home(){
                             imagination
                             <span className='absolute w-2 h-2 bg-black' style={{top: '-1rem', left: '-0.6rem', width: '2rem'}}></span>
                             <SVG name={'star'} classes={'absolute anim-world-beyond-o'} fill_1={'#F7CE55'} attr={{
-                                style: {top: '-1rem', left: '-0.6rem', width: '2rem'}
+                                style: {top: '-0.9rem', left: '-0.7rem', width: '2rem'}
                             }}/>
                         </span>
                         <span className='relative'>
@@ -98,10 +99,10 @@ export default function Home(){
                             <span className='absolute bg-black' style={{left: '1.46em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <span className='absolute bg-black' style={{left: '4.23em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#FFCD32'} fill_2={'#0268A3'} attr={{
-                                style: {top: '0.2em', left: '1.4em', width: '0.8em'}
+                                style: {top: '0.19em', left: '1.4em', width: '0.8em'}
                             }}/>     
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#FFCD32'} fill_2={'#0268A3'} attr={{
-                                style: {top: '0.2em', left: '4.2em', width: '0.8em'}
+                                style: {top: '0.19em', left: '4.2em', width: '0.8em'}
                             }}/>                                                       
                         </span>
                         <SVG name={'star'} classes={'absolute w-20 anim-im-your-imagination-pattern1'} attr={{...getTriggerPos('im_imagination')}}/>  
@@ -302,10 +303,10 @@ export default function Home(){
                         </Button>
                     </span>
                     <span className='absolute bottom-0 right-0 flex justify-end w-full gap-8 p-6 bg-black'>
-                        <button type='button' onClick={() => {setPrivacyShown(true)}}>Privacy Policy</button>
-                        <button type='button' onClick={() => {setCookiesShown(true)}}>Cookies Policy</button>
-                        <button type='button' onClick={() => {setTermsShown(true)}}>Terms &#38; Conditions</button>
-                        <button type='button' onClick={() => {setResidenceShown(true)}}>Why is your country of residence needed?</button>
+                        <Link href="/privacy-policy"><a>Privacy Policy</a></Link>
+                        <Link href="/cookies-policy"><a>Cookies Policy</a></Link>
+                        <Link href="/terms-and-conditions"><a>Terms &#38; Conditions</a></Link>
+                        <Link href="/why-is-your-country-of-residence-needed"><a>Why is your country of residence needed?</a></Link>
                     </span>            
                 </LandingPageSection>      
             </div>

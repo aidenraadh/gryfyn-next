@@ -47,7 +47,7 @@
         transform: scale(1);
     }
     100%{
-        transform: scale(40) rotate(180deg); 
+        transform: scale(40) rotate(360deg); 
     }
 }
 
