@@ -17,12 +17,40 @@ export default function Home(){
     const [successSubscribe, setSuccessSubscribe] = useState(false)
 
 
+    // const subscribe = useCallback(() => {
+    //     const options = {
+    //         method: 'GET',
+    //         body: JSON.stringify({email: usrEmailAddr})
+    //     };        
+    //     fetch(`/api/subscribe?email=${usrEmailAddr}`, options)
+    //     .then(response => {
+    //         if(response.status === 400){
+    //             setUsrEmailAddr('')
+    //             setUsrEmailValid(false)
+    //             throw new Error('Please enter valid email address');
+    //         }
+    //         return response.json()
+    //     })
+    //     .then(response => {
+    //         setUsrEmailAddr('')
+    //         setUsrEmailValid(true)
+    //         setSuccessSubscribe(true)
+    //     })
+    //     .catch(err => {
+    //         console.error(err)
+    //     });        
+    // }, [usrEmailAddr])
+
     const subscribe = useCallback(() => {
         const options = {
-            method: 'GET',
-            // body: JSON.stringify({email: usrEmailAddr})
+            method: 'POST',
+            body: JSON.stringify({email: usrEmailAddr}),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "X-MailerLite-ApiKey": '8c569c7547905031e5272208f8e35262',
+            },            
         };        
-        fetch(`/api/subscribe?email=${usrEmailAddr}`, options)
+        fetch('https://cors.gryfyn.io/https://api.mailerlite.com/api/v2/subscribers', options)
         .then(response => {
             if(response.status === 400){
                 setUsrEmailAddr('')
@@ -39,7 +67,7 @@ export default function Home(){
         .catch(err => {
             console.error(err)
         });        
-    }, [usrEmailAddr])
+    }, [usrEmailAddr])    
 
     useEffect(() => {
         return () => {
