@@ -44,7 +44,7 @@ export default function Home(){
         <MainLayout>
             <div id="wrapper" className="wrapper">
                 <LandingPageSection classes={'relative flex flex-col'} tag={'header'} attr={{id: 'world-beyond'}}>
-                    <h1 className="text-5xl font-['neue_metana_regular'] w-full leading-tight tablet:flex tablet:flex-wrap tablet:justify-center">
+                    <h1 className="relative text-5xl font-['neue_metana_regular'] w-full leading-tight tablet:flex tablet:flex-wrap tablet:justify-center" style={{zIndex: '1'}}>
                         <span style={{marginRight: '0.5em'}}>A</span>
                         <span className='relative' style={{marginRight: '0.5em'}}>
                             world
@@ -73,7 +73,7 @@ export default function Home(){
                             <SVG name={'eye'} classes={'absolute eye-in-a'}/>                            
                         </span>
                     </h1>    
-                    <p className="flex items-center w-full mt-10 tablet:justify-center">
+                    <p className="relative flex items-center w-full mt-10 tablet:justify-center" style={{zIndex: '1'}}>
                         <span className="relative before:absolute before:rounded-full before:top-2 before:left-2.5 inline-block h-12 mr-6 border-2 rounded-full w-7 anim-scroll-to-explore before:content-[''] before:w-1 before:h-2"></span>
                         Scroll to explore
                     </p>
@@ -212,7 +212,7 @@ export default function Home(){
                 </LandingPageSection>
 
                 <LandingPageSection tag={'p'} classes={"flex flex-col items-center justify-center"} attr={{
-                    id: 'socialise', 'data-hold-leave': '600', 'data-hold-enter': '1100', 'data-slide-dur': '50ms',
+                    id: 'socialize', 'data-hold-leave': '600', 'data-hold-enter': '1100', 'data-slide-dur': '50ms',
                 }}>
                     <span className="flex flex-col items-center justify-center title">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-green">
