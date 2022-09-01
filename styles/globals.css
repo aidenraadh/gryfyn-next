@@ -716,6 +716,7 @@ body{
         bottom: -61vw;
         left: -7vw;
         width: 114vw;
+        z-index: -1;
     }    
     #im-adventure > span{
         width: 110%;
@@ -740,17 +741,7 @@ body{
     #world-beyond .eye-in-a{
         top: 0.3em;
     }     
-    /* #world-beyond .eye-black{
-        top: 0.45em;
-    }          */
-    /* #pattern-sun{
-        margin: 0;
-        height: 100vh;
-        bottom: auto;
-        right: auto;
-    } */
 }
-
 /*
 |--------------------------------------------------------------------------
 | Mobile Layout
@@ -773,11 +764,6 @@ body{
         top: 1rem;
         left: 2.5rem;
     }    
-    /* #star-divider{
-        bottom: -35vh;
-        right: 0;
-        width: 100%;
-    }         */
     #im-playground #sun{
         top: -21vw;
         width: 61vw;

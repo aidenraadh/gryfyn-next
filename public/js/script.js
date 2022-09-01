@@ -177,7 +177,7 @@ class FunnyScroll{
 }
 
 const funnyScroll = new FunnyScroll({
-    transDur: '900ms',
+    transDur: '500ms',
     callbacks: {
         '0': {
             enterEnd: () => {

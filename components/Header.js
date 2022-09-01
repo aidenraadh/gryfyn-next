@@ -8,7 +8,9 @@ export default function Header(){
 
     return (<>
         <nav  className="fixed top-0 left-0 flex flex-col items-center justify-between h-screen gap-0 p-4 bg-black py-7 mobile:py-2 tablet:flex-row tablet:w-full tablet:h-auto navbar">
+            <a href="https://gryfyn.io/">
             <SVG name={'fire'} classes={'w-16 tablet:hidden'}/>
+            </a>
             <Link href="https://gryfyn.io/">
                 <a className="relative logo-link tablet:static">
                     <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1362.79 495.91" className="absolute tablet:static tablet:top-auto tablet:bottom-auto">
