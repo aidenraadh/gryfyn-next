@@ -7,7 +7,7 @@ import Button from '../components/Button'
 import Form from '../components/Form'
 import Popup from '../components/Popup'
 import PageHead from '../components/PageHead'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export default function Home(){
     const [popupShown, setPopupShown] = useState(false)
@@ -38,6 +38,15 @@ export default function Home(){
             console.error(err)
         });        
     }, [usrEmailAddr])
+
+    useEffect(() => {
+        return () => {
+            document.body.style.height = 'auto'
+            document.body.style.touchAction = 'auto'
+            document.documentElement.style.height = 'auto'
+            document.documentElement.style.touchAction = 'auto'            
+        }
+    }, [])
 
     return (<>
         <PageHead/>
@@ -297,8 +306,8 @@ export default function Home(){
                             Unlock Now
                         </Button>
                     </span>
-                    <span className='absolute bottom-0 right-0 flex flex-col justify-end w-full gap-2 p-2 footer desktop:hidden tablet:showen '>
-                        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1362.79 495.91" className="footer-logo">
+                    <span className='absolute bottom-0 right-0 flex flex-col justify-end w-full gap-2 p-2 bg-black tablet:bg-body footer'>
+                        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1362.79 495.91" className="flex-shrink-1 footer-logo">
                             <path fill="#FFCD32" d="M598.57,113.99c-17.51-3.66-28.81-14.98-35.57-35.6l-.37-1.14-.37,1.14c-6.75,20.62-18.06,31.93-35.57,35.6l-1.84,.38,1.84,.38c17.51,3.67,28.81,14.98,35.57,35.6l.37,1.14,.37-1.14c6.75-20.62,18.05-31.93,35.57-35.6l1.84-.38-1.84-.38Z"/>
                             <path fill="#449947" d="M974.75,113.99c-17.51-3.66-28.81-14.98-35.57-35.6l-.37-1.14-.37,1.14c-6.75,20.62-18.06,31.93-35.57,35.6l-1.84,.38,1.84,.38c17.51,3.67,28.81,14.98,35.57,35.6l.37,1.14,.37-1.14c6.75-20.62,18.05-31.93,35.57-35.6l1.84-.38-1.84-.38Z"/>
                             <path fill="#00000" d="M1024.86,85.7c-31.7,0-57.4,25.7-57.4,57.4v57.3h0c0,15.8-12.86,28.66-28.66,28.66s-28.66-12.86-28.66-28.66h0v-57.3c0-31.7-25.7-57.4-57.4-57.4h0v114.77h0c.04,47.49,38.55,86.04,86.06,86.04h0c15.8,0,28.62,12.81,28.62,28.62s-12.81,28.62-28.62,28.62-28.54-12.75-28.61-28.49h-57.35c.07,47.42,38.53,85.84,85.96,85.84s85.97-38.49,85.97-85.97c0-22.02-8.29-42.09-21.9-57.3,13.65-15.22,21.97-35.32,21.98-57.36h0V85.7h0Z"/>
@@ -309,22 +318,22 @@ export default function Home(){
                             <circle fill="#EA7542" cx="203.98" cy="315" r="22.1" transform="translate(-162.99 236.5) rotate(-45)"/>
                             <circle fill="#2488C1" cx="1128.46" cy="171.69" r="22.1"/>
                         </svg> 
-                        <div className='flex flex-row items-center justify-center mobile:text-xs'>
+                        <div className='flex flex-row items-center justify-end tablet:justify-center mobile:text-xs text-body tablet:text-black tablet:py-0 laptop:py-6 desktop:py-6 laptop:gap-5 desktop:gap-5'>
                             <Link href="/privacy-policy"><a className='footer-text'>Privacy Policy</a></Link>
                             <Link href="/cookies-policy"><a className='footer-text'>Cookies Policy</a></Link>
                             <Link href="/terms-and-conditions"><a className='footer-text'>Terms &#38; Conditions</a></Link>
                             <Link href="/why-is-your-country-of-residence-needed"><a className='footer-text'>Why is your country of residence needed?</a></Link>
                         </div>  
-                        <div className='flex flex-row items-center justify-center'>
-                        <a href="https://www.linkedin.com/company/gryfyn/" className='flex flex-col p-2'>
-                            <SVG name={'linkedin'} fill_1={'#00000'} classes={'w-9 h-9'}/>
-                        </a> 
-                        <a href="https://www.instagram.com/gryfyn.app/" className='flex flex-col p-2'>
-                            <SVG name={'instagram'} fill_1={'#00000'} classes={'w-9 h-9'}/>
-                        </a>
-                        <a href="./" className='flex flex-col p-2'>
-                            <SVG name={'twitter'} fill_1={'#00000'} classes={'w-9 h-9'}/>
-                        </a>
+                        <div className='flex flex-row items-center justify-center social-icons'>
+                            <a href="https://www.linkedin.com/company/gryfyn/" className='flex flex-col p-2'>
+                                <SVG name={'linkedin'} fill_1={'#00000'} classes={'w-9 h-9'}/>
+                            </a> 
+                            <a href="https://www.instagram.com/gryfyn.app/" className='flex flex-col p-2'>
+                                <SVG name={'instagram'} fill_1={'#00000'} classes={'w-9 h-9'}/>
+                            </a>
+                            <a href="./" className='flex flex-col p-2'>
+                                <SVG name={'twitter'} fill_1={'#00000'} classes={'w-9 h-9'}/>
+                            </a>
                         </div>    
                     </span>      
                 </LandingPageSection>      

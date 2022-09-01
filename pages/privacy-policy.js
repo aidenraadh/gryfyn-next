@@ -8,7 +8,7 @@ export default function Privacy(){
     return (<>
     <PageHead/>
     <Header/>
-    <LandingPageSection>
+    <LandingPageSection classes={'footer-description'}>
     <spam className="privacy-title font-['neue_metana_bold']">
         Privacy Policy
     </spam>

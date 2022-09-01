@@ -350,6 +350,10 @@ setTimeout(() => {
     funnyScroll.init()
     if(window.innerWidth <= 1100){
         document.body.style.overflowY = "auto";
+        document.body.style.height = '10000vh'
+        document.body.style.touchAction = 'none'
+        document.documentElement.style.height = '10000vh'
+        document.documentElement.style.touchAction = 'none'
     }
 }, 6800)
 
