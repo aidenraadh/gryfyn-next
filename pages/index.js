@@ -16,38 +16,10 @@ export default function Home(){
     const [usrEmailValid, setUsrEmailValid] = useState(true)
     const [successSubscribe, setSuccessSubscribe] = useState(false)
 
-    const testgetapi = useCallback(() => {
-        const options = {
-            method: 'GET',
-        };           
-        fetch('/api/testgetapi', options)
-        .then(response => response.json())
-        .then(response => {
-            console.log(response)
-        })
-        .catch(err => {
-            console.error(err)
-        });         
-    }, [])
-
-    const testpostapi = useCallback(() => {
-        const options = {
-            method: 'POST',
-        };           
-        fetch('/api/testpostapi', options)
-        .then(response => response.json())
-        .then(response => {
-            console.log(response)
-        })
-        .catch(err => {
-            console.error(err)
-        });         
-    }, [])
-
 
     const subscribe = useCallback(() => {
         const options = {
-            method: 'POST',
+            method: 'PUT',
             body: JSON.stringify({email: usrEmailAddr})
         };        
         fetch('/api/subscribe', options)
@@ -123,13 +95,7 @@ export default function Home(){
                     </h1>    
                     <p className="relative flex items-center w-full mt-10 tablet:justify-center" style={{zIndex: '1'}}>
                         <span className="relative before:absolute before:rounded-full before:top-2 before:left-2.5 inline-block h-12 mr-6 border-2 rounded-full w-7 anim-scroll-to-explore before:content-[''] before:w-1 before:h-2"></span>
-                        Scroll to explore
-                        <Button attr={{onClick: testgetapi}}>
-                            Test get
-                        </Button>
-                        <Button attr={{onClick: testpostapi}}>
-                            Test post
-                        </Button>                        
+                        Scroll to explore                       
                     </p>
                     <SVG name={'star'} classes={'absolute'} attr={{
                         id: "star-divider",
@@ -364,8 +330,8 @@ export default function Home(){
                             <circle fill="#2488C1" cx="1128.46" cy="171.69" r="22.1"/>
                         </svg> 
                         <div className='flex flex-row items-center justify-end text-w tablet:justify-center mobile:text-xs text-body tablet:text-black tablet:py-0 laptop:py-6 desktop:py-6 laptop:gap-5 desktop:gap-5'>
-                        <a href="https://www.iubenda.com/privacy-policy/51877991">Privacy Policy</a>
-                        <a href="https://www.iubenda.com/privacy-policy/51877991/cookie-policy">Cookies Policy</a>
+                            <Link href="/privacy-policy"><a className='footer-text desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
+                            <Link href="/cookies-policy"><a className='footer-text desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
                             <Link href="/terms-and-conditions"><a className='footer-text desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
                             <Link href="/why-is-your-country-of-residence-needed"><a className='footer-text desktop:text-white hover-underline-animation'>Why is your country of residence needed?</a></Link>
                         </div>  
