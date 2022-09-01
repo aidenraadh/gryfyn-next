@@ -8,7 +8,7 @@ export default function CountryResidenceNeeded(){
     return (<>
     <PageHead/>
     <Header/>
-    <LandingPageSection>
+    <LandingPageSection classes={'footer-description'}>
     <spam className="privacy-title font-['neue_metana_bold'] text-yellow">
         Why is your country of residence needed?
     </spam>

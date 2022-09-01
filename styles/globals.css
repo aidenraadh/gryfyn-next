@@ -720,6 +720,7 @@ body{
         bottom: -61vw;
         left: -7vw;
         width: 114vw;
+        z-index: -1;
     }    
     #im-adventure > span{
         width: 110%;
@@ -760,7 +761,6 @@ body{
         display: flex;
     }
 }
-
 /*
 |--------------------------------------------------------------------------
 | Mobile Layout
@@ -783,11 +783,6 @@ body{
         top: 1rem;
         left: 2.5rem;
     }    
-    /* #star-divider{
-        bottom: -35vh;
-        right: 0;
-        width: 100%;
-    }         */
     #im-playground #sun{
         top: -21vw;
         width: 61vw;

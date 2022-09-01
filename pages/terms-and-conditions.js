@@ -8,7 +8,7 @@ export default function TermsConditions(){
     return (<>
     <PageHead/>
     <Header/>
-    <LandingPageSection>
+    <LandingPageSection classes={'footer-description'}>
     <spam className="privacy-title font-['neue_metana_bold']">
         Terms &#38; Conditions
     </spam>

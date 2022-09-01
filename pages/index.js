@@ -283,7 +283,7 @@ export default function Home(){
                     </p>
                 </LandingPageSection> 
                 
-                <LandingPageSection tag={'div'} classes={'relative flex flex-col items-start justify-center'} attr={{
+                <LandingPageSection tag={'div'} classes={'relative flex flex-col items-start justify-start'} attr={{
                     id: 'your-key', 'data-hold-leave': 600, 'data-hold-enter': 800, 'data-slide-dur': '50ms',
                 }}>
                     <span className="relative flex flex-col font-['neue_metana_regular'] text-5xl w-full mobile:items-center mobile:text-4xl">
@@ -335,7 +335,7 @@ export default function Home(){
                                 <SVG name={'twitter'} fill_1={'#00000'} classes={'w-9 h-9'}/>
                             </a>
                         </div>    
-                    </span>      
+                    </span>     
                 </LandingPageSection>      
             </div>
             <aside>
