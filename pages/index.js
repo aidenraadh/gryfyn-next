@@ -19,10 +19,10 @@ export default function Home(){
 
     const subscribe = useCallback(() => {
         const options = {
-            method: 'PUT',
-            body: JSON.stringify({email: usrEmailAddr})
+            method: 'GET',
+            // body: JSON.stringify({email: usrEmailAddr})
         };        
-        fetch('/api/subscribe', options)
+        fetch(`/api/subscribe?email=${usrEmailAddr}`, options)
         .then(response => {
             if(response.status === 400){
                 setUsrEmailAddr('')

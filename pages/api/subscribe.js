@@ -1,5 +1,6 @@
 export default async function Subscribe(req, res){
-    const body = JSON.parse(req.body)
+    // const body = JSON.parse(req.body)
+    const body = {email: req.query.email}
     const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     // Make sure user fill their email
     if(body.email === '' || body.email === null){
