@@ -783,5 +783,11 @@ body{
     }    
     #world-beyond h1{
         font-size: 10vw;
-    }        
+    }
+    #your-key > span{
+        font-size: 8.2vw;
+    }
+    #your-key > span svg{
+        width: 1.55em;
+    }
 }
