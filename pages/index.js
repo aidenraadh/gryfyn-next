@@ -16,7 +16,6 @@ export default function Home(){
     const [usrEmailValid, setUsrEmailValid] = useState(true)
     const [successSubscribe, setSuccessSubscribe] = useState(false)
 
-
     // const subscribe = useCallback(() => {
     //     const options = {
     //         method: 'GET',
