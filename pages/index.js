@@ -20,7 +20,7 @@ export default function Home(){
             method: 'POST',
             body: JSON.stringify({email: usrEmailAddr})
         };        
-        fetch('https://gryfyn.io/api/subscribe', options)
+        fetch('/api/subscribe', options)
         .then(response => {
             if(response.status === 400){
                 setUsrEmailAddr('')

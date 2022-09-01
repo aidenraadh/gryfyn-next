@@ -13,8 +13,8 @@ export default async function Subscribe(req, res){
     const options = {
         method: 'POST',
         headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            'Content-Type': 'application/json',
+            "Accept": "application/json",
+            "Content-type": "application/json",
             'X-MailerLite-ApiKey': '8c569c7547905031e5272208f8e35262'
         },
         body: JSON.stringify({email: body.email})
