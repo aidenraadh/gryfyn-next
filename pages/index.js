@@ -330,8 +330,8 @@ export default function Home(){
                             <circle fill="#2488C1" cx="1128.46" cy="171.69" r="22.1"/>
                         </svg> 
                         <div className='flex flex-row items-center justify-end text-w tablet:justify-center mobile:text-xs text-body tablet:text-black tablet:py-0 laptop:py-6 desktop:py-6 laptop:gap-5 desktop:gap-5'>
-                            <Link href="/privacy-policy"><a className='footer-text desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
-                            <Link href="/cookies-policy"><a className='footer-text desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
+                        <a href="https://www.iubenda.com/privacy-policy/51877991">Privacy Policy</a>
+                        <a href="https://www.iubenda.com/privacy-policy/51877991/cookie-policy">Cookies Policy</a>
                             <Link href="/terms-and-conditions"><a className='footer-text desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
                             <Link href="/why-is-your-country-of-residence-needed"><a className='footer-text desktop:text-white hover-underline-animation'>Why is your country of residence needed?</a></Link>
                         </div>  
