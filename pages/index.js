@@ -7,6 +7,7 @@ import Button from '../components/Button'
 import Form from '../components/Form'
 import Popup from '../components/Popup'
 import PageHead from '../components/PageHead'
+import Head from 'next/head'
 import { useCallback, useEffect, useState } from 'react'
 
 export default function Home(){
@@ -49,6 +50,15 @@ export default function Home(){
     }, [])
 
     return (<>
+        <Head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+        <meta name="msapplication-TileColor" content="#da532c"/>
+        <meta name="theme-color" content="#ffffff"/>
+        </Head>
         <PageHead/>
         <MainLayout>
             <div id="wrapper" className="wrapper">
@@ -227,7 +237,7 @@ export default function Home(){
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-green">
                             socialise
                         </span>
-                        <span className="text-2xl text-center desc">
+                        <span className="text-2xl text-center desc p-4">
                             and connect with a world of opportunity.<br/><br/>
                             Communicate with those who inspire us <br className="mobile:hidden"/>
                             to explore the boundaries of imagination <br className="mobile:hidden"/>
@@ -318,11 +328,11 @@ export default function Home(){
                             <circle fill="#EA7542" cx="203.98" cy="315" r="22.1" transform="translate(-162.99 236.5) rotate(-45)"/>
                             <circle fill="#2488C1" cx="1128.46" cy="171.69" r="22.1"/>
                         </svg> 
-                        <div className='flex flex-row items-center justify-end tablet:justify-center mobile:text-xs text-body tablet:text-black tablet:py-0 laptop:py-6 desktop:py-6 laptop:gap-5 desktop:gap-5'>
-                            <Link href="/privacy-policy"><a className='footer-text'>Privacy Policy</a></Link>
-                            <Link href="/cookies-policy"><a className='footer-text'>Cookies Policy</a></Link>
-                            <Link href="/terms-and-conditions"><a className='footer-text'>Terms &#38; Conditions</a></Link>
-                            <Link href="/why-is-your-country-of-residence-needed"><a className='footer-text'>Why is your country of residence needed?</a></Link>
+                        <div className='flex flex-row items-center justify-end text-w tablet:justify-center mobile:text-xs text-body tablet:text-black tablet:py-0 laptop:py-6 desktop:py-6 laptop:gap-5 desktop:gap-5'>
+                            <Link href="/privacy-policy"><a className='footer-text desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
+                            <Link href="/cookies-policy"><a className='footer-text desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
+                            <Link href="/terms-and-conditions"><a className='footer-text desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
+                            <Link href="/why-is-your-country-of-residence-needed"><a className='footer-text desktop:text-white hover-underline-animation'>Why is your country of residence needed?</a></Link>
                         </div>  
                         <div className='flex flex-row items-center justify-center social-icons'>
                             <a href="https://www.linkedin.com/company/gryfyn/" className='flex flex-col p-2'>
@@ -331,9 +341,9 @@ export default function Home(){
                             <a href="https://www.instagram.com/gryfyn.app/" className='flex flex-col p-2'>
                                 <SVG name={'instagram'} fill_1={'#00000'} classes={'w-9 h-9'}/>
                             </a>
-                            <a href="./" className='flex flex-col p-2'>
+                            {/* <a href="./" className='flex flex-col p-2'>
                                 <SVG name={'twitter'} fill_1={'#00000'} classes={'w-9 h-9'}/>
-                            </a>
+                            </a> */}
                         </div>    
                     </span>     
                 </LandingPageSection>      

@@ -196,12 +196,30 @@ body{
     max-width: 200px;
 }
 
-.footer-text{
-    padding-left: 6px;
-    padding-right: 6px;
-    max-height:50px;
-    /* color: #000000; */
-}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: black;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 
 .footer .social-icons{
     display: none;
@@ -677,6 +695,24 @@ body{
 
 /*
 |--------------------------------------------------------------------------
+| Laptop Layout
+|--------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 110px) {
+
+    .footer-text{
+        padding-left: 6px;
+        padding-right: 6px;
+        max-height:50px;
+        color:#E8DFD4;
+    }
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
 | Tablet Layout
 |--------------------------------------------------------------------------
 |
@@ -759,6 +795,12 @@ body{
     }    
     .footer .social-icons{
         display: flex;
+    }
+    .footer-text{
+        padding-left: 6px;
+        padding-right: 6px;
+        max-height:50px;
+        color: #000000;
     }
 }
 /*
