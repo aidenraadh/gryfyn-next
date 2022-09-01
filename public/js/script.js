@@ -1,22 +1,3 @@
-// const vpWidth = window.innerWidth // Viewport width
-
-// // Initiate Skroll.js
-// S = skrollr.init({
-//         constants: {
-//                 // List of all horaizontal top scroll position triggering 
-//                 // the animations inside landing page        
-//                 im_imagination: (vpWidth > 1100 ? '50p' : '90p'),
-//                 create_future: (vpWidth > 1100 ? '150p' : '150p'),
-//                 im_playground: (vpWidth > 1100 ? '200p' : '270p'),
-//                 play_roles: (vpWidth > 1100 ? '310p' : '380p'),
-//                 im_home: (vpWidth > 1100 ? '400p' : '460p'),
-//                 socialize: (vpWidth > 1100 ? '500p' : '560p'),  
-//                 im_adventure: (vpWidth > 1100 ? '600p' : '670p'),
-//                 explore: (vpWidth > 1100 ? '680p' : '780p'),
-//                 im_wallet: (vpWidth > 1100 ? '760p' : '870p'),       
-// 	}    
-// })
-
 class FunnyScroll{
     constructor(settings = {}){
         this.wrapper = document.getElementById('wrapper')    
@@ -115,11 +96,7 @@ class FunnyScroll{
             this.wrapper.style.transform = 'translate('+(
                 this.mobileMode ? `0%, ${this.currSlideVal}%` : `${this.currSlideVal}%, 0%` 
             )+')';
-        }
-        // Slide the wrapper to the current section instantly
-        // this.wrapper.style.transform = 'translate('+(
-        //     this.mobileMode ? `0%, ${this.currSlideVal}%` : `${this.currSlideVal}%, 0%` 
-        // )+')';        
+        }     
         if(reset){
             this.isSliding = false
             this.reset = false
@@ -258,10 +235,12 @@ const funnyScroll = new FunnyScroll({
                 section.classList.add('enter-end')                   
             },  
             'leaveStart': (section) => {
-                section.firstChild.firstChild.style = 'transform: translateY(-70%); opacity: 0;';
-                section.firstChild.lastChild.style = 'transform: translateY(70%); opacity: 0 !important;';      
+                section.style = 'opacity: 0;';
+                section.firstChild.firstChild.style = 'transform: translateY(-70%);';
+                section.firstChild.lastChild.style = 'transform: translateY(70%);';      
             },             
             'leaveEnd': (section) => {
+                section.style = ''
                 section.firstChild.firstChild.style = '';
                 section.firstChild.lastChild.style = '';                  
                 section.classList.remove('enter-start')
@@ -371,13 +350,6 @@ setTimeout(() => {
     funnyScroll.init()
     if(window.innerWidth <= 1100){
         document.body.style.overflowY = "auto";
-        // console.log(window.pageYOffset)
-        // window.pageYOffset = 10000
-        // console.log(window.pageYOffset)
     }
-    // document.body.ontouchmove = () => {
-    //     console.log(window.pageYOffset)
-    //     console.log(document.documentElement.scrollTop)
-    // }
 }, 6800)
 

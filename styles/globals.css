@@ -243,6 +243,10 @@ body{
     width: 0.6em;
     height: 0.45em;
 }    
+
+#play-roles{
+    transition: opacity 800ms;
+}
 /*
 |--------------------------------------------------------------------------
 | All Animation Classes
@@ -333,7 +337,7 @@ body{
 }
 
 #play-roles .desc{
-    transition: opacity 800ms , transform 800ms !important;
+    transition: transform 800ms;
 }
 
 #play-roles.enter-end .desc{

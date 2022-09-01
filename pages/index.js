@@ -9,17 +9,6 @@ import Popup from '../components/Popup'
 import PageHead from '../components/PageHead'
 import { useCallback, useState } from 'react'
 
-// Get horaizontal scroll position of the page that will trigger the animation
-// that part of Skrollr.js
-const getTriggerPos = (posName) => {
-    const posData = {'data-0': 'animation-play-state: paused;'}
-
-    posData['data-_'+posName] = 'animation-play-state: running;'
-    
-    return posData
-}
-
-
 export default function Home(){
     const [popupShown, setPopupShown] = useState(false)
     const [usrEmailAddr, setUsrEmailAddr] = useState('')
@@ -115,8 +104,8 @@ export default function Home(){
                             }}/>                                                       
                         </span>
                         <span className='relative star-container'>
-                            <SVG name={'star'} classes={'absolute anim-im-your-imagination-pattern1'} attr={{...getTriggerPos('im_imagination')}}/>  
-                            <SVG name={'star'} classes={'absolute anim-im-your-imagination-pattern2'} attr={{...getTriggerPos('im_imagination')}}/> 
+                            <SVG name={'star'} classes={'absolute anim-im-your-imagination-pattern2'}/> 
+                            <SVG name={'star'} classes={'absolute anim-im-your-imagination-pattern1'}/>  
                         </span>                                                                                                        
                     </span>
                 </LandingPageSection>
@@ -124,7 +113,7 @@ export default function Home(){
                 <LandingPageSection classes={'relative flex flex-col items-center justify-center'} tag={'p'} attr={{
                     id: 'create-future', 'data-hold-enter': '1100'
                 }}>
-                    <span {...getTriggerPos('create_future')} className="flex flex-col items-center justify-center anim-create-future">
+                    <span className="flex flex-col items-center justify-center anim-create-future">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-yellow">create</span>
                         <span className="text-xl text-center">
                             the world of the future,<br/>
@@ -164,13 +153,13 @@ export default function Home(){
                 </LandingPageSection>
 
                 <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'} attr={{
-                    id: "play-roles", 'data-hold-leave': 900, 'data-hold-enter': 1500
+                    id: "play-roles", 'data-hold-leave': 900, 'data-hold-enter': 1500,
                 }}>
-                    <span {...getTriggerPos('play_roles')} className="flex flex-col items-center justify-center body">
+                    <span className="flex flex-col items-center justify-center body">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-orange title">
                             play
                         </span>
-                        <span {...getTriggerPos('play_roles')} className="text-2xl text-center desc">
+                        <span className="text-2xl text-center desc">
                             any roles of your desire,<br className=""/>
                             fulfill your fantasies.<br className=""/>
                             Bring utility to its full potential.
@@ -241,15 +230,12 @@ export default function Home(){
                 <LandingPageSection tag={'p'} classes={'relative flex flex-col items-center justify-center'} attr={{
                     id: 'im-adventure', 'data-hold-leave': 600, 'data-hold-enter': 2800, 'data-slide-dur': '50ms',
                 }}>
-                    <span className="relative flex flex-col items-center justify-center font-['neue_metana_regular'] anim-eye-zoom-out tablet:w-full"
-                    {...getTriggerPos('im_adventure')}>
+                    <span className="relative flex flex-col items-center justify-center font-['neue_metana_regular'] anim-eye-zoom-out tablet:w-full">
                         <SVG name={'eye'} classes={'w-full'} fill_1={'#E8DFD4'} fill_2={'#1996CE'}/>                         
-                        <span className="absolute text-4xl text-white im-your"
-                        {...getTriggerPos('im_adventure')}>
+                        <span className="absolute text-4xl text-white im-your">
                             I am your
                         </span>             
-                        <span className="absolute text-black opacity-0 text-7xl adventure"
-                        {...getTriggerPos('im_adventure')}>
+                        <span className="absolute text-black opacity-0 text-7xl adventure">
                             <span>adventure</span>
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#000000'} fill_2={'#FFCD32'} attr={{
                                 style: {top: '0.16em', left: '-0.08em', width: '0.84em'}
@@ -258,19 +244,17 @@ export default function Home(){
                                 style: {top: '-0.1em', left: '4.69em', width: '0.6em'}
                             }}/>  
                         </span>         
-                        <SVG name={'eye'} classes={'absolute top-0 left-0 w-full anim-eye-lid-blinking'} fill_1={'#000000'} fill_2={'#000000'} attr={{
-                            ...getTriggerPos('im_adventure')
-                        }}/>                        
+                        <SVG name={'eye'} classes={'absolute top-0 left-0 w-full anim-eye-lid-blinking'} fill_1={'#000000'} fill_2={'#000000'}/>                        
                     </span>                  
                 </LandingPageSection>   
 
                 <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'} attr={{
                     id: 'explore', 'data-hold-leave': 600, 'data-hold-enter': 1200, 'data-slide-dur': '50ms',
                 }}>
-                    <span {...getTriggerPos('explore')} className="mb-6 text-6xl explore font-['neue_metana_bold'] text-blue">
+                    <span className="mb-6 text-6xl explore font-['neue_metana_bold'] text-blue">
                         explore
                     </span>
-                    <span {...getTriggerPos('explore')} className="text-2xl text-center explore-desc">
+                    <span className="text-2xl text-center explore-desc">
                         the (un)known.<br/>
                         Go on the journey that is unique to you,<br/>
                         and watch Web 3 grow as you grow with it.
@@ -280,11 +264,11 @@ export default function Home(){
                 <LandingPageSection classes={'flex flex-col items-center justify-center'} attr={{
                     id: 'im-your-wallet', 'data-hold-leave': 600, 'data-hold-enter': 1500, 'data-slide-dur': '50ms',
                 }}>
-                    <h2 className="flex mobile:flex-col mobile:text-center items-center flex-wrap gap-5 mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular']" {...getTriggerPos('im_wallet')}>
+                    <h2 className="flex mobile:flex-col mobile:text-center items-center flex-wrap gap-5 mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular']">
                         I am your 
                         <span className="font-['neue_metana_bold']">wallet.</span>
                     </h2>
-                    <p {...getTriggerPos('im_wallet')} className="text-2xl text-center anim-im-your-wallet-desc">
+                    <p className="text-2xl text-center anim-im-your-wallet-desc">
                         An NFT-centric wallet for the curious ones. <br className="mobile:hidden"/>
                         Experience the digital world like never before.
                     </p>
@@ -374,13 +358,6 @@ export default function Home(){
                 }
             />            
         </MainLayout>
-        {/* <Script
-            id="skrollr-js" src="js/skrollr.min.js"
-            strategy="beforeInteractive"
-            onError={(e) => {
-                console.error('Script failed to load', e)
-            }}            
-        />     */}
         <Script
             id="script-js" src="js/script.js"
             strategy="afterInteractive"
