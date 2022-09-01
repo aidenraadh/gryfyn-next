@@ -16,6 +16,35 @@ export default function Home(){
     const [usrEmailValid, setUsrEmailValid] = useState(true)
     const [successSubscribe, setSuccessSubscribe] = useState(false)
 
+    const testgetapi = useCallback(() => {
+        const options = {
+            method: 'GET',
+        };           
+        fetch('/api/testgetapi', options)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+        })
+        .catch(err => {
+            console.error(err)
+        });         
+    }, [])
+
+    const testpostapi = useCallback(() => {
+        const options = {
+            method: 'POST',
+        };           
+        fetch('/api/testpostapi', options)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+        })
+        .catch(err => {
+            console.error(err)
+        });         
+    }, [])
+
+
     const subscribe = useCallback(() => {
         const options = {
             method: 'POST',
@@ -95,6 +124,12 @@ export default function Home(){
                     <p className="relative flex items-center w-full mt-10 tablet:justify-center" style={{zIndex: '1'}}>
                         <span className="relative before:absolute before:rounded-full before:top-2 before:left-2.5 inline-block h-12 mr-6 border-2 rounded-full w-7 anim-scroll-to-explore before:content-[''] before:w-1 before:h-2"></span>
                         Scroll to explore
+                        <Button attr={{onClick: testgetapi}}>
+                            Test get
+                        </Button>
+                        <Button attr={{onClick: testpostapi}}>
+                            Test post
+                        </Button>                        
                     </p>
                     <SVG name={'star'} classes={'absolute'} attr={{
                         id: "star-divider",
@@ -237,7 +272,7 @@ export default function Home(){
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-green">
                             socialise
                         </span>
-                        <span className="text-2xl text-center desc p-4">
+                        <span className="p-4 text-2xl text-center desc">
                             and connect with a world of opportunity.<br/><br/>
                             Communicate with those who inspire us <br className="mobile:hidden"/>
                             to explore the boundaries of imagination <br className="mobile:hidden"/>
