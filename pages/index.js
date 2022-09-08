@@ -15,31 +15,7 @@ export default function Home(){
     const [usrEmailAddr, setUsrEmailAddr] = useState('')
     const [usrEmailValid, setUsrEmailValid] = useState(true)
     const [successSubscribe, setSuccessSubscribe] = useState(false)
-
-    // const subscribe = useCallback(() => {
-    //     const options = {
-    //         method: 'GET',
-    //         body: JSON.stringify({email: usrEmailAddr})
-    //     };        
-    //     fetch(`/api/subscribe?email=${usrEmailAddr}`, options)
-    //     .then(response => {
-    //         if(response.status === 400){
-    //             setUsrEmailAddr('')
-    //             setUsrEmailValid(false)
-    //             throw new Error('Please enter valid email address');
-    //         }
-    //         return response.json()
-    //     })
-    //     .then(response => {
-    //         setUsrEmailAddr('')
-    //         setUsrEmailValid(true)
-    //         setSuccessSubscribe(true)
-    //     })
-    //     .catch(err => {
-    //         console.error(err)
-    //     });        
-    // }, [usrEmailAddr])
-
+  
     const subscribe = useCallback(() => {
         const options = {
             method: 'POST',
@@ -48,7 +24,7 @@ export default function Home(){
                 "Content-type": "application/json; charset=UTF-8",
                 "X-MailerLite-ApiKey": '8c569c7547905031e5272208f8e35262',
             },            
-        };        
+        };
         fetch('https://cors.gryfyn.io/https://api.mailerlite.com/api/v2/subscribers', options)
         .then(response => {
             if(response.status === 400){
@@ -86,6 +62,22 @@ export default function Home(){
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
         <meta name="msapplication-TileColor" content="#da532c"/>
         <meta name="theme-color" content="#ffffff"/>
+        <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
         <PageHead/>
         <MainLayout>
@@ -144,10 +136,10 @@ export default function Home(){
                             <span className='absolute bg-black' style={{left: '1.46em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <span className='absolute bg-black' style={{left: '4.23em', top: '0.42em', width: '0.6em', height: '0.4em'}}></span>
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#FFCD32'} fill_2={'#0268A3'} attr={{
-                                style: {top: '0.16em', left: '1.4em', width: '0.82em'}
+                                style: {top: '0.12em', left: '1.35em', width: '0.85em'}
                             }}/>     
                             <SVG name={'eye'} classes={'absolute'} fill_1={'#FFCD32'} fill_2={'#0268A3'} attr={{
-                                style: {top: '0.16em', left: '4.18em', width: '0.82em'}
+                                style: {top: '0.12em', left: '4.13em', width: '0.85em'}
                             }}/>                                                       
                         </span>
                         <span className='relative star-container'>
@@ -313,12 +305,12 @@ export default function Home(){
                 }}>
                     <h2 className="flex mobile:flex-col mobile:text-center items-center flex-wrap gap-5 mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular']">
                         I am your 
-                        <span className="font-['neue_metana_bold']">wallet.</span>
+                        <span className="font-['neue_metana_bold']"> wallet.</span>
                     </h2>
-                    <p className="text-2xl text-center anim-im-your-wallet-desc">
+                    <span className="text-2xl text-center anim-im-your-wallet-desc">
                         An NFT-centric wallet for the curious ones. <br className="mobile:hidden"/>
                         Experience the digital world like never before.
-                    </p>
+                    </span>
                 </LandingPageSection> 
                 
                 <LandingPageSection tag={'div'} classes={'relative flex flex-col items-start justify-start'} attr={{
@@ -357,10 +349,10 @@ export default function Home(){
                             <circle fill="#2488C1" cx="1128.46" cy="171.69" r="22.1"/>
                         </svg> 
                         <div className='flex flex-row items-center justify-end text-w tablet:justify-center mobile:text-xs text-body tablet:text-black tablet:py-0 laptop:py-6 desktop:py-6 laptop:gap-5 desktop:gap-5'>
-                            <Link href="/privacy-policy"><a className='footer-text desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
-                            <Link href="/cookies-policy"><a className='footer-text desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
-                            <Link href="/terms-and-conditions"><a className='footer-text desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
-                            <Link href="/why-is-your-country-of-residence-needed"><a className='footer-text desktop:text-white hover-underline-animation'>Why is your country of residence needed?</a></Link>
+                            <Link href="/privacy-policy"><a className='footer-texts text-center desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
+                            <Link href="/cookies-policy"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
+                            <Link href="/terms-and-conditions"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
+                            <Link href="/why-is-your-country-of-residence-needed"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Why is your country of residence needed?</a></Link>
                         </div>  
                         <div className='flex flex-row items-center justify-center social-icons'>
                             <a href="https://www.linkedin.com/company/gryfyn/" className='flex flex-col p-2'>
@@ -369,9 +361,9 @@ export default function Home(){
                             <a href="https://www.instagram.com/gryfyn.app/" className='flex flex-col p-2'>
                                 <SVG name={'instagram'} fill_1={'#00000'} classes={'w-9 h-9'}/>
                             </a>
-                            {/* <a href="./" className='flex flex-col p-2'>
+                            <a href="https://twitter.com/gryfynwallet" className='flex flex-col p-2'>
                                 <SVG name={'twitter'} fill_1={'#00000'} classes={'w-9 h-9'}/>
-                            </a> */}
+                            </a>
                         </div>    
                     </span>     
                 </LandingPageSection>      
@@ -411,6 +403,18 @@ export default function Home(){
             onError={(e) => {
                 console.error('Script failed to load', e)
             }}            
-        />               
+        /> 
+        <Script id="script-js">{`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '7933809916689684'); 
+            fbq('track', 'PageView');
+        `}</Script>
     </>)
 }

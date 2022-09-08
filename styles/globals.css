@@ -186,7 +186,6 @@ body{
 }
 
 .footer{
-    /* background-color: #E5DFD6; */
     max-height: 27vh;
 }
 
@@ -195,7 +194,6 @@ body{
     align-self: center;
     max-width: 200px;
 }
-
 
 .hover-underline-animation {
     display: inline-block;
@@ -219,6 +217,10 @@ body{
   .hover-underline-animation:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+
+  .text-2xl{
+    font-size: 1.2rem;
   }
 
 .footer .social-icons{
@@ -666,6 +668,10 @@ body{
     animation-fill-mode: both;
     animation-delay: 500ms;    
     animation-play-state: paused;
+}
+
+#your-key.enter-start .footer{
+    animation: anim-fade-in 3s;
 }
 
 #your-key.enter-end .your-key,

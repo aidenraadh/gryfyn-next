@@ -32,9 +32,9 @@ export default function Header(){
             <a href="https://www.instagram.com/gryfyn.app/" className='flex flex-col p-2 tablet:hidden'>
                 <SVG name={'instagram'} fill_1={'#E8DFD4'} classes={'w-9 h-9 mobile:hidden'}/>
             </a>
-            {/* <a href="./" className='flex flex-col p-2 tablet:hidden'>
+            <a href="https://twitter.com/gryfynwallet" className='flex flex-col p-2 tablet:hidden'>
                 <SVG name={'twitter'} fill_1={'#E8DFD4'} classes={'w-9 h-9 mobile:hidden'}/>
-            </a> */}
+            </a>
             </div>                    
         </nav>
 
