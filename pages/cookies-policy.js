@@ -11,7 +11,7 @@ export default function Cookies(){
     <PageHead/>
     <Header/>
     <LandingPageSection classes={'footer-description'}>
-    <h1 className="privacy-title font-['neue_metana_bold']">
+    <h1 className="privacy-title font-['neue_metana_bold'] flex flex-col text-center">
         Cookies Policy
     </h1>
     <div className="scroll-box font-['basier_circle']">
@@ -246,7 +246,7 @@ export default function Cookies(){
         </>}/>      
     </div>
     <div className="flex flex-col items-center content-center justify-center">
-        <spam className="privacy-sub font-['neue_metana_regular']">i am your <b className="font-['neue_metana_bold']">wallet.</b></spam>
+        <spam className="privacy-sub font-['neue_metana_regular'] flex flex-row text-center">i am your&nbsp;<b className="font-['neue_metana_bold']">wallet.</b></spam>
         <spam className="font-['basier_circle']">An NFT-centric wallet for the curious ones. </spam> 
         <spam className="font-['basier_circle']">Experience the digital world like never before.</spam>
     </div>
