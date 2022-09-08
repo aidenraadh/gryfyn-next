@@ -28,6 +28,16 @@ input{
 }
 
 @font-face {
+    font-family: "basier circle medium";
+    src: url("fonts/basier-cufonfonts/BasierSquare-Medium.ttf");
+}
+
+@font-face {
+    font-family: "basier circle semibold";
+    src: url("fonts/basier-cufonfonts/BasierCircle-SemiBold.ttf");
+}
+
+@font-face {
     font-family: "neue metana regular";
     src: url("fonts/neue_metana/NeueMetana-Regular.otf");
 }
@@ -41,7 +51,29 @@ body{
     color: #E1D8CC;
     background-color: #000000;
 }
+.accordion > header{
+	position: relative;
+}
 
+.accordion > header .heading{
+	flex-shrink: 0;
+	transition: color 0.3s;
+}
+
+
+.accordion > header .toggle{
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.accordion .body-wrapper{
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.3s;
+}
+                       
 .navbar{
     z-index: 98;
 }
