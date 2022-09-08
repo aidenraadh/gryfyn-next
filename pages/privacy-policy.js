@@ -91,6 +91,7 @@ export default function Privacy(){
                     <span><span className="font-['basier_circle_semibold']">Owner contact email:</span>info@gryfyn.io</span>
                 </div>
             </address>
+            <a href='https://www.iubenda.com/privacy-policy/51877991/legal' className='flex flex-col text-center p-5 text-2xl'><b className="font-['neue_metana_bold']">Show the complete Privacy Policy</b></a>
         </div>
         <div className="flex flex-col items-center content-center justify-center">
             <spam className="privacy-sub font-['neue_metana_regular']">i am your <b className="font-['neue_metana_bold']">wallet.</b></spam>
@@ -99,10 +100,10 @@ export default function Privacy(){
         </div>
     </LandingPageSection>
     <span className='fixed bottom-0 right-0 flex justify-end w-full gap-8 p-6 bg-black'>
-        <a href="https://www.iubenda.com/privacy-policy/51877991">Privacy Policy</a>
-        <a href="https://www.iubenda.com/privacy-policy/51877991/cookie-policy">Cookies Policy</a>
+        <Link href="/privacy-policy">Privacy Policy</Link>
+        <Link href="/cookies-policy">Cookies Policy</Link>
         <Link href="/terms-and-conditions"><a>Terms &#38; Conditions</a></Link>
-        <Link href="/why-is-your-country-of-residence-needed"><a>Why is your country of residence needed?</a></Link>
+        <Link href="/faq"><a>FAQ</a></Link>
     </span>     
     </>)
 }

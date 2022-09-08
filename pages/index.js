@@ -351,7 +351,7 @@ export default function Home(){
                             <Link href="/privacy-policy"><a className='footer-texts text-center desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
                             <Link href="/cookies-policy"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
                             <Link href="/terms-and-conditions"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
-                            <Link href="/why-is-your-country-of-residence-needed"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Why is your country of residence needed?</a></Link>
+                            <Link href="/faq"><a className='footer-text text-center desktop:text-white hover-underline-animation'>FAQ</a></Link>
                         </div>  
                         <div className='flex flex-row items-center justify-center social-icons'>
                             <a href="https://www.linkedin.com/company/gryfyn/" className='flex flex-col p-2'>

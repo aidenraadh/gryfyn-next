@@ -349,10 +349,10 @@ export default function TermsConditions(){
     </div>
     </LandingPageSection>
     <span className='fixed bottom-0 right-0 flex justify-end w-full gap-8 p-6 bg-black'>
-        <a href="https://www.iubenda.com/privacy-policy/51877991">Privacy Policy</a>
-        <a href="https://www.iubenda.com/privacy-policy/51877991/cookie-policy">Cookies Policy</a>
+        <Link href="/privacy-policy">Privacy Policy</Link>
+        <Link href="/cookies-policy">Cookies Policy</Link>
         <Link href="/terms-and-conditions"><a>Terms &#38; Conditions</a></Link>
-        <Link href="/why-is-your-country-of-residence-needed"><a>Why is your country of residence needed?</a></Link>
+        <Link href="/faq"><a>FAQ</a></Link>
     </span>     
     </>)
 }

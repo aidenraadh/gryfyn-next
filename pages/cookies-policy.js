@@ -18,10 +18,10 @@ export default function Cookies(){
         <p>
             This document informs Users about the technologies that help this Application to achieve the purposes described below. 
             Such technologies allow the Owner to access and store information (for example by using a Cookie) or use resources 
-            (for example by running a script) on a User's device as they interact with this Application.
+            (for example by running a script) on a User&apos;s device as they interact with this Application.
         </p><br/>
         <p>
-            For simplicity, all such technologies are defined as "Trackers" within this document &#8211; 
+            For simplicity, all such technologies are defined as &quot;Trackers&quot; within this document &#8211; 
             unless there is a reason to differentiate.
         </p>
         <p>
@@ -30,20 +30,20 @@ export default function Cookies(){
             the term Cookies is only used where it is specifically meant to indicate that particular type of Tracker.
         </p><br/>
         <p>
-            Some of the purposes for which Trackers are used may also require the User's consent. Whenever consent is given, 
+            Some of the purposes for which Trackers are used may also require the User&apos;s consent. Whenever consent is given, 
             it can be freely withdrawn at any time following the instructions provided in this document.
         </p><br/>
         <p>
-            This Application uses Trackers managed directly by the Owner (so-called "first-party" Trackers) and Trackers 
-            that enable services provided by a third-party (so-called "third-party" Trackers). 
+            This Application uses Trackers managed directly by the Owner (so-called &quot;first-party&quot; Trackers) and Trackers 
+            that enable services provided by a third-party (so-called &quot;third-party&quot; Trackers). 
             Unless otherwise specified within this document, third-party providers may access the Trackers managed by them.
         </p>
         <p>
             The validity and expiration periods of Cookies and other similar Trackers may vary depending on the lifetime 
-            set by the Owner or the relevant provider. Some of them expire upon termination of the User's browsing session.
+            set by the Owner or the relevant provider. Some of them expire upon termination of the User&apos;s browsing session.
         </p>
         <p>
-            In addition to what's specified in the descriptions within each of the categories below, Users may find 
+            In addition to what&apos;s specified in the descriptions within each of the categories below, Users may find 
             more precise and updated information regarding lifetime specification as well as any other relevant information &#8211; 
             such as the presence of other Trackers - in the linked privacy policies of the respective third-party providers 
             or by contacting the Owner.        
@@ -52,7 +52,7 @@ export default function Cookies(){
             Activities strictly necessary for the operation of this Application and delivery of the Service
         </h5><br/>
         <p>
-            This Application uses so-called "technical" Cookies and other similar Trackers to carry out activities 
+            This Application uses so-called &quot;technical&quot; Cookies and other similar Trackers to carry out activities 
             that are strictly necessary for the operation or delivery of the Service.
         </p><br/>      
         <h5 className="font-['neue_metana_bold'] text-white">
@@ -69,7 +69,7 @@ export default function Cookies(){
                 </p><br/>
                 <h6 className="block font-['basier_circle_semibold']">Google Analytics (Google LLC)</h6><br/>
                 <p>
-                    Google Analytics is a web analysis service provided by Google LLC ("Google"). Google utilizes 
+                    Google Analytics is a web analysis service provided by Google LLC (&quot;Google&quot;). Google utilizes 
                     the Data collected to track and examine the use of this Application, to prepare reports on its activities 
                     and share them with other Google services.
                 </p><br/>     
@@ -94,8 +94,8 @@ export default function Cookies(){
                 </ul>                                                            
         </>}/><br/>     
         <p>
-            This Application uses Trackers managed directly by the Owner (so-called "first-party" Trackers) and Trackers 
-            that enable services provided by a third-party (so-called "third-party" Trackers). Unless otherwise specified 
+            This Application uses Trackers managed directly by the Owner (so-called &quot;first-party&quot; Trackers) and Trackers 
+            that enable services provided by a third-party (so-called &quot;third-party&quot; Trackers). Unless otherwise specified 
             within this document, third-party providers may access the Trackers managed by them.
         </p><br/>    
         <h5 className="font-['neue_metana_bold'] text-white">
@@ -115,14 +115,14 @@ export default function Cookies(){
         </p><br/>        
         <p>
             It is also possible, via relevant browser or device features, to delete previously stored Trackers, 
-            including those used to remember the User's initial consent.
+            including those used to remember the User&apos;s initial consent.
         </p><br/>                 
         <p>
-            Other Trackers in the browser's local memory may be cleared by deleting the browsing history.
+            Other Trackers in the browser&apos;s local memory may be cleared by deleting the browsing history.
         </p><br/>         
         <p>
             With regard to any third-party Trackers, Users can manage their preferences and withdraw their consent 
-            via the related opt-out link (where provided), by using the means indicated in the third party's privacy policy, 
+            via the related opt-out link (where provided), by using the means indicated in the third party&apos;s privacy policy, 
             or by contacting the third party.
         </p><br/>       
         <h6 className="block font-['basier_circle_semibold']">Locating Tracker Settings</h6><br/>
@@ -148,7 +148,7 @@ export default function Cookies(){
         <p>
             Users are free to decide whether or not to grant consent. However, please note that Trackers help this Application 
             to provide a better experience and advanced functionalities to Users 
-            (in line with the purposes outlined in this document). Therefore, in the absence of the User's consent, 
+            (in line with the purposes outlined in this document). Therefore, in the absence of the User&apos;s consent, 
             the Owner may be unable to provide related features.
         </p><br/>
         <h5 className="font-['neue_metana_bold'] text-white">
@@ -185,11 +185,11 @@ export default function Cookies(){
                     which can include: the IP addresses or domain names of the computers utilized by the Users who use this Application, 
                     the URI addresses (Uniform Resource Identifier), the time of the request, 
                     the method utilized to submit the request to the server, the size of the file received in response, 
-                    the numerical code indicating the status of the server's answer (successful outcome, error, etc.), 
+                    the numerical code indicating the status of the server&apos;s answer (successful outcome, error, etc.), 
                     the country of origin, the features of the browser and the operating system utilized by the User, 
                     the various time details per visit (e.g., the time spent on each page within the Application) and the details about 
                     the path followed within the Application with special reference to the sequence of pages visited, and other parameters about 
-                    the device operating system and/or the User's IT environment.
+                    the device operating system and/or the User&apos;s IT environment.
                 </p><br/>     
                 <h6 className="block font-['basier_circle_semibold']">User</h6><br/>
                 <p>
@@ -226,13 +226,13 @@ export default function Cookies(){
                 </p><br/>       
                 <h6 className="block font-['basier_circle_semibold']">Cookie</h6><br/>
                 <p>
-                    Cookies are Trackers consisting of small sets of data stored in the User's browser.
+                    Cookies are Trackers consisting of small sets of data stored in the User&apos;s browser.
                 </p><br/>   
                 <h6 className="block font-['basier_circle_semibold']">Tracker</h6><br/>
                 <p>
                     Tracker indicates any technology - e.g Cookies, unique identifiers, web beacons, embedded scripts, 
                     e-tags and fingerprinting - that enables the tracking of Users, for example by accessing or storing 
-                    information on the User's device.
+                    information on the User&apos;s device.
                 </p><br/>            
                 <hr/><br/>
                 <h6 className="block font-['basier_circle_semibold']">Legal information</h6><br/>
@@ -255,7 +255,7 @@ export default function Cookies(){
         <Link href="/privacy-policy"><a>Privacy Policy</a></Link>
         <Link href="/cookies-policy"><a>Cookies Policy</a></Link>
         <Link href="/terms-and-conditions"><a>Terms &#38; Conditions</a></Link>
-        <Link href="/why-is-your-country-of-residence-needed"><a>Why is your country of residence needed?</a></Link>
+        <Link href="/faq"><a>FAQ</a></Link>
     </span>     
     </>)
 }
