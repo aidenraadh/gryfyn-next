@@ -132,10 +132,9 @@ export default function Home(){
                 </LandingPageSection>      
                 
                 <LandingPageSection classes={'flex flex-col items-center justify-center bg-red'} tag={'p'} attr={{
-                    id: 'im-your-imagination', 'data-hold-leave': 500 , 'data-hold-enter': 2000,
+                    id: 'im-your-imagination', 'data-hold-leave': 300 , 'data-hold-enter': 1200,
                 }}>
-                    <span className="relative flex flex-col mobile:items-center font-['neue_metana_regular'] content"
-                    data-0="opacity: 1; transform: scale(1);" data-115p="opacity: 1; transform: scale(1);" data-130p="opacity: 0; transform: scale(0.9);">
+                    <span className="relative flex flex-col mobile:items-center font-['neue_metana_regular'] content">
                         <span className="text-4xl text-white im-your-imagination-fading-text">
                             I am your
                         </span>
@@ -158,7 +157,7 @@ export default function Home(){
                 </LandingPageSection>
 
                 <LandingPageSection classes={'relative flex flex-col items-center justify-center'} tag={'p'} attr={{
-                    id: 'create-future', 'data-hold-enter': '1100'
+                    id: 'create-future', 'data-hold-enter': '700'
                 }}>
                     <span className="flex flex-col items-center justify-center anim-create-future">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-yellow">create</span>

@@ -155,7 +155,7 @@ body{
 }
 
 #im-your-imagination .content{
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
 .scroll-box{
@@ -296,7 +296,7 @@ body{
 }
 
 #im-your-imagination.enter-start .im-your-imagination-fading-text{
-    animation: im-your-imagination-fading-text 1800ms ease 1;
+    animation: im-your-imagination-fading-text 1200ms ease 1;
     animation-fill-mode: both;   
     animation-play-state: paused;  
 }
@@ -306,8 +306,8 @@ body{
 }
 
 #im-your-imagination.enter-start .anim-im-your-imagination-pattern1{
-    animation: anim-im-your-imagination-pattern1 1400ms ease 1;
-    animation-delay: 800ms;
+    animation: anim-im-your-imagination-pattern1 1000ms ease 1;
+    animation-delay: 500ms;
     animation-fill-mode: both;     
     animation-play-state: paused; 
 }
@@ -317,8 +317,8 @@ body{
 }
 
 #im-your-imagination.enter-start .anim-im-your-imagination-pattern2{
-    animation: anim-im-your-imagination-pattern2 1400ms ease 1;
-    animation-delay: 500ms;
+    animation: anim-im-your-imagination-pattern2 1000ms ease 1;
+    animation-delay: 200ms;
     animation-fill-mode: both;  
     animation-play-state: paused;    
 }
@@ -328,7 +328,7 @@ body{
 }
 
 #create-future.enter-start .anim-create-future{
-    animation: anim-create-future 1000ms ease 1;
+    animation: anim-create-future 600ms ease 1;
     animation-fill-mode: both; 
     animation-play-state: paused;
 }
