@@ -14,6 +14,8 @@ module.exports = {
       },
       fontFamily: {
         'basier_circle': ['basier circle'],
+        'basier_circle_medium': ['basier circle medium'],
+        'basier_circle_semibold': ['basier circle semibold'],
         'neue_metana_regular': ['neue metana regular'],
         'neue_metana_bold': ['neue metana bold'],
       },  
