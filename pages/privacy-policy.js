@@ -19,7 +19,7 @@ export default function Privacy(){
             </h5><br/>     
             <dl className='grid grid-cols-2 gap-12 tablet:grid-cols-1'>
                 <div className='flex gap-3'>
-                    <SVG name={'chart_bar_square'} classes={'w-12 h-12'}/>
+                    <SVG name={'chart_bar_square'} classes={'w-12 h-12 shrink-0'}/>
                     <div>
                         <dt className="font-['basier_circle_semibold'] text-white mb-2">Analytics</dt>
                         <dd>
@@ -29,7 +29,7 @@ export default function Privacy(){
                     </div>
                 </div>        
                 <div className='flex gap-3'>
-                    <SVG name={'envelope_open'} classes={'w-11 h-11'}/>
+                    <SVG name={'envelope_open'} classes={'w-11 h-11 shrink-0'}/>
                     <div>
                         <dt className="font-['basier_circle_semibold'] text-white mb-2">Contacting the User</dt>
                         <dd>
@@ -39,7 +39,7 @@ export default function Privacy(){
                     </div>
                 </div> 
                 <div className='flex gap-3'>
-                    <SVG name={'document_text'} classes={'w-11 h-11'}/>
+                    <SVG name={'document_text'} classes={'w-11 h-11 shrink-0'}/>
                     <div>
                         <dt className="font-['basier_circle_semibold'] text-white mb-2">
                             Interaction with external social networks and platforms
@@ -50,7 +50,7 @@ export default function Privacy(){
                     </div>
                 </div>      
                 <div className='flex gap-3'>
-                    <SVG name={'document_text'} classes={'w-11 h-11'}/>
+                    <SVG name={'document_text'} classes={'w-11 h-11 shrink-0'}/>
                     <div>
                         <dt className="font-['basier_circle_semibold'] text-white mb-2">Managing contacts and sending messages</dt>
                         <dd>
@@ -60,7 +60,7 @@ export default function Privacy(){
                     </div>
                 </div>  
                 <div className='flex gap-3'>
-                    <SVG name={'document_text'} classes={'w-11 h-11'}/>
+                    <SVG name={'document_text'} classes={'w-11 h-11 shrink-0'}/>
                     <div>
                         <dt className="font-['basier_circle_semibold'] text-white mb-2">Managing support and contact requests</dt>
                         <dd>
@@ -69,7 +69,7 @@ export default function Privacy(){
                     </div>
                 </div>  
                 <div className='flex gap-3'>
-                    <SVG name={'document_text'} classes={'w-11 h-11'}/>
+                    <SVG name={'document_text'} classes={'w-11 h-11 shrink-0'}/>
                     <div>
                         <dt className="font-['basier_circle_semibold'] text-white mb-2">Tag Management</dt>
                         <dd>
@@ -83,7 +83,7 @@ export default function Privacy(){
                 Contact Information
             </h5><br/>
             <address className='flex gap-4 not-italic'>
-                <SVG name={'user'} classes={'w-12 h-12'}/>
+                <SVG name={'user'} classes={'w-12 h-12 shrink-0'}/>
                 <div>
                     <span className="font-['basier_circle_semibold']">Owner and Data Controller</span><br/>
                     <span>Gryfyn HK Limited - Unit 417-421, Cyberport 1, 100</span><br/>

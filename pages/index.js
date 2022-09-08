@@ -376,7 +376,7 @@ export default function Home(){
                 </LandingPageSection>      
             </div>
             <aside>
-                <Button classes={'text-lg fixed top-4 right-6'} attr={{ onClick: () => {setPopupShown(true)}, id: 'discover-more' }}>
+                <Button classes={'text-lg fixed top-4 right-6'} attr={{ id: 'discover-more' }}>
                     Discover More
                 </Button>   
             </aside>   
