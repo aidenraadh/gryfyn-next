@@ -9,7 +9,7 @@ export default function LoadingScreen(){
 
         let timeout = setTimeout(() => {
             sunLoader.style.display = "none";
-        }, 6800);
+        }, 3600);
         
         return () => {
             clearTimeout(timeout)

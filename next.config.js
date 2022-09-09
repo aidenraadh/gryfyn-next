@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  trailingSlash: true,
   webpackDevMiddleware: (config) => {
     // Solve compiling problem via vagrant
     config.watchOptions = {

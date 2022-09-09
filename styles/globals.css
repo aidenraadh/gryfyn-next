@@ -116,7 +116,7 @@ body{
 
 #preloader{
     animation: preloader 0ms;
-    animation-delay: 3300ms;
+    animation-delay: 2200ms;
     animation-fill-mode: both;
     background:#000000;
     height: 100vh;
@@ -126,37 +126,37 @@ body{
 }
   
 #preloader .rectangle{
-    animation: move-left 600ms ease-in-out alternate, anim-fade-out 0s;
+    animation: move-left 300ms ease-in-out alternate, anim-fade-out 0s;
     animation-iteration-count: 2, 1;
     animation-fill-mode: none, forwards;
-    animation-delay: 0ms, 1150ms;
+    animation-delay: 0ms, 650ms;
 }
 
 #preloader .rectangle:nth-child(2){
-    animation: move-right 600ms ease-in-out alternate, anim-fade-out 0s;
+    animation: move-right 300ms ease-in-out alternate, anim-fade-out 0s;
     animation-iteration-count: 2, 1;
     animation-fill-mode: none, forwards;
-    animation-delay: 0ms, 1150ms;    
+    animation-delay: 0ms, 650ms;    
 }
 
 #preloader .star{
-    animation: spin-90 1000ms ease, anim-fade-in 0s ease;
+    animation: spin-90 700ms ease, anim-fade-in 0s ease;
     animation-fill-mode: none, both;
     animation-direction: normal, normal;
     animation-iteration-count: 1, 1;
-    animation-delay: 1150ms, 1150ms;    
+    animation-delay: 650ms, 650ms;    
 }
 
 #preloader .eye{
     animation: anim-fade-in 0s ease;
     animation-fill-mode: both;
-    animation-delay: 2300ms;        
+    animation-delay: 1550ms;        
 }
 
 #preloader .eye-lid{
-    animation: eye-open 2500ms ease;
+    animation: eye-open 1800ms ease;
     animation-fill-mode: both;
-    animation-delay: 2100ms;        
+    animation-delay: 1300ms;        
     transform-origin: center 10%;
 }
 
@@ -170,11 +170,11 @@ body{
 
 #sun-loader{
     z-index: 100;
-    animation: scale-out 13s ease 4.8s 1 forwards;
+    animation: scale-out 6s ease 2.8s 1 forwards;
 }
 
 .loading-sun{
-    animation: spin 2s ease 3.3s;
+    animation: spin 1s ease 2.3s;
     fill: var(--orange-color);
     transform-origin: center;
 }
@@ -301,7 +301,7 @@ body{
 }    
 
 #play-roles{
-    transition: opacity 800ms;
+    transition: opacity 300ms;
 }
 /*
 |--------------------------------------------------------------------------
@@ -370,9 +370,8 @@ body{
 #create-future.enter-end .anim-create-future{
     animation-play-state: running;
 }
-
 #play-roles.enter-start .body{
-    animation: anim-create-future 1000ms ease 1;
+    animation: anim-create-future 500ms ease 1;
     animation-fill-mode: both; 
     animation-play-state: paused;
 }
@@ -382,30 +381,30 @@ body{
 }
 
 #play-roles.enter-end .title{
-    transition: opacity 800ms, transform 800ms;
+    transition: opacity 300ms, transform 300ms;
 }
 
 #play-roles.enter-start .desc{
-    animation: anim-fade-in 1000ms ease 1;
+    animation: anim-fade-in 500ms ease 1;
     animation-fill-mode: both; 
-    animation-delay: 800ms;
+    animation-delay: 300ms;
     animation-play-state: paused;    
 }
 
 #play-roles .desc{
-    transition: transform 800ms;
+    transition: transform 300ms;
 }
 
 #play-roles.enter-end .desc{
     animation-play-state: running;
 }
-
+/*-400*/
 #socialize{
-    transition: opacity 0.5s;
+    transition: opacity 0.3s;
 }
 
 #socialize.enter-start .title{
-    animation: anim-create-future 1000ms ease 1;
+    animation: anim-create-future 500ms ease 1;
     animation-fill-mode: both; 
     animation-play-state: paused;
 }
@@ -415,9 +414,9 @@ body{
 }
 
 #socialize.enter-start .desc{
-    animation: anim-fade-in 1000ms ease 1;
+    animation: anim-fade-in 500ms ease 1;
     animation-fill-mode: both; 
-    animation-delay: 800ms;
+    animation-delay: 300ms;
     animation-play-state: paused;    
 }
 
@@ -439,11 +438,11 @@ body{
 }
 
 #im-your-wallet{
-    transition: opacity 0.5s;
+    transition: opacity 0.2s;
 }
 
 #im-your-wallet.enter-start .anim-im-your-wallet-title{
-    animation: anim-im-your-wallet-title 1000ms ease 1, anim-fade-in 1000ms ease 1;
+    animation: anim-im-your-wallet-title 400ms ease 1, anim-fade-in 400ms ease 1;
     animation-fill-mode: both; 
     animation-play-state: paused;
 }
@@ -453,8 +452,8 @@ body{
 }
 
 #im-your-wallet.enter-start .anim-im-your-wallet-desc{
-    animation: anim-im-your-wallet-desc 1000ms ease 1, anim-fade-in 1000ms ease 1;
-    animation-delay: 800ms;
+    animation: anim-im-your-wallet-desc 400ms ease 1, anim-fade-in 400ms ease 1;
+    animation-delay: 300ms;
     animation-fill-mode: both; 
     animation-play-state: paused;
 }
@@ -472,9 +471,9 @@ body{
 }
 
 #im-adventure.enter-start .anim-eye-lid-blinking{
-    animation: eye-lid-blinking 3000ms linear;
+    animation: eye-lid-blinking 2200ms linear;
     animation-delay: 100ms;
-    transform-origin: 50% 27%;
+    transform-origin: 50% -10%;
     animation-fill-mode: both;
     animation-play-state: paused;
 }
@@ -484,7 +483,7 @@ body{
 }
 
 #im-adventure.enter-start .anim-eye-zoom-out{
-    animation: anim-eye-zoom-out 1100ms ease;
+    animation: anim-eye-zoom-out 600ms ease;
     animation-fill-mode: both;
     animation-play-state: paused;    
 }
@@ -496,7 +495,7 @@ body{
 #im-adventure.enter-start .adventure{
     animation: anim-fade-in;
     animation-duration: 0ms;
-    animation-delay: 2000ms;
+    animation-delay: 1500ms;
     animation-fill-mode: both;
     animation-play-state: paused; 
 }
@@ -508,7 +507,7 @@ body{
 #im-adventure.enter-start .im-your{
     animation: anim-fade-out;
     animation-duration: 0ms;
-    animation-delay: 2000ms;
+    animation-delay: 1500ms;
     animation-fill-mode: both;
     animation-play-state: paused; 
 }
@@ -518,12 +517,12 @@ body{
 }
 
 #explore{
-    transition: opacity 0.5s;
+    transition: opacity 0.2s;
 }
 
 #explore.enter-start .explore,
 #explore.enter-start .explore-desc{
-    animation: anim-fade-in 1000ms ease 1;
+    animation: anim-fade-in 600ms ease 1;
     animation-fill-mode: both; 
     animation-play-state: paused;    
 }
@@ -534,16 +533,15 @@ body{
 }
 
 #explore.enter-start .explore-desc{
-    animation-delay: 600ms;   
+    animation-delay: 200ms;   
 }
 
-
 #im-your-home{
-    transition: opacity 800ms, transform 800ms;
+    transition: opacity 400ms, transform 400ms;
 }
 
 #im-your-home.enter-start .anim-im-your-home-box{
-    animation: anim-im-your-home-box 1800ms ease-in;
+    animation: anim-im-your-home-box 1200ms ease-in;
     animation-fill-mode: both;   
     animation-play-state: paused; 
 }
@@ -553,9 +551,9 @@ body{
 }
 
 #im-your-home.enter-start .anim-im-your-home-inner-box{
-    animation: anim-im-your-home-inner-box 2000ms ease;
+    animation: anim-im-your-home-inner-box 1100ms ease;
     animation-fill-mode: both;
-    animation-delay: 1400ms;
+    animation-delay: 1100ms;
     transform-origin: center bottom;
     animation-play-state: paused;
 }
@@ -565,9 +563,9 @@ body{
 }
 
 #im-your-home.enter-start .anim-im-your-home-squares{
-    animation: anim-im-your-home-squares 900ms ease;
+    animation: anim-im-your-home-squares 500ms ease;
     animation-fill-mode: both;
-    animation-delay: 2500ms;
+    animation-delay: 2100ms;
     animation-play-state: paused;
 }
 
@@ -578,7 +576,7 @@ body{
 #im-your-home.enter-start .im-your-text{
     animation-name: anim-fade-out;
     animation-duration: 0ms;
-    animation-delay: 1600ms;
+    animation-delay: 1300ms;
     animation-play-state: paused;
     animation-fill-mode: both;
 }
@@ -588,7 +586,7 @@ body{
 }
 
 #im-your-home.enter-start .home-text{
-    animation: anim-fade-in 0ms 1700ms, anim-im-your-home-home-text 500ms ease 1700ms;
+    animation: anim-fade-in 0ms 1700ms, anim-im-your-home-home-text 100ms ease 1700ms;
     animation-play-state: paused, paused;
     animation-fill-mode: both, both;
 }
@@ -617,8 +615,8 @@ body{
 }
 
 #im-playground.enter-start #im-your{
-    animation: anim-fade-out 800 ease;
-    animation-delay: 1800ms;
+    animation: anim-fade-out 200 ease;
+    animation-delay: 1000ms;
     animation-fill-mode: both;
     animation-play-state: paused;
 } 
@@ -630,8 +628,8 @@ body{
 #im-playground.enter-start #load-bar{
     animation: anim-im-playground-load-bar, anim-fade-out;
     animation-timing-function: linear, ease;
-    animation-duration: 1800ms, 800ms;
-    animation-delay: 0ms, 1800ms;
+    animation-duration: 1000ms, 200ms;
+    animation-delay: 0ms, 1000ms;
     animation-fill-mode: both;
     transform-origin: left center;
     animation-play-state: paused;
@@ -642,7 +640,7 @@ body{
 } 
 
 #im-playground.enter-start .playground{
-    animation: anim-im-playground-playground 800ms;
+    animation: anim-im-playground-playground 600ms;
     animation-fill-mode: both;
     animation-play-state: paused;
 } 
@@ -652,23 +650,23 @@ body{
 } 
 
 #im-playground .playground:nth-child(1){
-    animation-delay: 2000ms;
+    animation-delay: 1200ms;
 } 
 
 #im-playground .playground:nth-child(2){
-    animation-delay: 2100ms;
+    animation-delay: 1300ms;
 } 
 
 #im-playground .playground:nth-child(3){
-    animation-delay: 2200ms;
+    animation-delay: 1400ms;
 } 
 
 #im-playground .playground:nth-child(4){
-    animation-delay: 2300ms;
+    animation-delay: 1500ms;
 } 
 
 #im-playground .playground:nth-child(5){
-    animation-delay: 2400ms;
+    animation-delay: 1600ms;
 } 
 
 #your-key{

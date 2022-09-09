@@ -162,7 +162,7 @@ export default function Home(){
                 </LandingPageSection>
 
                 <LandingPageSection tag={'p'} classes={"relative flex flex-col items-center justify-center font-['neue_metana_regular']"} attr={{
-                    id: 'im-playground', 'data-hold-enter': 3000
+                    id: 'im-playground', 'data-hold-enter': 2000
                 }}>
                     <span className='absolute flex flex-col items-center justify-center gap-8 tracking-widest text-7xl text-blue playground-words' aria-hidden="true">
                         <span className='playground'>playground</span>
@@ -191,7 +191,7 @@ export default function Home(){
                 </LandingPageSection>
 
                 <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'} attr={{
-                    id: "play-roles", 'data-hold-leave': 900, 'data-hold-enter': 1500,
+                    id: "play-roles", 'data-hold-leave': 500, 'data-hold-enter': 700,
                 }}>
                     <span className="flex flex-col items-center justify-center body">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-orange title">
@@ -206,7 +206,7 @@ export default function Home(){
                 </LandingPageSection>        
 
                 <LandingPageSection tag={'p'} classes={"flex flex-col items-center justify-center font-['neue_metana_regular']"} attr={{
-                    id: 'im-your-home', 'data-hold-leave': 900, 'data-hold-enter': 3500, 'data-slide-dur': '50ms',
+                    id: 'im-your-home', 'data-hold-leave': 900, 'data-hold-enter': 2500, 'data-slide-dur': '50ms',
                 }}>
                     <span className="relative flex flex-col items-center justify-center border-8 border-body w-96 h-96 anim-im-your-home-box">
                         <span className="absolute bottom-0 left-0 w-full h-full anim-im-your-home-inner-box bg-body" ></span>
@@ -250,7 +250,7 @@ export default function Home(){
                 </LandingPageSection>
 
                 <LandingPageSection tag={'p'} classes={"flex flex-col items-center justify-center"} attr={{
-                    id: 'socialize', 'data-hold-leave': '600', 'data-hold-enter': '1100', 'data-slide-dur': '50ms',
+                    id: 'socialize', 'data-hold-leave': '400', 'data-hold-enter': '600', 'data-slide-dur': '50ms',
                 }}>
                     <span className="flex flex-col items-center justify-center title">
                         <span className="mb-6 text-6xl font-['neue_metana_bold'] text-green">
@@ -266,7 +266,7 @@ export default function Home(){
                 </LandingPageSection>         
 
                 <LandingPageSection tag={'p'} classes={'relative flex flex-col items-center justify-center'} attr={{
-                    id: 'im-adventure', 'data-hold-leave': 600, 'data-hold-enter': 2800, 'data-slide-dur': '50ms',
+                    id: 'im-adventure', 'data-hold-leave': 600, 'data-hold-enter': 2000, 'data-slide-dur': '50ms',
                 }}>
                     <span className="relative flex flex-col items-center justify-center font-['neue_metana_regular'] anim-eye-zoom-out tablet:w-full">
                         <SVG name={'eye'} classes={'w-full'} fill_1={'#E8DFD4'} fill_2={'#1996CE'}/>                         
@@ -287,7 +287,7 @@ export default function Home(){
                 </LandingPageSection>   
 
                 <LandingPageSection tag={'p'} classes={'flex flex-col items-center justify-center'} attr={{
-                    id: 'explore', 'data-hold-leave': 600, 'data-hold-enter': 1200, 'data-slide-dur': '50ms',
+                    id: 'explore', 'data-hold-leave': 200, 'data-hold-enter': 700, 'data-slide-dur': '50ms',
                 }}>
                     <span className="mb-6 text-6xl explore font-['neue_metana_bold'] text-blue">
                         explore
@@ -300,7 +300,7 @@ export default function Home(){
                 </LandingPageSection>    
 
                 <LandingPageSection classes={'flex flex-col items-center justify-center'} attr={{
-                    id: 'im-your-wallet', 'data-hold-leave': 600, 'data-hold-enter': 1500, 'data-slide-dur': '50ms',
+                    id: 'im-your-wallet', 'data-hold-leave': 600, 'data-hold-enter': 800, 'data-slide-dur': '50ms',
                 }}>
                     <h2 className="flex mobile:flex-col mobile:text-center items-center flex-wrap gap-5 mb-6 text-6xl anim-im-your-wallet-title font-['neue_metana_regular']">
                         I am your 
@@ -348,10 +348,10 @@ export default function Home(){
                             <circle fill="#2488C1" cx="1128.46" cy="171.69" r="22.1"/>
                         </svg> 
                         <div className='flex flex-row items-center justify-end text-w tablet:justify-center mobile:text-xs text-body tablet:text-black tablet:py-0 laptop:py-6 desktop:py-6 laptop:gap-5 desktop:gap-5'>
-                            <Link href="/privacy-policy"><a className='footer-texts text-center desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
-                            <Link href="/cookies-policy"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
-                            <Link href="/terms-and-conditions"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
-                            <Link href="/faq"><a className='footer-text text-center desktop:text-white hover-underline-animation'>FAQ</a></Link>
+                            <Link href="/privacy-policy"><a className='text-center footer-texts desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
+                            <Link href="/cookies-policy"><a className='text-center footer-text desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
+                            <Link href="/terms-and-conditions"><a className='text-center footer-text desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
+                            <Link href="/faq"><a className='text-center footer-text desktop:text-white hover-underline-animation'>FAQ</a></Link>
                         </div>  
                         <div className='flex flex-row items-center justify-center social-icons'>
                             <a href="https://www.linkedin.com/company/gryfyn/" className='flex flex-col p-2'>

@@ -355,7 +355,7 @@ setTimeout(() => {
         document.documentElement.style.height = '10000vh'
         document.documentElement.style.touchAction = 'none'
     }
-}, 6800)
+}, 3600)
 
 document.getElementById('discover-more').addEventListener('click', () => {
     funnyScroll.slide(10, true)
