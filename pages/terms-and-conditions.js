@@ -343,14 +343,14 @@ export default function TermsConditions(){
 </div>
   </div>
     <div className="flex flex-col items-center content-center justify-center">
-        <spam className="privacy-sub font-['neue_metana_regular'] flex flex-row text-center">i am your&nbsp;<b className="font-['neue_metana_bold']">wallet.</b></spam>
+        <spam className="privacy-sub font-['neue_metana_regular'] text-center">i am your&nbsp;<b className="font-['neue_metana_bold']">wallet.</b></spam>
         <spam className="font-['basier_circle']">An NFT-centric wallet for the curious ones. </spam> 
         <spam className="font-['basier_circle']">Experience the digital world like never before.</spam>
     </div>
     </LandingPageSection>
     <span className='fixed bottom-0 right-0 flex justify-end w-full gap-8 p-6 bg-black'>
         <Link href="/privacy-policy">Privacy Policy</Link>
-        <Link href="/cookies-policy">Cookies Policy</Link>
+        <Link href="/cookie-policy">Cookie Policy</Link>
         <Link href="/terms-and-conditions"><a>Terms &#38; Conditions</a></Link>
         <Link href="/faq"><a>FAQ</a></Link>
     </span>     

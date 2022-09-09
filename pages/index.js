@@ -352,6 +352,10 @@ export default function Home(){
                             <Link href="/cookies-policy"><a className='text-center footer-text desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
                             <Link href="/terms-and-conditions"><a className='text-center footer-text desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
                             <Link href="/faq"><a className='text-center footer-text desktop:text-white hover-underline-animation'>FAQ</a></Link>
+                            <Link href="/privacy-policy"><a className='text-center footer-texts desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
+                            <Link href="/cookie-policy"><a className='text-center footer-text desktop:text-white hover-underline-animation'>Cookie Policy</a></Link>
+                            <Link href="/terms-and-conditions"><a className='text-center footer-text desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
+                            <Link href="/faq"><a className='text-center footer-text desktop:text-white hover-underline-animation'>FAQ</a></Link>
                         </div>  
                         <div className='flex flex-row items-center justify-center social-icons'>
                             <a href="https://www.linkedin.com/company/gryfyn/" className='flex flex-col p-2'>

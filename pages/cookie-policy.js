@@ -5,14 +5,14 @@ import PageHead from '../components/PageHead'
 import Accordion from '../components/Accordion'
 import { useState } from 'react'
 
-export default function Cookies(){   
+export default function Cookie(){   
     const [analyticsExpanded, setAnalyticsExpanded] = useState(false)
     return (<>
     <PageHead/>
     <Header/>
     <LandingPageSection classes={'footer-description'}>
     <h1 className="privacy-title font-['neue_metana_bold'] flex flex-col text-center">
-        Cookies Policy
+        Cookie Policy
     </h1>
     <div className="scroll-box font-['basier_circle']">
         <p>
@@ -246,14 +246,14 @@ export default function Cookies(){
         </>}/>      
     </div>
     <div className="flex flex-col items-center content-center justify-center">
-        <spam className="privacy-sub font-['neue_metana_regular'] flex flex-row text-center">i am your&nbsp;<b className="font-['neue_metana_bold']">wallet.</b></spam>
+        <spam className="privacy-sub font-['neue_metana_regular'] text-center">i am your&nbsp;<b className="font-['neue_metana_bold']">wallet.</b></spam>
         <spam className="font-['basier_circle']">An NFT-centric wallet for the curious ones. </spam> 
         <spam className="font-['basier_circle']">Experience the digital world like never before.</spam>
     </div>
     </LandingPageSection>
     <span className='fixed bottom-0 right-0 flex justify-end w-full gap-8 p-6 bg-black'>
         <Link href="/privacy-policy"><a>Privacy Policy</a></Link>
-        <Link href="/cookies-policy"><a>Cookies Policy</a></Link>
+        <Link href="/cookie-policy"><a>Cookie Policy</a></Link>
         <Link href="/terms-and-conditions"><a>Terms &#38; Conditions</a></Link>
         <Link href="/faq"><a>FAQ</a></Link>
     </span>     
