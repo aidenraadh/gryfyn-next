@@ -214,7 +214,7 @@ body{
     margin: 10px;
     font-weight: 500;
     font-size: 30px;
-    width: 330px;
+    min-width: 330px;
 }
 
 .footer{
@@ -719,7 +719,7 @@ body{
     margin-top:18.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;line-height:115%;font-size:21px;font-weight:normal;
 }
 .faq2{
-    margin-top:18.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;line-height:115%;font-size:21px;font-weight:normal;
+    margin-top:18.0pt;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-weight:normal;
 }
 .faq3{
     margin:0cm;margin-bottom:.0001pt;line-height:115%;font-size:15px;

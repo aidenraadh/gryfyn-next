@@ -349,7 +349,7 @@ export default function Home(){
                         </svg> 
                         <div className='flex flex-row items-center justify-end text-w tablet:justify-center mobile:text-xs text-body tablet:text-black tablet:py-0 laptop:py-6 desktop:py-6 laptop:gap-5 desktop:gap-5'>
                             <Link href="/privacy-policy"><a className='footer-texts text-center desktop:text-white hover-underline-animation'>Privacy Policy</a></Link>
-                            <Link href="/cookies-policy"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Cookies Policy</a></Link>
+                            <Link href="/cookie-policy"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Cookie Policy</a></Link>
                             <Link href="/terms-and-conditions"><a className='footer-text text-center desktop:text-white hover-underline-animation'>Terms &#38; Conditions</a></Link>
                             <Link href="/faq"><a className='footer-text text-center desktop:text-white hover-underline-animation'>FAQ</a></Link>
                         </div>  
