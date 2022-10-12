@@ -14,10 +14,10 @@ export default function CountryResidenceNeeded(){
     </spam>
     <div className="scroll-box font-['basier_circle']">
     <h2 className='faq1'>Why is your country of residence needed?</h2>
-    <h2 className='faq2'><span>Disclosing your country of residence is an important step because we provide a custodial wallet solution &#40;custodial wallets are explained below&#41;. Accurately determining your country of residence allows us to follow relevant Anti-Money Laundering &#40;AML&#41; laws, tax reporting, regulatory compliance.&nbsp;</span></h2>
+    <p className='faq2'><span>Disclosing your country of residence is an important step because we provide a custodial wallet solution &#40;custodial wallets are explained below&#41;. Accurately determining your country of residence allows us to follow relevant Anti-Money Laundering &#40;AML&#41; laws, tax reporting, regulatory compliance.&nbsp;</span></p>
     <p className='faq3'>Further to this, you will not be able to withdraw any assets until your Know Your Customer &#40;KYC&#41; verification has been fully completed and approved. You will only be allowed to deposit.</p>
     <h2 className='faq4'>What is a country of residence?</h2>
-    <p className='faq5'>A country of residence is a jurisdiction where you reside, i.e. where you are considered to be a resident. As part of our KYC process, we will ask you to submit proof of residence with your full name and residential address clearly displayed. Examples include: &nbsp;</p>
+    <p className='faq2'>A country of residence is a jurisdiction where you reside, i.e. where you are considered to be a resident. As part of our KYC process, we will ask you to submit proof of residence with your full name and residential address clearly displayed. Examples include: &nbsp;</p>
     <ul>
         <li>utility bill mailed to your <span >residential&nbsp;</span>address in the last three months;</li>
         <li>bank statement mailed to your <span >residential&nbsp;</span>address in the last three months;</li>
